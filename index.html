@@ -904,7 +904,6 @@ if (window.RProfiler) {
 </script> -->
 
 		 <script language="javascript" type="text/javascript">
-
 			//  if (window.CPRUM) {
 			//     window.CPRUM('consentv2', { 
 			// 	  analytics_storage: 'denied' 
@@ -916,10 +915,20 @@ if (window.RProfiler) {
 			// 		}); 
 			// 	});
 			// }
-			 (window.CPRUM
-			  ? window.CPRUM
-			  : (...args) => window.addEventListener('GlimpseLoaded', () => window.CPRUM(...args))
-			)('consentv2', { analytics_storage: 'denied' });
+			 // (window.CPRUM
+			//   ? window.CPRUM
+			//   : (...args) => window.addEventListener('GlimpseLoaded', () => window.CPRUM(...args))
+			// )('consentv2', { analytics_storage: 'denied' });
+
+			 function cpInit(command, options) {
+			  if (window.CPRUM) {
+			    window.CPRUM(command, options);
+			  } else {
+			    window.addEventListener('GlimpseLoaded', () => window.CPRUM(command, options));
+			  }
+			}
+
+			cpInit('consentv2', { analytics_storage: 'denied' });
 			
 		 </script>
 
@@ -932,6 +941,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
