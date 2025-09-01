@@ -905,17 +905,21 @@ if (window.RProfiler) {
 
 		 <script language="javascript" type="text/javascript">
 
-			 if (window.CPRUM) {
-			    window.CPRUM('consentv2', { 
-				  analytics_storage: 'denied' 
-				}); 
-			} else {
-			    window.addEventListener('GlimpseLoaded', () => {
-					 window.CPRUM('consentv2', { 
-					  analytics_storage: 'denied' 
-					}); 
-				});
-			}
+			//  if (window.CPRUM) {
+			//     window.CPRUM('consentv2', { 
+			// 	  analytics_storage: 'denied' 
+			// 	}); 
+			// } else {
+			//     window.addEventListener('GlimpseLoaded', () => {
+			// 		 window.CPRUM('consentv2', { 
+			// 		  analytics_storage: 'denied' 
+			// 		}); 
+			// 	});
+			// }
+			 (window.CPRUM
+			  ? window.CPRUM
+			  : (...args) => window.addEventListener('GlimpseLoaded', () => window.CPRUM(...args))
+			)('consentv2', { analytics_storage: 'denied' });
 			
 		 </script>
 
@@ -928,6 +932,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
