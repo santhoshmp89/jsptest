@@ -380,6 +380,16 @@
   </script> -->
 
 <!--   <script defer src='https://cpqa.catchpoint.com/jp/278122/latest/InitialLoadScript.js'></script> -->
+
+    <script language="javascript" type="text/javascript">
+      function cpInit(command, options) {
+			  if (window.CPRUM) {
+			    window.CPRUM(command, options);
+			  } else {
+			    window.addEventListener('GlimpseLoaded', () => window.CPRUM(command, options));
+			  }
+			}
+    </script>
     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -389,3 +399,4 @@
     
   </body>
 </html>
+
