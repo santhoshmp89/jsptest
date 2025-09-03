@@ -934,7 +934,7 @@ if (window.RProfiler) {
 			    window.addEventListener('GlimpseLoaded', () => window.CPRUM(command, options));
 			  }
 			}
-			setTImeout(function() {
+			setTimeout(function() {
 				cpInit('consentv2', { analytics_storage: 'denied' });
 			}, 10000);
 
@@ -951,6 +951,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
