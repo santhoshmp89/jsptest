@@ -927,15 +927,15 @@ if (window.RProfiler) {
 			//   : (...args) => window.addEventListener('GlimpseLoaded', () => window.CPRUM(...args))
 			// )('consentv2', { analytics_storage: 'denied' });
 
-			 function cpInit(command, options) {
-			  if (window.CPRUM) {
-			    window.CPRUM(command, options);
-			  } else {
-			    window.addEventListener('GlimpseLoaded', () => window.CPRUM(command, options));
-			  }
-			}
+			//  function cpInit(command, options) {
+			//   if (window.CPRUM) {
+			//     window.CPRUM(command, options);
+			//   } else {
+			//     window.addEventListener('GlimpseLoaded', () => window.CPRUM(command, options));
+			//   }
+			// }
 
-			cpInit('consentv2', { analytics_storage: 'denied' });
+			// cpInit('consentv2', { analytics_storage: 'denied' });
 
 			 
 			
@@ -950,6 +950,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
