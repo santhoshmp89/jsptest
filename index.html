@@ -948,16 +948,19 @@ if (window.RProfiler) {
 		<script defer src='https://portalstage.catchpoint.com/jp/91733/v4.0.6/InitialLoadScript.js'></script>
 
 		<script language="javascript" type="text/javascript">
-			if (window.RProfiler) {
-			    window.addEventListener("beforeunload", function(a) {   
+			function init() {
+				 window.addEventListener("beforeunload", function(a) {   
 					window.RProfiler.addInfo("indicator", "adsrendered", 1);
 					window.RProfiler.addInfo("indicator", "adsviewable", 10)
 	                window.RProfiler.addInfo("indicator", "resourcecount", 100);
 	                window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
 	                // window.RProfiler.addInfo("indicator", e, d);                
 	            })
+			}
+			if (window.RProfiler) {
+			   init();
 			} else {
-			    window.addEventListener('GlimpseLoaded', () => window.RProfiler.usePageHide());
+			    window.addEventListener('GlimpseLoaded', () => window.RProfiler.init());
 			}
 		</script>
 
@@ -969,6 +972,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
