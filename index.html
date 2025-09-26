@@ -949,21 +949,30 @@ if (window.RProfiler) {
 
 		<script language="javascript" type="text/javascript">
 			// window.addEventListener("beforeunload", function(a) {
-				function init() {
-					 window.addEventListener("beforeunload", function(a) {   
-						window.RProfiler.addInfo("indicator", "adsrendered", 1);
-						window.RProfiler.addInfo("indicator", "adsviewable", 10)
-		                window.RProfiler.addInfo("indicator", "resourcecount", 100);
-		                window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
-		                // window.RProfiler.addInfo("indicator", e, d);                
-		            })
-				}
-				if (window.RProfiler) {
-				   init();
-				} else {
-				    window.addEventListener('GlimpseLoaded', () => init());
-				}
+				// function init() {
+				// 	 window.addEventListener("beforeunload", function(a) {   
+				// 		window.RProfiler.addInfo("indicator", "adsrendered", 1);
+				// 		window.RProfiler.addInfo("indicator", "adsviewable", 10)
+		  //               window.RProfiler.addInfo("indicator", "resourcecount", 100);
+		  //               window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
+		  //               // window.RProfiler.addInfo("indicator", e, d);                
+		  //           })
+				// }
+				// if (window.RProfiler) {
+				//    init();
+				// } else {
+				//     window.addEventListener('GlimpseLoaded', () => init());
+				// }
 			// });
+
+			
+		function init() {
+		    window.RProfiler.addInfo("indicator", "adsrendered", 1);
+			window.RProfiler.addInfo("indicator", "adsviewable", 10)
+			window.RProfiler.addInfo("indicator", "resourcecount", 100);
+			window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
+		}
+		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
 		</script>
 
 	<script src="js/jquery.min.js"></script>
@@ -974,6 +983,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
