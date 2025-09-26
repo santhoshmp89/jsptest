@@ -967,10 +967,12 @@ if (window.RProfiler) {
 
 			
 		function init() {
-		    window.RProfiler.addInfo("indicator", "adsrendered", 1);
-			window.RProfiler.addInfo("indicator", "adsviewable", 10)
-			window.RProfiler.addInfo("indicator", "resourcecount", 100);
-			window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
+			window.addEventListener("beforeunload", function(a) {
+			    window.RProfiler.addInfo("indicator", "adsrendered", 1);
+				window.RProfiler.addInfo("indicator", "adsviewable", 10)
+				window.RProfiler.addInfo("indicator", "resourcecount", 100);
+				window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
+			});
 		}
 		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
 		</script>
@@ -983,6 +985,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
