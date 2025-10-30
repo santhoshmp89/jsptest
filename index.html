@@ -983,8 +983,14 @@ if (window.RProfiler) {
 	      CPRUMDataLayer.push(arguments);
 	    }
 
-		cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345)
-		</script>
+		cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345);
+
+		
+		function init() {
+			window.RProfiler.addInfo('indicator', 'adsrendered', 6789);		
+		}
+		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
+	</script>
 
 	<script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -994,6 +1000,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
