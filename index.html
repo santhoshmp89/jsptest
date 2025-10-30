@@ -967,15 +967,23 @@ if (window.RProfiler) {
 			// });
 
 			
-		function init() {
-			window.addEventListener("beforeunload", function(a) {
-			    window.RProfiler.addInfo("indicator", "adsrendered", 1);
-				window.RProfiler.addInfo("indicator", "adsviewable", 10)
-				window.RProfiler.addInfo("indicator", "resourcecount", 100);
-				window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
-			});
-		}
-		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
+		// function init() {
+		// 	window.addEventListener("beforeunload", function(a) {
+		// 	    window.RProfiler.addInfo("indicator", "adsrendered", 1);
+		// 		window.RProfiler.addInfo("indicator", "adsviewable", 10)
+		// 		window.RProfiler.addInfo("indicator", "resourcecount", 100);
+		// 		window.RProfiler.addInfo("indicator", "resourcetransfersize", 1000);
+		// 	});
+		// }
+		// window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
+
+		// New way of adding custom tag
+		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+		function cpRUMDataLayerTag() {
+	      CPRUMDataLayer.push(arguments);
+	    }
+
+		cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345)
 		</script>
 
 	<script src="js/jquery.min.js"></script>
@@ -986,6 +994,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
