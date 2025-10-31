@@ -983,13 +983,21 @@ if (window.RProfiler) {
 	      CPRUMDataLayer.push(arguments);
 	    }
 
-			cpRUMDataLayerTag('addInfo', 'conversion', 'conve');
+			// cpRUMDataLayerTag('addInfo', 'conversion', 'conve');
 		// cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345);
 		// cpRUMDataLayerTag('addInfo', 'pageGroup', 'home');
 		// cpRUMDataLayerTag('addInfo', 'appError', 10, 'undefined error');
 		// 	cpRUMDataLayerTag('addInfo', 'conversion', 20, 1200);
 		// 	cpRUMDataLayerTag('addInfo', 'tracepoint', 'tracepoint', 'tracepoint mesg');
 		// 	cpRUMDataLayerTag('addInfo', 'variation', 'variation');
+
+			cpRUMDataLayerTag('conversion', 'conve');
+		cpRUMDataLayerTag('indicator', 'adsrendered', 2345);
+		cpRUMDataLayerTag('pageGroup', 'home');
+		cpRUMDataLayerTag('appError', 10, 'undefined error');
+			cpRUMDataLayerTag('conversion', 20, 1200);
+			cpRUMDataLayerTag('tracepoint', 'tracepoint', 'tracepoint mesg');
+			cpRUMDataLayerTag('variation', 'variation');
 
 		
 		function init() {
@@ -1008,6 +1016,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
