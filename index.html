@@ -994,7 +994,8 @@ if (window.RProfiler) {
 		
 		function init() {
 			// window.RProfiler.addInfo('indicator', 'adsrendered', 6789);	
-			window.RProfiler.addInfo('conversionOnly');	
+			window.RProfiler.addInfo('conversion', 'conversionOnly');
+			window.RProfiler.addInfo('conversion', 'conv', 20, 1200);
 		}
 		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
 	</script>
@@ -1007,6 +1008,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
