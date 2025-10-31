@@ -999,7 +999,8 @@ if (window.RProfiler) {
 			cpRUMDataLayerTag('tracepoint', 'tracepoint', 'tracepoint mesg');
 			cpRUMDataLayerTag('variation', 'variation');
 			cpRUMDataLayerTag('usePageHide', false);
-			// cpRUMDataLayerTag('excludeBenchMarks');
+			cpRUMDataLayerTag('excludeBenchMarks');
+			cpRUMDataLayerTag('consentv2', { analytics_storage: 'granted' })
 		
 		function init() {
 			window.RProfiler.addInfo('indicator', 'adsrendered', 6789);	
@@ -1017,6 +1018,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
