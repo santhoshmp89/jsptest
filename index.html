@@ -978,10 +978,10 @@ if (window.RProfiler) {
 		// window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
 
 		// New way of adding custom tag
-		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
-		function cpRUMDataLayerTag() {
-	      CPRUMDataLayer.push(arguments);
-	    }
+		// window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+		// function cpRUMDataLayerTag() {
+	 //      CPRUMDataLayer.push(arguments);
+	 //    }
 
 			// cpRUMDataLayerTag('addInfo', 'conversion', 'conve');
 		// cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345);
@@ -992,22 +992,44 @@ if (window.RProfiler) {
 		// 	cpRUMDataLayerTag('addInfo', 'variation', 'variation');
 
 			// cpRUMDataLayerTag('conversion', 'conve');
-		cpRUMDataLayerTag('indicator', 'adsrendered', 2345);
-		cpRUMDataLayerTag('pageGroup', 'home');
-		cpRUMDataLayerTag('appError', 10, 'undefined error');
-			cpRUMDataLayerTag('conversion', 20, 1200);
-			cpRUMDataLayerTag('tracepoint', 'tracepoint', 'tracepoint mesg');
-			cpRUMDataLayerTag('variation', 'variation');
-			cpRUMDataLayerTag('usePageHide', false);
-			cpRUMDataLayerTag('excludeBenchMarks');
-			cpRUMDataLayerTag('consentv2', { analytics_storage: 'granted' })
+		// cpRUMDataLayerTag('indicator', 'adsrendered', 2345);
+		// cpRUMDataLayerTag('pageGroup', 'home');
+		// cpRUMDataLayerTag('appError', 10, 'undefined error');
+		// 	cpRUMDataLayerTag('conversion', 20, 1200);
+		// 	cpRUMDataLayerTag('tracepoint', 'tracepoint', 'tracepoint mesg');
+		// 	cpRUMDataLayerTag('variation', 'variation');
+		// 	cpRUMDataLayerTag('usePageHide', false);
+		// 	cpRUMDataLayerTag('excludeBenchMarks');
+		// 	cpRUMDataLayerTag('consentv2', { analytics_storage: 'granted' })
 		
+		// function init() {
+		// 	window.RProfiler.addInfo('indicator', 'adsrendered', 6789);	
+		// 	// window.RProfiler.addInfo('conversion', 'conversionOnly');
+		// 	// window.RProfiler.addInfo('conversion', 'conv', 20, 1200);
+		// }
+		// window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
+
+		<script>
+		    // Initialize the queue
+		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+		function cpRumTag() {
+		  CPRUMDataLayer.push(arguments);
+		}
+	
+		// Queue some events before the "real library" is loaded
+		
+		cpRumTag('pageGroup', 'home');
+	
+	  </script>
+
+	<script language="javascript" type="text/javascript">
 		function init() {
-			window.RProfiler.addInfo('indicator', 'adsrendered', 6789);	
-			// window.RProfiler.addInfo('conversion', 'conversionOnly');
-			// window.RProfiler.addInfo('conversion', 'conv', 20, 1200);
+		    window.RProfiler.addInfo('pageGroup', 'home');
 		}
 		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
+	</script>
+
+			
 	</script>
 
 	<script src="js/jquery.min.js"></script>
@@ -1018,6 +1040,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
