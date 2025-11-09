@@ -1018,13 +1018,13 @@ if (window.RProfiler) {
 	
 		// Queue some events before the "real library" is loaded
 		
-		cpRumTag('pageGroup', 'home');
+		cpRumTag('pageGroup', 'new-home');
 	
 	  </script>
 
 	<script language="javascript" type="text/javascript">
 		function init() {
-		    window.RProfiler.addInfo('pageGroup', 'home');
+		    window.RProfiler.addInfo('pageGroup', 'oldhome');
 		}
 		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
 	</script>
@@ -1040,6 +1040,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
