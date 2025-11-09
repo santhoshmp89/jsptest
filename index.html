@@ -1009,7 +1009,7 @@ if (window.RProfiler) {
 		// }
 		// window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
 		</script>
-		<script>
+		<!-- <script>
 		    // Initialize the queue
 		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
 		function cpRumTag() {
@@ -1027,7 +1027,19 @@ if (window.RProfiler) {
 		    window.RProfiler.addInfo('pageGroup', 'oldhome');
 		}
 		window.RProfiler ? init() : window.addEventListener("GlimpseLoaded", init);
-	</script>
+	</script> -->
+	<script>
+		    // Initialize the queue
+		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+		function cpRumTag() {
+		  CPRUMDataLayer.push(arguments);
+		}
+	
+		// Queue some events before the "real library" is loaded
+		cpRumTag('indicator', 'adsrendered', 2345);
+	
+	  </script>
+
 
 			
 	
@@ -1040,6 +1052,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
