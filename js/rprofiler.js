@@ -35,7 +35,7 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 /*!*************************************************!*\
-  !*** ./src/rprofiler/rprofiler.ts + 31 modules ***!
+  !*** ./src/rprofiler/rprofiler.ts + 30 modules ***!
   \*************************************************/
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
@@ -46,7 +46,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// CONCATENATED MODULE: ./node_modules/web-vitals/dist/web-vitals.attribution.js
-var t,e,n=function(){var t=self.performance&&performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];if(t&&t.responseStart>0&&t.responseStart<performance.now())return t},r=function(t){if("loading"===document.readyState)return"loading";var e=n();if(e){if(t<e.domInteractive)return"loading";if(0===e.domContentLoadedEventStart||t<e.domContentLoadedEventStart)return"dom-interactive";if(0===e.domComplete||t<e.domComplete)return"dom-content-loaded"}return"complete"},i=function(t){var e=t.nodeName;return 1===t.nodeType?e.toLowerCase():e.toUpperCase().replace(/^#/,"")},a=function(t,e){var n="";try{for(;t&&9!==t.nodeType;){var r=t,a=r.id?"#"+r.id:i(r)+(r.classList&&r.classList.value&&r.classList.value.trim()&&r.classList.value.trim().length?"."+r.classList.value.trim().replace(/\s+/g,"."):"");if(n.length+a.length>(e||100)-1)return n||a;if(n=n?a+">"+n:a,r.id)break;t=r.parentNode}}catch(t){}return n},o=-1,c=function(){return o},u=function(t){addEventListener("pageshow",(function(e){e.persisted&&(o=e.timeStamp,t(e))}),!0)},s=function(){var t=n();return t&&t.activationStart||0},f=function(t,e){var r=n(),i="navigate";c()>=0?i="back-forward-cache":r&&(document.prerendering||s()>0?i="prerender":document.wasDiscarded?i="restore":r.type&&(i=r.type.replace(/_/g,"-")));return{name:t,value:void 0===e?-1:e,rating:"good",delta:0,entries:[],id:"v4-".concat(Date.now(),"-").concat(Math.floor(8999999999999*Math.random())+1e12),navigationType:i}},d=function(t,e,n){try{if(PerformanceObserver.supportedEntryTypes.includes(t)){var r=new PerformanceObserver((function(t){Promise.resolve().then((function(){e(t.getEntries())}))}));return r.observe(Object.assign({type:t,buffered:!0},n||{})),r}}catch(t){}},l=function(t,e,n,r){var i,a;return function(o){e.value>=0&&(o||r)&&((a=e.value-(i||0))||void 0===i)&&(i=e.value,e.delta=a,e.rating=function(t,e){return t>e[1]?"poor":t>e[0]?"needs-improvement":"good"}(e.value,n),t(e))}},m=function(t){requestAnimationFrame((function(){return requestAnimationFrame((function(){return t()}))}))},p=function(t){document.addEventListener("visibilitychange",(function(){"hidden"===document.visibilityState&&t()}))},v=function(t){var e=!1;return function(){e||(t(),e=!0)}},g=-1,h=function(){return"hidden"!==document.visibilityState||document.prerendering?1/0:0},T=function(t){"hidden"===document.visibilityState&&g>-1&&(g="visibilitychange"===t.type?t.timeStamp:0,E())},y=function(){addEventListener("visibilitychange",T,!0),addEventListener("prerenderingchange",T,!0)},E=function(){removeEventListener("visibilitychange",T,!0),removeEventListener("prerenderingchange",T,!0)},S=function(){return g<0&&(g=h(),y(),u((function(){setTimeout((function(){g=h(),y()}),0)}))),{get firstHiddenTime(){return g}}},b=function(t){document.prerendering?addEventListener("prerenderingchange",(function(){return t()}),!0):t()},L=[1800,3e3],C=function(t,e){e=e||{},b((function(){var n,r=S(),i=f("FCP"),a=d("paint",(function(t){t.forEach((function(t){"first-contentful-paint"===t.name&&(a.disconnect(),t.startTime<r.firstHiddenTime&&(i.value=Math.max(t.startTime-s(),0),i.entries.push(t),n(!0)))}))}));a&&(n=l(t,i,L,e.reportAllChanges),u((function(r){i=f("FCP"),n=l(t,i,L,e.reportAllChanges),m((function(){i.value=performance.now()-r.timeStamp,n(!0)}))})))}))},M=[.1,.25],D=function(t,e){!function(t,e){e=e||{},C(v((function(){var n,r=f("CLS",0),i=0,a=[],o=function(t){t.forEach((function(t){if(!t.hadRecentInput){var e=a[0],n=a[a.length-1];i&&t.startTime-n.startTime<1e3&&t.startTime-e.startTime<5e3?(i+=t.value,a.push(t)):(i=t.value,a=[t])}})),i>r.value&&(r.value=i,r.entries=a,n())},c=d("layout-shift",o);c&&(n=l(t,r,M,e.reportAllChanges),p((function(){o(c.takeRecords()),n(!0)})),u((function(){i=0,r=f("CLS",0),n=l(t,r,M,e.reportAllChanges),m((function(){return n()}))})),setTimeout(n,0))})))}((function(e){var n=function(t){var e,n={};if(t.entries.length){var i=t.entries.reduce((function(t,e){return t&&t.value>e.value?t:e}));if(i&&i.sources&&i.sources.length){var o=(e=i.sources).find((function(t){return t.node&&1===t.node.nodeType}))||e[0];o&&(n={largestShiftTarget:a(o.node),largestShiftTime:i.startTime,largestShiftValue:i.value,largestShiftSource:o,largestShiftEntry:i,loadState:r(i.startTime)})}}return Object.assign(t,{attribution:n})}(e);t(n)}),e)},w=function(t,e){C((function(e){var i=function(t){var e={timeToFirstByte:0,firstByteToFCP:t.value,loadState:r(c())};if(t.entries.length){var i=n(),a=t.entries[t.entries.length-1];if(i){var o=i.activationStart||0,u=Math.max(0,i.responseStart-o);e={timeToFirstByte:u,firstByteToFCP:t.value-u,loadState:r(t.entries[0].startTime),navigationEntry:i,fcpEntry:a}}}return Object.assign(t,{attribution:e})}(e);t(i)}),e)},x=0,I=1/0,k=0,A=function(t){t.forEach((function(t){t.interactionId&&(I=Math.min(I,t.interactionId),k=Math.max(k,t.interactionId),x=k?(k-I)/7+1:0)}))},F=function(){return t?x:performance.interactionCount||0},P=function(){"interactionCount"in performance||t||(t=d("event",A,{type:"event",buffered:!0,durationThreshold:0}))},B=[],O=new Map,R=0,j=function(){var t=Math.min(B.length-1,Math.floor((F()-R)/50));return B[t]},q=[],H=function(t){if(q.forEach((function(e){return e(t)})),t.interactionId||"first-input"===t.entryType){var e=B[B.length-1],n=O.get(t.interactionId);if(n||B.length<10||t.duration>e.latency){if(n)t.duration>n.latency?(n.entries=[t],n.latency=t.duration):t.duration===n.latency&&t.startTime===n.entries[0].startTime&&n.entries.push(t);else{var r={id:t.interactionId,latency:t.duration,entries:[t]};O.set(r.id,r),B.push(r)}B.sort((function(t,e){return e.latency-t.latency})),B.length>10&&B.splice(10).forEach((function(t){return O.delete(t.id)}))}}},N=function(t){var e=self.requestIdleCallback||self.setTimeout,n=-1;return t=v(t),"hidden"===document.visibilityState?t():(n=e(t),p(t)),n},W=[200,500],z=function(t,e){"PerformanceEventTiming"in self&&"interactionId"in PerformanceEventTiming.prototype&&(e=e||{},b((function(){var n;P();var r,i=f("INP"),a=function(t){N((function(){t.forEach(H);var e=j();e&&e.latency!==i.value&&(i.value=e.latency,i.entries=e.entries,r())}))},o=d("event",a,{durationThreshold:null!==(n=e.durationThreshold)&&void 0!==n?n:40});r=l(t,i,W,e.reportAllChanges),o&&(o.observe({type:"first-input",buffered:!0}),p((function(){a(o.takeRecords()),r(!0)})),u((function(){R=F(),B.length=0,O.clear(),i=f("INP"),r=l(t,i,W,e.reportAllChanges)})))})))},U=[],V=[],_=0,G=new WeakMap,J=new Map,K=-1,Q=function(t){U=U.concat(t),X()},X=function(){K<0&&(K=N(Y))},Y=function(){J.size>10&&J.forEach((function(t,e){O.has(e)||J.delete(e)}));var t=B.map((function(t){return G.get(t.entries[0])})),e=V.length-50;V=V.filter((function(n,r){return r>=e||t.includes(n)}));for(var n=new Set,r=0;r<V.length;r++){var i=V[r];nt(i.startTime,i.processingEnd).forEach((function(t){n.add(t)}))}var a=U.length-1-50;U=U.filter((function(t,e){return t.startTime>_&&e>a||n.has(t)})),K=-1};q.push((function(t){t.interactionId&&t.target&&!J.has(t.interactionId)&&J.set(t.interactionId,t.target)}),(function(t){var e,n=t.startTime+t.duration;_=Math.max(_,t.processingEnd);for(var r=V.length-1;r>=0;r--){var i=V[r];if(Math.abs(n-i.renderTime)<=8){(e=i).startTime=Math.min(t.startTime,e.startTime),e.processingStart=Math.min(t.processingStart,e.processingStart),e.processingEnd=Math.max(t.processingEnd,e.processingEnd),e.entries.push(t);break}}e||(e={startTime:t.startTime,processingStart:t.processingStart,processingEnd:t.processingEnd,renderTime:n,entries:[t]},V.push(e)),(t.interactionId||"first-input"===t.entryType)&&G.set(t,e),X()}));var Z,$,tt,et,nt=function(t,e){for(var n,r=[],i=0;n=U[i];i++)if(!(n.startTime+n.duration<t)){if(n.startTime>e)break;r.push(n)}return r},rt=function(t,n){e||(e=d("long-animation-frame",Q)),z((function(e){var n=function(t){var e=t.entries[0],n=G.get(e),i=e.processingStart,o=n.processingEnd,c=n.entries.sort((function(t,e){return t.processingStart-e.processingStart})),u=nt(e.startTime,o),s=t.entries.find((function(t){return t.target})),f=s&&s.target||J.get(e.interactionId),d=[e.startTime+e.duration,o].concat(u.map((function(t){return t.startTime+t.duration}))),l=Math.max.apply(Math,d),m={interactionTarget:a(f),interactionTargetElement:f,interactionType:e.name.startsWith("key")?"keyboard":"pointer",interactionTime:e.startTime,nextPaintTime:l,processedEventEntries:c,longAnimationFrameEntries:u,inputDelay:i-e.startTime,processingDuration:o-i,presentationDelay:Math.max(l-o,0),loadState:r(e.startTime)};return Object.assign(t,{attribution:m})}(e);t(n)}),n)},it=[2500,4e3],at={},ot=function(t,e){!function(t,e){e=e||{},b((function(){var n,r=S(),i=f("LCP"),a=function(t){e.reportAllChanges||(t=t.slice(-1)),t.forEach((function(t){t.startTime<r.firstHiddenTime&&(i.value=Math.max(t.startTime-s(),0),i.entries=[t],n())}))},o=d("largest-contentful-paint",a);if(o){n=l(t,i,it,e.reportAllChanges);var c=v((function(){at[i.id]||(a(o.takeRecords()),o.disconnect(),at[i.id]=!0,n(!0))}));["keydown","click"].forEach((function(t){addEventListener(t,(function(){return N(c)}),!0)})),p(c),u((function(r){i=f("LCP"),n=l(t,i,it,e.reportAllChanges),m((function(){i.value=performance.now()-r.timeStamp,at[i.id]=!0,n(!0)}))}))}}))}((function(e){var r=function(t){var e={timeToFirstByte:0,resourceLoadDelay:0,resourceLoadDuration:0,elementRenderDelay:t.value};if(t.entries.length){var r=n();if(r){var i=r.activationStart||0,o=t.entries[t.entries.length-1],c=o.url&&performance.getEntriesByType("resource").filter((function(t){return t.name===o.url}))[0],u=Math.max(0,r.responseStart-i),s=Math.max(u,c?(c.requestStart||c.startTime)-i:0),f=Math.max(s,c?c.responseEnd-i:0),d=Math.max(f,o.startTime-i);e={element:a(o.element),timeToFirstByte:u,resourceLoadDelay:s-u,resourceLoadDuration:f-s,elementRenderDelay:d-f,navigationEntry:r,lcpEntry:o},o.url&&(e.url=o.url),c&&(e.lcpResourceEntry=c)}}return Object.assign(t,{attribution:e})}(e);t(r)}),e)},ct=[800,1800],ut=function t(e){document.prerendering?b((function(){return t(e)})):"complete"!==document.readyState?addEventListener("load",(function(){return t(e)}),!0):setTimeout(e,0)},st=function(t,e){e=e||{};var r=f("TTFB"),i=l(t,r,ct,e.reportAllChanges);ut((function(){var a=n();a&&(r.value=Math.max(a.responseStart-s(),0),r.entries=[a],i(!0),u((function(){r=f("TTFB",0),(i=l(t,r,ct,e.reportAllChanges))(!0)})))}))},ft=function(t,e){st((function(e){var n=function(t){var e={waitingDuration:0,cacheDuration:0,dnsDuration:0,connectionDuration:0,requestDuration:0};if(t.entries.length){var n=t.entries[0],r=n.activationStart||0,i=Math.max((n.workerStart||n.fetchStart)-r,0),a=Math.max(n.domainLookupStart-r,0),o=Math.max(n.connectStart-r,0),c=Math.max(n.connectEnd-r,0);e={waitingDuration:i,cacheDuration:a-i,dnsDuration:o-a,connectionDuration:c-o,requestDuration:t.value-c,navigationEntry:n}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},dt={passive:!0,capture:!0},lt=new Date,mt=function(t,e){Z||(Z=e,$=t,tt=new Date,gt(removeEventListener),pt())},pt=function(){if($>=0&&$<tt-lt){var t={entryType:"first-input",name:Z.type,target:Z.target,cancelable:Z.cancelable,startTime:Z.timeStamp,processingStart:Z.timeStamp+$};et.forEach((function(e){e(t)})),et=[]}},vt=function(t){if(t.cancelable){var e=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,e){var n=function(){mt(t,e),i()},r=function(){i()},i=function(){removeEventListener("pointerup",n,dt),removeEventListener("pointercancel",r,dt)};addEventListener("pointerup",n,dt),addEventListener("pointercancel",r,dt)}(e,t):mt(e,t)}},gt=function(t){["mousedown","keydown","touchstart","pointerdown"].forEach((function(e){return t(e,vt,dt)}))},ht=[100,300],Tt=function(t,e){e=e||{},b((function(){var n,r=S(),i=f("FID"),a=function(t){t.startTime<r.firstHiddenTime&&(i.value=t.processingStart-t.startTime,i.entries.push(t),n(!0))},o=function(t){t.forEach(a)},c=d("first-input",o);n=l(t,i,ht,e.reportAllChanges),c&&(p(v((function(){o(c.takeRecords()),c.disconnect()}))),u((function(){var r;i=f("FID"),n=l(t,i,ht,e.reportAllChanges),et=[],$=-1,Z=null,gt(addEventListener),r=a,et.push(r),pt()})))}))},yt=function(t,e){Tt((function(e){var n=function(t){var e=t.entries[0],n={eventTarget:a(e.target),eventType:e.name,eventTime:e.startTime,eventEntry:e,loadState:r(e.startTime)};return Object.assign(t,{attribution:n})}(e);t(n)}),e)};
+var t,e,n,r=function(){var t=self.performance&&performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];if(t&&t.responseStart>0&&t.responseStart<performance.now())return t},i=function(t){if("loading"===document.readyState)return"loading";var e=r();if(e){if(t<e.domInteractive)return"loading";if(0===e.domContentLoadedEventStart||t<e.domContentLoadedEventStart)return"dom-interactive";if(0===e.domComplete||t<e.domComplete)return"dom-content-loaded"}return"complete"},a=function(t){var e=t.nodeName;return 1===t.nodeType?e.toLowerCase():e.toUpperCase().replace(/^#/,"")},o=function(t,e){var n="";try{for(;t&&9!==t.nodeType;){var r=t,i=r.id?"#"+r.id:a(r)+(r.classList&&r.classList.value&&r.classList.value.trim()&&r.classList.value.trim().length?"."+r.classList.value.trim().replace(/\s+/g,"."):"");if(n.length+i.length>(e||100)-1)return n||i;if(n=n?i+">"+n:i,r.id)break;t=r.parentNode}}catch(t){}return n},c=-1,u=function(){return c},s=function(t){addEventListener("pageshow",(function(e){e.persisted&&(c=e.timeStamp,t(e))}),!0)},f=function(){var t=r();return t&&t.activationStart||0},d=function(t,e){var n=r(),i="navigate";u()>=0?i="back-forward-cache":n&&(document.prerendering||f()>0?i="prerender":document.wasDiscarded?i="restore":n.type&&(i=n.type.replace(/_/g,"-")));return{name:t,value:void 0===e?-1:e,rating:"good",delta:0,entries:[],id:"v4-".concat(Date.now(),"-").concat(Math.floor(8999999999999*Math.random())+1e12),navigationType:i}},l=function(t,e,n){try{if(PerformanceObserver.supportedEntryTypes.includes(t)){var r=new PerformanceObserver((function(t){Promise.resolve().then((function(){e(t.getEntries())}))}));return r.observe(Object.assign({type:t,buffered:!0},n||{})),r}}catch(t){}},m=function(t,e,n,r){var i,a;return function(o){e.value>=0&&(o||r)&&((a=e.value-(i||0))||void 0===i)&&(i=e.value,e.delta=a,e.rating=function(t,e){return t>e[1]?"poor":t>e[0]?"needs-improvement":"good"}(e.value,n),t(e))}},p=function(t){requestAnimationFrame((function(){return requestAnimationFrame((function(){return t()}))}))},v=function(t){document.addEventListener("visibilitychange",(function(){"hidden"===document.visibilityState&&t()}))},g=function(t){var e=!1;return function(){e||(t(),e=!0)}},h=-1,T=function(){return"hidden"!==document.visibilityState||document.prerendering?1/0:0},y=function(t){"hidden"===document.visibilityState&&h>-1&&(h="visibilitychange"===t.type?t.timeStamp:0,S())},E=function(){addEventListener("visibilitychange",y,!0),addEventListener("prerenderingchange",y,!0)},S=function(){removeEventListener("visibilitychange",y,!0),removeEventListener("prerenderingchange",y,!0)},b=function(){return h<0&&(h=T(),E(),s((function(){setTimeout((function(){h=T(),E()}),0)}))),{get firstHiddenTime(){return h}}},L=function(t){document.prerendering?addEventListener("prerenderingchange",(function(){return t()}),!0):t()},C=[1800,3e3],M=function(t,e){e=e||{},L((function(){var n,r=b(),i=d("FCP"),a=l("paint",(function(t){t.forEach((function(t){"first-contentful-paint"===t.name&&(a.disconnect(),t.startTime<r.firstHiddenTime&&(i.value=Math.max(t.startTime-f(),0),i.entries.push(t),n(!0)))}))}));a&&(n=m(t,i,C,e.reportAllChanges),s((function(r){i=d("FCP"),n=m(t,i,C,e.reportAllChanges),p((function(){i.value=performance.now()-r.timeStamp,n(!0)}))})))}))},w=[.1,.25],D=function(t,e){!function(t,e){e=e||{},M(g((function(){var n,r=d("CLS",0),i=0,a=[],o=function(t){t.forEach((function(t){if(!t.hadRecentInput){var e=a[0],n=a[a.length-1];i&&t.startTime-n.startTime<1e3&&t.startTime-e.startTime<5e3?(i+=t.value,a.push(t)):(i=t.value,a=[t])}})),i>r.value&&(r.value=i,r.entries=a,n())},c=l("layout-shift",o);c&&(n=m(t,r,w,e.reportAllChanges),v((function(){o(c.takeRecords()),n(!0)})),s((function(){i=0,r=d("CLS",0),n=m(t,r,w,e.reportAllChanges),p((function(){return n()}))})),setTimeout(n,0))})))}((function(e){var n=function(t){var e,n={};if(t.entries.length){var r=t.entries.reduce((function(t,e){return t&&t.value>e.value?t:e}));if(r&&r.sources&&r.sources.length){var a=(e=r.sources).find((function(t){return t.node&&1===t.node.nodeType}))||e[0];a&&(n={largestShiftTarget:o(a.node),largestShiftTime:r.startTime,largestShiftValue:r.value,largestShiftSource:a,largestShiftEntry:r,loadState:i(r.startTime)})}}return Object.assign(t,{attribution:n})}(e);t(n)}),e)},x=function(t,e){M((function(e){var n=function(t){var e={timeToFirstByte:0,firstByteToFCP:t.value,loadState:i(u())};if(t.entries.length){var n=r(),a=t.entries[t.entries.length-1];if(n){var o=n.activationStart||0,c=Math.max(0,n.responseStart-o);e={timeToFirstByte:c,firstByteToFCP:t.value-c,loadState:i(t.entries[0].startTime),navigationEntry:n,fcpEntry:a}}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},I=0,k=1/0,A=0,F=function(t){t.forEach((function(t){t.interactionId&&(k=Math.min(k,t.interactionId),A=Math.max(A,t.interactionId),I=A?(A-k)/7+1:0)}))},P=function(){"interactionCount"in performance||t||(t=l("event",F,{type:"event",buffered:!0,durationThreshold:0}))},B=[],O=new Map,R=0,j=function(){return(t?I:performance.interactionCount||0)-R},q=[],H=function(t){if(q.forEach((function(e){return e(t)})),t.interactionId||"first-input"===t.entryType){var e=B[B.length-1],n=O.get(t.interactionId);if(n||B.length<10||t.duration>e.latency){if(n)t.duration>n.latency?(n.entries=[t],n.latency=t.duration):t.duration===n.latency&&t.startTime===n.entries[0].startTime&&n.entries.push(t);else{var r={id:t.interactionId,latency:t.duration,entries:[t]};O.set(r.id,r),B.push(r)}B.sort((function(t,e){return e.latency-t.latency})),B.length>10&&B.splice(10).forEach((function(t){return O.delete(t.id)}))}}},N=function(t){var e=self.requestIdleCallback||self.setTimeout,n=-1;return t=g(t),"hidden"===document.visibilityState?t():(n=e(t),v(t)),n},W=[200,500],z=function(t,e){"PerformanceEventTiming"in self&&"interactionId"in PerformanceEventTiming.prototype&&(e=e||{},L((function(){var n;P();var r,i=d("INP"),a=function(t){N((function(){t.forEach(H);var e,n=(e=Math.min(B.length-1,Math.floor(j()/50)),B[e]);n&&n.latency!==i.value&&(i.value=n.latency,i.entries=n.entries,r())}))},o=l("event",a,{durationThreshold:null!==(n=e.durationThreshold)&&void 0!==n?n:40});r=m(t,i,W,e.reportAllChanges),o&&(o.observe({type:"first-input",buffered:!0}),v((function(){a(o.takeRecords()),r(!0)})),s((function(){R=0,B.length=0,O.clear(),i=d("INP"),r=m(t,i,W,e.reportAllChanges)})))})))},U=[],V=new Map,_=[],G=new WeakMap,J=new Map,K=-1,Q=function(t){U=U.concat(t),X()},X=function(){K<0&&(K=N(Y))},Y=function(){J.size>10&&J.forEach((function(t,e){O.has(e)||J.delete(e)})),_=_.slice(-50);var t=new Set(_.concat(B.map((function(t){return G.get(t.entries[0])}))));V.forEach((function(e,n){t.has(n)||V.delete(n)}));var e=new Set;V.forEach((function(t){nt(t.startTime,t.processingEnd).forEach((function(t){e.add(t)}))}));for(var r=0;r<50;r++){var i=U[U.length-1-r];if(!i||i.startTime<n)break;e.add(i)}U=Array.from(e),K=-1};q.push((function(t){t.interactionId&&t.target&&!J.has(t.interactionId)&&J.set(t.interactionId,t.target)}),(function(t){var e,r=t.startTime+t.duration;n=Math.max(n,t.processingEnd);for(var i=_.length-1;i>=0;i--)if(e=_[i],Math.abs(r-e)<=8){var a=V.get(e);a.startTime=Math.min(t.startTime,a.startTime),a.processingStart=Math.min(t.processingStart,a.processingStart),a.processingEnd=Math.max(t.processingEnd,a.processingEnd),a.entries.push(t),r=e;break}r!==e&&(_.push(r),V.set(r,{startTime:t.startTime,processingStart:t.processingStart,processingEnd:t.processingEnd,entries:[t]})),(t.interactionId||"first-input"===t.entryType)&&G.set(t,r),X()}));var Z,$,tt,et,nt=function(t,e){for(var n,r=[],i=0;n=U[i];i++)if(!(n.startTime+n.duration<t)){if(n.startTime>e)break;r.push(n)}return r},rt=function(t,n){e||(e=l("long-animation-frame",Q)),z((function(e){var n=function(t){var e=t.entries[0],n=G.get(e),r=V.get(n),a=e.processingStart,c=r.processingEnd,u=r.entries.sort((function(t,e){return t.processingStart-e.processingStart})),s=nt(e.startTime,c),f=t.entries.find((function(t){return t.target})),d=f&&f.target||J.get(e.interactionId),l=[e.startTime+e.duration,c].concat(s.map((function(t){return t.startTime+t.duration}))),m=Math.max.apply(Math,l),p={interactionTarget:o(d),interactionTargetElement:d,interactionType:e.name.startsWith("key")?"keyboard":"pointer",interactionTime:e.startTime,nextPaintTime:m,processedEventEntries:u,longAnimationFrameEntries:s,inputDelay:a-e.startTime,processingDuration:c-a,presentationDelay:Math.max(m-c,0),loadState:i(e.startTime)};return Object.assign(t,{attribution:p})}(e);t(n)}),n)},it=[2500,4e3],at={},ot=function(t,e){!function(t,e){e=e||{},L((function(){var n,r=b(),i=d("LCP"),a=function(t){e.reportAllChanges||(t=t.slice(-1)),t.forEach((function(t){t.startTime<r.firstHiddenTime&&(i.value=Math.max(t.startTime-f(),0),i.entries=[t],n())}))},o=l("largest-contentful-paint",a);if(o){n=m(t,i,it,e.reportAllChanges);var c=g((function(){at[i.id]||(a(o.takeRecords()),o.disconnect(),at[i.id]=!0,n(!0))}));["keydown","click"].forEach((function(t){addEventListener(t,(function(){return N(c)}),!0)})),v(c),s((function(r){i=d("LCP"),n=m(t,i,it,e.reportAllChanges),p((function(){i.value=performance.now()-r.timeStamp,at[i.id]=!0,n(!0)}))}))}}))}((function(e){var n=function(t){var e={timeToFirstByte:0,resourceLoadDelay:0,resourceLoadDuration:0,elementRenderDelay:t.value};if(t.entries.length){var n=r();if(n){var i=n.activationStart||0,a=t.entries[t.entries.length-1],c=a.url&&performance.getEntriesByType("resource").filter((function(t){return t.name===a.url}))[0],u=Math.max(0,n.responseStart-i),s=Math.max(u,c?(c.requestStart||c.startTime)-i:0),f=Math.max(s,c?c.responseEnd-i:0),d=Math.max(f,a.startTime-i);e={element:o(a.element),timeToFirstByte:u,resourceLoadDelay:s-u,resourceLoadDuration:f-s,elementRenderDelay:d-f,navigationEntry:n,lcpEntry:a},a.url&&(e.url=a.url),c&&(e.lcpResourceEntry=c)}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},ct=[800,1800],ut=function t(e){document.prerendering?L((function(){return t(e)})):"complete"!==document.readyState?addEventListener("load",(function(){return t(e)}),!0):setTimeout(e,0)},st=function(t,e){e=e||{};var n=d("TTFB"),i=m(t,n,ct,e.reportAllChanges);ut((function(){var a=r();a&&(n.value=Math.max(a.responseStart-f(),0),n.entries=[a],i(!0),s((function(){n=d("TTFB",0),(i=m(t,n,ct,e.reportAllChanges))(!0)})))}))},ft=function(t,e){st((function(e){var n=function(t){var e={waitingDuration:0,cacheDuration:0,dnsDuration:0,connectionDuration:0,requestDuration:0};if(t.entries.length){var n=t.entries[0],r=n.activationStart||0,i=Math.max((n.workerStart||n.fetchStart)-r,0),a=Math.max(n.domainLookupStart-r,0),o=Math.max(n.connectStart-r,0),c=Math.max(n.connectEnd-r,0);e={waitingDuration:i,cacheDuration:a-i,dnsDuration:o-a,connectionDuration:c-o,requestDuration:t.value-c,navigationEntry:n}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},dt={passive:!0,capture:!0},lt=new Date,mt=function(t,e){Z||(Z=e,$=t,tt=new Date,gt(removeEventListener),pt())},pt=function(){if($>=0&&$<tt-lt){var t={entryType:"first-input",name:Z.type,target:Z.target,cancelable:Z.cancelable,startTime:Z.timeStamp,processingStart:Z.timeStamp+$};et.forEach((function(e){e(t)})),et=[]}},vt=function(t){if(t.cancelable){var e=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,e){var n=function(){mt(t,e),i()},r=function(){i()},i=function(){removeEventListener("pointerup",n,dt),removeEventListener("pointercancel",r,dt)};addEventListener("pointerup",n,dt),addEventListener("pointercancel",r,dt)}(e,t):mt(e,t)}},gt=function(t){["mousedown","keydown","touchstart","pointerdown"].forEach((function(e){return t(e,vt,dt)}))},ht=[100,300],Tt=function(t,e){e=e||{},L((function(){var n,r=b(),i=d("FID"),a=function(t){t.startTime<r.firstHiddenTime&&(i.value=t.processingStart-t.startTime,i.entries.push(t),n(!0))},o=function(t){t.forEach(a)},c=l("first-input",o);n=m(t,i,ht,e.reportAllChanges),c&&(v(g((function(){o(c.takeRecords()),c.disconnect()}))),s((function(){var r;i=d("FID"),n=m(t,i,ht,e.reportAllChanges),et=[],$=-1,Z=null,gt(addEventListener),r=a,et.push(r),pt()})))}))},yt=function(t,e){Tt((function(e){var n=function(t){var e=t.entries[0],n={eventTarget:o(e.target),eventType:e.name,eventTime:e.startTime,eventEntry:e,loadState:i(e.startTime)};return Object.assign(t,{attribution:n})}(e);t(n)}),e)};
 
 ;// CONCATENATED MODULE: ./src/types.ts
 var WindowEvent;
@@ -56,6 +56,7 @@ var WindowEvent;
     WindowEvent["Abort"] = "abort";
     WindowEvent["Error"] = "error";
     WindowEvent["Unload"] = "unload";
+    WindowEvent["PageHide"] = "pagehide";
 })(WindowEvent || (WindowEvent = {}));
 var LoadStateEnum;
 (function (LoadStateEnum) {
@@ -111,6 +112,17 @@ var WinHttpMethod;
     WinHttpMethod[WinHttpMethod["TRACE"] = 6] = "TRACE";
     WinHttpMethod[WinHttpMethod["CONNECT"] = 7] = "CONNECT";
 })(WinHttpMethod || (WinHttpMethod = {}));
+var RProfilerCustomEventSessionReplay;
+(function (RProfilerCustomEventSessionReplay) {
+    RProfilerCustomEventSessionReplay["RageClick"] = "RageClick";
+    RProfilerCustomEventSessionReplay["DeadClick"] = "DeadClick";
+    RProfilerCustomEventSessionReplay["Errors"] = "Errors";
+})(RProfilerCustomEventSessionReplay || (RProfilerCustomEventSessionReplay = {}));
+var ConsentV2Type;
+(function (ConsentV2Type) {
+    ConsentV2Type["Granted"] = "granted";
+    ConsentV2Type["Denied"] = "denied";
+})(ConsentV2Type || (ConsentV2Type = {}));
 
 ;// CONCATENATED MODULE: ./src/rprofiler/AjaxTiming.ts
 var AjaxTiming = /** @class */ (function () {
@@ -619,6 +631,7 @@ var __assign = (undefined && undefined.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+
 var MainConfig = /** @class */ (function () {
     function MainConfig() {
     }
@@ -626,59 +639,74 @@ var MainConfig = /** @class */ (function () {
         return new Date().getTime();
     };
     MainConfig.setWindowEvent = function () {
-        _f.windowEvent = this.pageWindow['WindowEvent'];
+        _g.windowEvent = this.pageWindow['WindowEvent'];
     };
     MainConfig.setRProfiler = function () {
-        _f.profiler = this.pageWindow['RProfiler'];
+        _g.profiler = this.pageWindow['RProfiler'];
     };
     MainConfig.setWindowEventDef = function () {
-        var _a, _b, _c, _d, _e;
-        _f.windowEventDef = {
-            Load: (_a = _f.windowEvent) === null || _a === void 0 ? void 0 : _a.Load,
-            BeforeUnload: (_b = _f.windowEvent) === null || _b === void 0 ? void 0 : _b.BeforeUnload,
-            Unload: (_c = _f.windowEvent) === null || _c === void 0 ? void 0 : _c.Unload,
-            Abort: (_d = _f.windowEvent) === null || _d === void 0 ? void 0 : _d.Abort,
-            Error: (_e = _f.windowEvent) === null || _e === void 0 ? void 0 : _e.Error
+        var _a, _b, _c, _d, _e, _f;
+        _g.windowEventDef = {
+            Load: (_a = _g.windowEvent) === null || _a === void 0 ? void 0 : _a.Load,
+            BeforeUnload: (_b = _g.windowEvent) === null || _b === void 0 ? void 0 : _b.BeforeUnload,
+            Unload: (_c = _g.windowEvent) === null || _c === void 0 ? void 0 : _c.Unload,
+            Abort: (_d = _g.windowEvent) === null || _d === void 0 ? void 0 : _d.Abort,
+            Error: (_e = _g.windowEvent) === null || _e === void 0 ? void 0 : _e.Error,
+            PageHide: (_f = this.windowEvent) === null || _f === void 0 ? void 0 : _f.PageHide
         };
     };
     MainConfig.setAppConfig = function (config) {
-        _f.config = __assign(__assign({}, _f.config), config);
+        _g.config = __assign(__assign({}, _g.config), config);
     };
     MainConfig.initValues = function () {
-        _f.setWindowEvent();
-        _f.setRProfiler();
-        _f.setWindowEventDef();
+        _g.setWindowEvent();
+        _g.setRProfiler();
+        _g.setWindowEventDef();
     };
-    var _a, _b, _c, _d, _e;
-    var _f;
-    _f = MainConfig;
-    MainConfig.pageWindow = parent.window;
-    MainConfig.location = _f.pageWindow.location;
-    MainConfig.profiler = _f.pageWindow['RProfiler'];
-    MainConfig.windowEvent = _f.pageWindow['WindowEvent'];
-    MainConfig.protocol = _f.location.protocol + '//';
+    MainConfig.getConfig = function () {
+        return _g.config;
+    };
+    MainConfig.isConsentV2Granted = function () {
+        return _g.config.consentv2 === ConsentV2Type.Granted;
+    };
+    var _a, _b, _c, _d, _e, _f;
+    var _g;
+    _g = MainConfig;
+    MainConfig.pageWindow = window;
+    MainConfig.location = _g.pageWindow.location;
+    MainConfig.profiler = _g.pageWindow['RProfiler'];
+    MainConfig.windowEvent = _g.pageWindow['WindowEvent'];
+    MainConfig.protocol = _g.location.protocol + '//';
     MainConfig.windowEventDef = {
-        Load: (_a = _f.windowEvent) === null || _a === void 0 ? void 0 : _a.Load,
-        BeforeUnload: (_b = _f.windowEvent) === null || _b === void 0 ? void 0 : _b.BeforeUnload,
-        Unload: (_c = _f.windowEvent) === null || _c === void 0 ? void 0 : _c.Unload,
-        Abort: (_d = _f.windowEvent) === null || _d === void 0 ? void 0 : _d.Abort,
-        Error: (_e = _f.windowEvent) === null || _e === void 0 ? void 0 : _e.Error
+        Load: (_a = _g.windowEvent) === null || _a === void 0 ? void 0 : _a.Load,
+        BeforeUnload: (_b = _g.windowEvent) === null || _b === void 0 ? void 0 : _b.BeforeUnload,
+        Unload: (_c = _g.windowEvent) === null || _c === void 0 ? void 0 : _c.Unload,
+        Abort: (_d = _g.windowEvent) === null || _d === void 0 ? void 0 : _d.Abort,
+        Error: (_e = _g.windowEvent) === null || _e === void 0 ? void 0 : _e.Error,
+        PageHide: (_f = _g.windowEvent) === null || _f === void 0 ? void 0 : _f.PageHide
     };
-    MainConfig.hasPerformanceApi = !!_f.pageWindow.performance && typeof _f.pageWindow.performance === 'object';
-    MainConfig.hasGetEntriesApi = _f.hasPerformanceApi && typeof _f.pageWindow.performance.getEntriesByType === 'function';
-    MainConfig.testUserId = "test";
-    MainConfig.version = 'v4.0.5';
+    MainConfig.hasPerformanceApi = !!_g.pageWindow.performance && typeof _g.pageWindow.performance === 'object';
+    MainConfig.hasGetEntriesApi = _g.hasPerformanceApi && typeof _g.pageWindow.performance.getEntriesByType === 'function';
+    MainConfig.testUserId = 'test'; // wrapping in curly braces and converting to string to match exact string instead partial replacement
+    MainConfig.version = 'v4.0.12';
     MainConfig.config = {
         sampleRate: -999, // range [0 - 100]
         waterfallSampleRate: -888, // range [0 - 100]
-        postUrl: _f.protocol + 'lst01a.3genlabs.net/hawklogserver/r.p',
-        siteId: 1826,
+        postUrl: _g.protocol + 'lst01a.3genlabs.net/hawklogserver/r.p',
+        siteId: 91733,
         debugParameter: 'GlimpseDebug',
-        debugUrl: 'portalstage.catchpoint.com/jp/v4.0.5/D',
+        debugUrl: 'localhost:44394/jp/v4.0.12/s.D',
         waterfallParameter: 'GlimpseWaterfall',
         sendOnLoad: false, // default is send onunload
         clearResources: true, // clear performance entries when we send data to core. using performance.clearResourceTimings()
-        ajaxDomains: ''
+        ajaxDomains: '',
+        useBenchmark: false,
+        lastMileUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.12/LastMileScript.js',
+        benchMarkPageGroups: '',
+        sessionReplayEnabled: false,
+        sessionReplayScriptUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.12/SessionReplayScript.js',
+        usePageHideEvent: false, // use pagehide event instead of unload, Default to false
+        consentv2: ConsentV2Type.Granted
     };
     return MainConfig;
 }());
@@ -1348,10 +1376,13 @@ var PostData = /** @class */ (function (_super) {
             obj['mfv'] = this.markFullyVisible;
             obj['mtu'] = this.markTimeToUserAction;
             obj['tp'] = this.timeOnPage;
-            obj['tti'] = this.timeToInteract;
             obj['et'] = this.engagementTime;
             obj['fet'] = this.firstEngagementTime;
             obj['vct'] = this.visComplete;
+            // Checking for networkScore to be not null or undefined, because if it's null/undefined means that last mile script didn't run.
+            if (this.networkScore !== null && this.networkScore !== undefined) {
+                obj['ns'] = this.networkScore;
+            }
             if (!isSoftNavigation) {
                 obj['fp'] = this.firstPaint;
                 obj['fcp'] = this.firstContentPaint;
@@ -1541,6 +1572,11 @@ var Storage = /** @class */ (function () {
     function Storage() {
     }
     Storage.save = function (value) {
+        // If consent is not granted, delete any stored data.
+        if (!config.isConsentV2Granted()) {
+            Storage.delete();
+            return;
+        }
         if (Storage.canUseLocalStorage()) {
             config.pageWindow.localStorage.setItem(Storage.storeKey, value);
             return;
@@ -1548,6 +1584,11 @@ var Storage = /** @class */ (function () {
         Storage.setCookie(value);
     };
     Storage.read = function () {
+        // If consent is not granted, delete any stored data.
+        if (!config.isConsentV2Granted()) {
+            Storage.delete();
+            return;
+        }
         if (Storage.canUseLocalStorage()) {
             var store = config.pageWindow.localStorage.getItem(Storage.storeKey);
             if (store) {
@@ -1555,6 +1596,12 @@ var Storage = /** @class */ (function () {
             }
         }
         return this.readCookie();
+    };
+    Storage.delete = function () {
+        if (Storage.canUseLocalStorage()) {
+            config.pageWindow.localStorage.removeItem(Storage.storeKey);
+        }
+        Storage.deleteCookie();
     };
     Storage.canUseLocalStorage = function () {
         var canUse = true;
@@ -1588,6 +1635,14 @@ var Storage = /** @class */ (function () {
                 '; path=/; domain=' +
                 domain +
                 '; SameSite=Lax;';
+    };
+    Storage.deleteCookie = function () {
+        var split = config.pageWindow.document.domain.split('.');
+        var length = split.length;
+        var domain = split[length - 2] + '.' + split[length - 1];
+        // Set cookie with past expiration date to delete it
+        document.cookie =
+            Storage.storeKey + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain + '; SameSite=Lax;';
     };
     Storage.readCookie = function () {
         var split = config.pageWindow.document.cookie.split(';');
@@ -1706,6 +1761,19 @@ var Visitor = /** @class */ (function () {
         this.store.sessionTime = time;
         this.updateStore();
     };
+    Visitor.prototype.updatePageViewId = function () {
+        if (!this.store) {
+            return;
+        }
+        this.store.pageViewId = this.generatePageViewID();
+    };
+    // Generate a new page view ID
+    Visitor.prototype.generatePageViewID = function () {
+        if (!this.store) {
+            return;
+        }
+        return Math.floor(1 + Math.random() * ((Math.pow(2, 16) - 2) / 2));
+    };
     Visitor.prototype.updateStore = function () {
         if (!this.store) {
             return;
@@ -1772,12 +1840,16 @@ var Visitor = /** @class */ (function () {
             }
         }
         this.store.sessionTime = new Date().getTime();
-        this.store.pageViewId = Math.floor(1 + Math.random() * ((Math.pow(2, 16) - 2) / 2));
+        this.store.pageViewId = this.generatePageViewID();
         this.store.urlCheckSum = this.getReferrer(config.pageWindow.location.href);
         this.store.resetViewCount();
         this.updateStore();
-        var hasVisitorData = this.store.load();
-        return hasVisitorData;
+        // If consent is granted then only load visitor data from storage.
+        if (config.isConsentV2Granted()) {
+            var hasVisitorData = this.store.load();
+            return hasVisitorData;
+        }
+        return true;
     };
     //This method is used for 2 purpose
     // 1. When the userId is -1 (no id assigned for user), user id is created randomly. So method is called without a param
@@ -1947,21 +2019,8 @@ var DataProvider = /** @class */ (function () {
                 var paintTimings = config.pageWindow.performance.getEntriesByType('paint');
                 if (paintTimings && paintTimings.length > 0) {
                     postObj.firstPaint = _this.getPaintTimings(paintTimings, 'first-paint');
-                    postObj.firstContentPaint = _this.getPaintTimings(paintTimings, 'first-contentful-paint');
-                }
-            }
-            var timing = main_Util.getNavigationTime();
-            if (timing) {
-                var navStart = main_Util.getNavigationStart(timing);
-                var contentLoadEnd = main_Util.getMetricValue(timing.domContentLoadedEventEnd, navStart);
-                var timeToInteract = performanceObserver.getLongTaskTime();
-                if (isSoftNavigation) {
-                    // For soft navigation when there are no long tasks captured, post visually complate as TTI.
-                    postObj.timeToInteract = timeToInteract || _this.getVisuallyComplete(isSoftNavigation);
-                }
-                else {
-                    postObj.timeToInteract =
-                        contentLoadEnd && contentLoadEnd < timeToInteract ? timeToInteract : contentLoadEnd;
+                    // Commenting this as we are getting the FCP from core web vitals package.
+                    // postObj.firstContentPaint = this.getPaintTimings(paintTimings, 'first-contentful-paint');
                 }
             }
             if (config.profiler.getEventTimingHandler) {
@@ -2022,6 +2081,7 @@ var DataProvider = /** @class */ (function () {
         };
         this.captureSoftNavigations = function () {
             config.profiler.eventManager.add('hashchange', config.pageWindow, _this.onSoftNavigation);
+            config.profiler.eventManager.add('hashchange', config.pageWindow, _this.onAfterSoftNavigation);
             var history = config.pageWindow.history;
             if (!history) {
                 return;
@@ -2032,6 +2092,7 @@ var DataProvider = /** @class */ (function () {
                 history.go = function (delta) {
                     _this.onSoftNavigation();
                     origGo_1.call(history, delta);
+                    _this.onAfterSoftNavigation();
                 };
             }
             if (typeof history.back === functionStr) {
@@ -2039,6 +2100,7 @@ var DataProvider = /** @class */ (function () {
                 history.back = function () {
                     _this.onSoftNavigation();
                     origBack_1.call(history);
+                    _this.onAfterSoftNavigation();
                 };
             }
             if (typeof history.forward === functionStr) {
@@ -2046,6 +2108,7 @@ var DataProvider = /** @class */ (function () {
                 history.forward = function () {
                     _this.onSoftNavigation();
                     origForward_1.call(history);
+                    _this.onAfterSoftNavigation();
                 };
             }
             if (typeof history.pushState === functionStr) {
@@ -2054,6 +2117,7 @@ var DataProvider = /** @class */ (function () {
                 history.pushState = function (data, title, url) {
                     _this.onSoftNavigation();
                     origPush_1.call(history, data, title, url);
+                    _this.onAfterSoftNavigation();
                 };
             }
             if (typeof history.replaceState === functionStr) {
@@ -2062,6 +2126,7 @@ var DataProvider = /** @class */ (function () {
                 history.replaceState = function (data, title, url) {
                     _this.onSoftNavigation();
                     origReplace_1.call(history, data, title, url);
+                    _this.onAfterSoftNavigation();
                 };
             }
         };
@@ -2101,6 +2166,29 @@ var DataProvider = /** @class */ (function () {
                 }
             }, 0);
             _this.didSoftNavigation = true;
+            config.profiler.excludeLastMileBenchMarks = false; // before the soft navigation resetting the benchmark to false.
+        };
+        this.onAfterSoftNavigation = function () {
+            _this.runBenchmarkForSoftNavigation();
+        };
+        this.runBenchmarkForSoftNavigation = function () {
+            var _a, _b, _c, _d, _e;
+            var hasLastMileScript = document.getElementById('lastMileScriptiframe');
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            var canAddLastMileScript = (_b = (_a = window === null || window === void 0 ? void 0 : window.RProfiler) === null || _a === void 0 ? void 0 : _a.checkLastMileScriptPermissions) === null || _b === void 0 ? void 0 : _b.call(_a);
+            if (canAddLastMileScript) {
+                if (hasLastMileScript) {
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
+                    (_c = window === null || window === void 0 ? void 0 : window.lastMileInitScript) === null || _c === void 0 ? void 0 : _c.call(window);
+                }
+                else {
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
+                    (_e = (_d = window === null || window === void 0 ? void 0 : window.RProfiler) === null || _d === void 0 ? void 0 : _d.addLastMileScript) === null || _e === void 0 ? void 0 : _e.call(_d);
+                }
+            }
         };
         this.doPost = function (type, isSoftNavigation) {
             if (!_this.visitor.shouldPost()) {
@@ -2149,7 +2237,7 @@ var DataProvider = /** @class */ (function () {
             loadPost();
         }
         else {
-            config.profiler.eventManager.add(config.windowEventDef.Load, parent.window, loadPost);
+            config.profiler.eventManager.add(config.windowEventDef.Load, window, loadPost);
         }
         // need on both "beforeunload" and "unload" for cross-browser compatibility
         var didUnloadPost = false;
@@ -2160,9 +2248,19 @@ var DataProvider = /** @class */ (function () {
             didUnloadPost = true;
             _this.doPost(PostType.OnBeforeUnload, false);
         };
-        config.profiler.eventManager.add(config.windowEventDef.BeforeUnload, config.pageWindow, unloadPost);
-        config.profiler.eventManager.add(config.windowEventDef.Unload, config.pageWindow, unloadPost);
+        // use pagehide event if flag is set true.
+        if (config.config.usePageHideEvent) {
+            config.profiler.eventManager.add(config.windowEventDef.PageHide, config.pageWindow, unloadPost);
+        }
+        else {
+            // use beforeunload event, if flag is false.
+            config.profiler.eventManager.add(config.windowEventDef.BeforeUnload, config.pageWindow, unloadPost);
+            config.profiler.eventManager.add(config.windowEventDef.Unload, config.pageWindow, unloadPost);
+        }
     }
+    DataProvider.prototype.getVisitor = function () {
+        return this.visitor;
+    };
     DataProvider.prototype.createInitPostObject = function (ev, isSoftNavigation) {
         var postObj = this.createBasePostObj(ev, true, isSoftNavigation);
         this.updatePerformanceMetrics(postObj);
@@ -2223,6 +2321,17 @@ var DataProvider = /** @class */ (function () {
             if (cpWebVitals.inpDe && cpWebVitals.inpDe.length > 0) {
                 postObj.inpDe = cpWebVitals.inpDe;
             }
+            if (cpWebVitals.fcp) {
+                postObj.firstContentPaint = cpWebVitals.fcp;
+            }
+            // Checking fp is greater than fcp. If fp is greater than fcp, then assigning the fcp to fp.
+            if (postObj.firstPaint > postObj.firstContentPaint || postObj.firstContentPaint === undefined) {
+                postObj.firstPaint = postObj.firstContentPaint;
+            }
+            // Checking lcp is less than fcp. If lcp is lessthan fcp, then assigning the fcp to lcp.
+            if (postObj.lcp < postObj.firstContentPaint) {
+                postObj.lcp = postObj.firstContentPaint;
+            }
         }
         if (((_c = (_b = config === null || config === void 0 ? void 0 : config.profiler) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.jsCount) > 0) {
             postObj.jsErrorCount = config.profiler.data.jsCount;
@@ -2244,6 +2353,11 @@ var DataProvider = /** @class */ (function () {
                 postObj.fdc = cpFrustrationMetrics.fdc;
                 postObj.ftc = cpFrustrationMetrics.ftc;
             }
+        }
+        // Checking for networkScore to be not null or undefined, because if it's null/undefined means that last mile script didn't run.
+        if (config.pageWindow['lastMileNetworkScore'] !== null &&
+            config.pageWindow['lastMileNetworkScore'] !== undefined) {
+            postObj.networkScore = config.pageWindow['lastMileNetworkScore'];
         }
         return postObj;
     };
@@ -2272,9 +2386,21 @@ var DataProvider = /** @class */ (function () {
         else {
             postObj.referrer = encodeURI(decodeURI(config.pageWindow.location.href));
         }
+        var consentDenied = !config.isConsentV2Granted();
         if (isSoftNavigation) {
             postObj.isNewView = ev == PostType.OnLoad;
+            // create new pageViewId for new view, if consent is denied for softnavigation.
+            if (postObj.isNewView === true && consentDenied) {
+                this.visitor.updatePageViewId();
+                postObj.pageViewId = info.pageViewId;
+            }
         }
+        // Commeting this as there is some issue in core. For now we go with unique values for sessionId and pageViewId
+        // if consent is denied for MPA, then update the sessionId and pageViewId same as userId
+        // if (!isSoftNavigation && consentDenied) {
+        //     postObj.sessionId = postObj.userId;
+        //     postObj.pageViewId = postObj.userId;
+        // }
         if (config.profiler.hasInsight) {
             this.addInsightForPost(postObj);
             config.profiler.clearInfo();
@@ -2330,7 +2456,6 @@ var DataProvider = /** @class */ (function () {
                 break; // arriving here means it's a nonstandard mark that we don't care about
         }
     };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
     DataProvider.prototype.getPaintTimings = function (paintTimings, type) {
         var paintType = paintTimings.filter(function (x) { return x.name === type; });
         if (paintType && paintType.length > 0 && paintType[0].startTime) {
@@ -2440,36 +2565,73 @@ var DataProvider = /** @class */ (function () {
     };
     DataProvider.prototype.makeRequest = function (type, postObj, sendWaterfall) {
         var dataStr = postObj.toString(type, sendWaterfall);
+        // if consent is not required or different type dont add.
+        var urlWithQueryParam = this.postUrl;
+        // add query param for consent, If granted add a_s=1
+        if (config.config.consentv2 === ConsentV2Type.Granted) {
+            var params = new URLSearchParams({
+                a_s: '1'
+            });
+            urlWithQueryParam = "".concat(this.postUrl, "?").concat(params.toString());
+        }
+        // add query param for consent, If denied add a_s=0
+        if (config.config.consentv2 === ConsentV2Type.Denied) {
+            var params = new URLSearchParams({
+                a_s: '0'
+            });
+            urlWithQueryParam = "".concat(this.postUrl, "?").concat(params.toString());
+        }
         if (config.pageWindow.navigator && typeof config.pageWindow.navigator['sendBeacon'] == 'function') {
-            config.pageWindow.navigator['sendBeacon'](this.postUrl, dataStr);
+            try {
+                config.pageWindow.navigator['sendBeacon'](urlWithQueryParam, dataStr);
+            }
+            catch (error) {
+                console.error('Error sending RUM data:', error);
+            }
         }
         else {
-            var request = new XMLHttpRequest();
+            var request_1 = new XMLHttpRequest();
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             if (window.XDomainRequest) {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                request = new window.XDomainRequest();
+                request_1 = new window.XDomainRequest();
                 //Set all the fields so that the request can be made succesfully
-                request.timeout = 0;
-                request.onload = function () {
+                request_1.timeout = 0;
+                request_1.onload = function () {
                     // do nothing
                 };
-                request.onerror = function () {
+                request_1.onerror = function () {
                     // do nothing
                 };
-                request.ontimeout = function () {
+                request_1.ontimeout = function () {
                     // do nothing
                 };
-                request.onprogress = function () {
+                request_1.onprogress = function () {
                     // do nothing
                 };
             }
-            request.open('POST', this.postUrl, false);
-            request.setRequestHeader
-                ? request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+            request_1.open('POST', urlWithQueryParam, false);
+            request_1.setRequestHeader
+                ? request_1.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
                 : null;
-            request.send(dataStr);
-            request = null;
+            request_1.onreadystatechange = function () {
+                if (request_1.readyState === 4) {
+                    if (request_1.status >= 200 && request_1.status < 300) {
+                        console.log('JSP Request succeeded with status:', request_1.status);
+                    }
+                    else {
+                        console.error('JSP Request failed with status:', request_1.status);
+                        console.error('JSP Response text:', request_1.responseText);
+                    }
+                }
+            };
+            try {
+                request_1.send(dataStr);
+            }
+            catch (e) {
+                console.error('CP JSP Request failed to send:', e);
+            }
+            request_1 = null;
         }
     };
     return DataProvider;
@@ -2516,7 +2678,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 var mainScript = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var getAppDetails, appDetails, error_1;
+    var getAppDetails, appDetails, error_1, dataProvider;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -2536,7 +2698,7 @@ var mainScript = function () { return __awaiter(void 0, void 0, void 0, function
                     var response, data;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
-                            case 0: return [4 /*yield*/, fetch('https://portalstage.catchpoint.com/jp/1826/v4.0.5/AC')];
+                            case 0: return [4 /*yield*/, fetch('https://localhost:44394/jp/91733/v4.0.12/s.AC')];
                             case 1:
                                 response = _a.sent();
                                 return [4 /*yield*/, response.json()];
@@ -2555,7 +2717,10 @@ var mainScript = function () { return __awaiter(void 0, void 0, void 0, function
                 config.setAppConfig({
                     sampleRate: appDetails.SampleRate,
                     ajaxDomains: appDetails.AjaxDomains,
-                    waterfallSampleRate: appDetails.WaterfallSampleRate
+                    waterfallSampleRate: appDetails.WaterfallSampleRate,
+                    useBenchmark: appDetails.UseBenchmark,
+                    benchMarkPageGroups: appDetails.BenchmarkPageGroups,
+                    sessionReplayEnabled: appDetails.SessionReplayEnabled
                 });
                 return [3 /*break*/, 4];
             case 3:
@@ -2563,7 +2728,11 @@ var mainScript = function () { return __awaiter(void 0, void 0, void 0, function
                 console.error('CP RUM Error', error_1);
                 return [3 /*break*/, 4];
             case 4:
-                new main_DataProvider();
+                dataProvider = new main_DataProvider();
+                // Pass the visitor instance to RProfiler
+                if (config.profiler && dataProvider) {
+                    config.profiler.setVisitor(dataProvider.getVisitor());
+                }
                 return [2 /*return*/];
         }
     });
@@ -2597,7 +2766,7 @@ var getSelectorFromTarget = function (target) {
  * Max value of the Mutation and the last resource to get the response will be considered as Visually complete
  * VisComplete listen to scroll and click events to avoid miscalculation of VCT and will stop calculating if one of the events fired.
  * */
-var windowItem = parent.window || window;
+var windowItem = window;
 var visComplete = function () {
     windowItem['CPVisuallyComplete'] = (function () {
         var VisComplete = /** @class */ (function () {
@@ -2985,22 +3154,25 @@ var visComplete = function () {
  * In most cases, rage clicks signal that your website didn’t react the way your visitor expected,
  * so you may want to take a closer look at it.
  */
+
 var RageClick = /** @class */ (function () {
     function RageClick() {
+        this.rprofiler = null;
         this.clickCount = 0;
         this.rageClickLimit = 3;
         this.timeoutDuration = 1000; // milliseconds
         this.rageClickValue = null;
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    RageClick.prototype.startListening = function (_event) {
-        this.clicklistener();
+    RageClick.prototype.startListening = function (event) {
+        this.clicklistener(event);
     };
     RageClick.prototype.getRageClick = function () {
         return this.rageClickValue;
     };
-    RageClick.prototype.clicklistener = function () {
+    RageClick.prototype.clicklistener = function (e) {
         var _this = this;
+        var _a, _b;
         this.clickCount++;
         var clickInterval = setInterval(function () {
             _this.clickCount = 0;
@@ -3009,6 +3181,12 @@ var RageClick = /** @class */ (function () {
         if (this.clickCount >= this.rageClickLimit) {
             this.rageClickValue = 1;
             clearInterval(clickInterval);
+            this.rprofiler = window['RProfiler'];
+            var sessionReplayEnabled = (_a = this.rprofiler) === null || _a === void 0 ? void 0 : _a.getSessionReplayFlag();
+            // send Rage Click event to session replay
+            if (sessionReplayEnabled && ((_b = this.rprofiler) === null || _b === void 0 ? void 0 : _b.dispatchCustomEvent)) {
+                this.rprofiler.dispatchCustomEvent(RProfilerCustomEventSessionReplay.RageClick, { event: e });
+            }
         }
     };
     return RageClick;
@@ -3055,6 +3233,7 @@ var errorClick = new ErrorClick();
 
 ;// CONCATENATED MODULE: ./src/frustrationMetrics/DeadClick.ts
 
+
 /**
  * Detects dead clicks
  *
@@ -3066,6 +3245,7 @@ var errorClick = new ErrorClick();
  */
 var DeadClick = /** @class */ (function () {
     function DeadClick() {
+        this.rprofiler = null;
         this.clickCounts = {};
         this.deadClickLimit = 2;
         this.deadClickValue = null;
@@ -3076,6 +3256,7 @@ var DeadClick = /** @class */ (function () {
     };
     DeadClick.prototype.clickListener = function (event) {
         var _this = this;
+        var _a, _b;
         var clickCountClear = setInterval(function () {
             _this.clickCounts = {};
             clearInterval(clickCountClear);
@@ -3085,6 +3266,12 @@ var DeadClick = /** @class */ (function () {
         if (this.clickCounts[selector] === this.deadClickLimit) {
             this.deadClickValue = 1;
             clearInterval(clickCountClear);
+            this.rprofiler = window['RProfiler'];
+            var sessionReplayEnabled = (_a = this.rprofiler) === null || _a === void 0 ? void 0 : _a.getSessionReplayFlag();
+            // send Dead Click event to session replay
+            if (sessionReplayEnabled && ((_b = this.rprofiler) === null || _b === void 0 ? void 0 : _b.dispatchCustomEvent)) {
+                this.rprofiler.dispatchCustomEvent(RProfilerCustomEventSessionReplay.DeadClick, { event: event });
+            }
         }
     };
     DeadClick.prototype.startListening = function (event) {
@@ -3108,18 +3295,29 @@ var ThrashedCursor = /** @class */ (function () {
     function ThrashedCursor() {
         var _this = this;
         this.mouseMoveListener = function (event) {
-            var nextDirection = Math.sign(event.movementX);
-            _this.distance += Math.abs(event.movementX) + Math.abs(event.movementY);
-            if (nextDirection !== _this.direction) {
-                _this.direction = nextDirection;
-                _this.directionChangeCount++;
+            var currentX = event.clientX;
+            var currentY = event.clientY;
+            if (_this.lastMouseX !== null && _this.lastMouseY !== null) {
+                var deltaX = currentX - _this.lastMouseX;
+                var deltaY = currentY - _this.lastMouseY;
+                var nextDirection = Math.sign(deltaX);
+                _this.distance += Math.abs(deltaX) + Math.abs(deltaY);
+                if (nextDirection !== _this.direction) {
+                    _this.direction = nextDirection;
+                    _this.directionChangeCount++;
+                }
             }
+            // Update the last mouse position
+            _this.lastMouseX = currentX;
+            _this.lastMouseY = currentY;
         };
         this.directionChangeCount = 0;
         this.distance = 0;
         this.interval = 350;
         this.threshold = 0.01;
         this.thrashedCursorValue = false;
+        this.lastMouseX = null;
+        this.lastMouseY = null;
         var intervalClear = setInterval(function () {
             var nextVelocity = _this.distance / _this.interval;
             if (!_this.velocity) {
@@ -3128,7 +3326,7 @@ var ThrashedCursor = /** @class */ (function () {
             }
             var acceleration = (nextVelocity - _this.velocity) / _this.interval;
             if (_this.directionChangeCount && acceleration > _this.threshold) {
-                // clearing the interval after detecting thrashed cursor
+                // Clearing the interval after detecting thrashed cursor
                 clearInterval(intervalClear);
                 _this.thrashedCursorValue = true;
             }
@@ -3179,130 +3377,6 @@ var FrustrationMetrics = /** @class */ (function () {
 }());
 var frustrationMetrics = new FrustrationMetrics();
 
-;// CONCATENATED MODULE: ./src/benchmark/benchmark.ts
-var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-function createDiv(message, color) {
-    var div = document.createElement('div');
-    div.textContent = message;
-    div.style.position = 'fixed';
-    div.style.bottom = '10px';
-    div.style.right = '10px';
-    div.style.padding = '10px';
-    div.style.backgroundColor = color;
-    div.style.color = 'white';
-    div.style.fontWeight = 'bold';
-    div.style.borderRadius = '5px';
-    div.style.opacity = '0';
-    div.style.transition = 'opacity 1s';
-    var dismissButton = document.createElement('button');
-    dismissButton.textContent = 'X';
-    dismissButton.style.marginLeft = '10px';
-    dismissButton.style.backgroundColor = 'transparent';
-    dismissButton.style.border = 'none';
-    dismissButton.style.color = 'white';
-    dismissButton.style.fontWeight = 'bold';
-    dismissButton.style.cursor = 'pointer';
-    dismissButton.onclick = function () {
-        div.style.opacity = '0';
-        setTimeout(function () { return div.remove(); }, 1000); // Wait for the fade-out transition to complete
-    };
-    div.appendChild(dismissButton);
-    document.body.appendChild(div);
-    // Trigger the fade-in effect
-    setTimeout(function () { return (div.style.opacity = '1'); }, 0);
-}
-var calculateScore = function () {
-    var _a;
-    var maxLatency = 200;
-    var totalScore = 0;
-    var lastMileScore = 0;
-    if ((_a = window === null || window === void 0 ? void 0 : window.lastMileResults) === null || _a === void 0 ? void 0 : _a.length) {
-        var _loop_1 = function (i) {
-            var prob1 = window.lastMileResults[i].singleObjectResult;
-            var prob2 = window.lastMileResults[i].singleObjectResult.tracePoints.rtts;
-            var prob2Latencies = prob2.map(function (entry) { return entry.singleObjectResult.waitTime; });
-            var latencies = __spreadArray([prob1.waitTime], prob2Latencies, true);
-            var failedRequests = (prob1.codeError > 0 ? 1 : 0) + prob2.filter(function (entry) { return entry.singleObjectResult.codeError > 0; }).length;
-            if (latencies.length > 0) {
-                var avgLatency = latencies.reduce(function (sum, value) { return sum + value; }, 0) / latencies.length;
-                var jitter = latencies
-                    .slice(1)
-                    .map(function (latency, index) { return Math.abs(latency - latencies[index]); })
-                    .reduce(function (sum, value) { return sum + value; }, 0) / (latencies.length - 1 || 1);
-                var packetLoss = (failedRequests / (latencies.length + failedRequests)) * 100;
-                var score = 100;
-                score -= packetLoss * 0.5;
-                score -= Math.min((avgLatency / maxLatency) * 100, 100) * 0.2;
-                score -= Math.min((jitter / maxLatency) * 100, 100) * 0.3;
-                score = Math.max(0, Math.min(100, score));
-                totalScore += score;
-                lastMileScore++;
-            }
-        };
-        for (var i = 0; i < window.lastMileResults.length; i++) {
-            _loop_1(i);
-        }
-        console.log(lastMileScore > 0 ? Math.floor(totalScore / lastMileScore) : 0);
-        return lastMileScore > 0 ? Math.floor(totalScore / lastMileScore) : 0;
-    }
-};
-var addFloatingDiv = function (count) {
-    if (count <= 60) {
-        createDiv('BAD CONNECTION', 'red');
-    }
-    else if (count <= 80) {
-        createDiv('UNSTABLE CONNECTION', 'orange');
-    }
-    else {
-        createDiv('GOOD CONNECTION', 'green');
-    }
-};
-var addScroreToIndicator = function (score) {
-    var init = function () {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        window.RProfiler.addInfo('indicator', 'lm_indicator', score);
-    };
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    window.RProfiler ? init() : window.addEventListener('GlimpseLoaded', init);
-};
-var addScroreToTracepoint = function (score) {
-    var scoreText = score <= 60 ? 'BAD CONNECTION' : score <= 80 ? 'UNSTABLE CONNECTION' : 'GOOD CONNECTION';
-    var init = function () {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        window.RProfiler.addInfo('tracepoint', 'lm_tracepoint', scoreText);
-    };
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    window.RProfiler ? init() : window.addEventListener('GlimpseLoaded', init);
-};
-var benchMarkScore = function () {
-    var intervalId = null;
-    if (!intervalId) {
-        intervalId = setInterval(function () {
-            var _a;
-            if (((_a = window === null || window === void 0 ? void 0 : window.lastMileResults) === null || _a === void 0 ? void 0 : _a.length) > 0) {
-                var score = calculateScore();
-                addFloatingDiv(score);
-                clearInterval(intervalId);
-                addScroreToIndicator(score);
-                addScroreToTracepoint(score);
-            }
-        }, 1000);
-    }
-};
-/* harmony default export */ var benchmark = (benchMarkScore);
-
 ;// CONCATENATED MODULE: ./src/rprofiler/rprofiler.ts
 var rprofiler_assign = (undefined && undefined.__assign) || function () {
     rprofiler_assign = Object.assign || function(t) {
@@ -3314,6 +3388,42 @@ var rprofiler_assign = (undefined && undefined.__assign) || function () {
         return t;
     };
     return rprofiler_assign.apply(this, arguments);
+};
+var rprofiler_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var rprofiler_generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
 };
 
 
@@ -3336,11 +3446,14 @@ var RProfiler = /** @class */ (function () {
         var _this = this;
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        this.restUrl = 'portalstage.catchpoint.com/jp/1826/v4.0.5/M';
+        this.restUrl = 'localhost:44394/jp/91733/v4.0.12/s.M';
         this.startTime = new Date().getTime();
         this.eventsTimingHandler = new rprofiler_EventsTimingHandler();
         this.inpDe = [];
-        this.version = 'v4.0.5'; //version number of inline script
+        this.visitor = null;
+        this.processedDataLayerCount = 0; // Track processed commands
+        this.siteId = 91733;
+        this.version = 'v4.0.12'; //version number of inline script
         this.info = {};
         this.hasInsight = false;
         this.data = {
@@ -3350,9 +3463,10 @@ var RProfiler = /** @class */ (function () {
             loadTime: -1,
             loadFired: window.document.readyState == 'complete'
         };
+        this.excludeLastMileBenchMarks = false; // used to exclude the lastmile benchmark to stop running the tests.
         this.eventManager = new rprofiler_ProfilerEventManager();
         this.setCLS = function (_a) {
-            var metricName = _a.name, metricValue = _a.delta;
+            var metricName = _a.name, metricValue = _a.value;
             var CLS = metricName === 'CLS' ? metricValue : undefined;
             _this.cls = CLS;
         };
@@ -3391,6 +3505,10 @@ var RProfiler = /** @class */ (function () {
                 }
             }
         };
+        this.setFCP = function (_a) {
+            var name = _a.name, value = _a.value;
+            _this.fcp = name === 'FCP' ? value : undefined;
+        };
         this.recordPageLoad = function () {
             _this.data.loadTime = new Date().getTime();
             _this.data.loadFired = true;
@@ -3399,6 +3517,16 @@ var RProfiler = /** @class */ (function () {
             _this.data.jsCount++;
             var currError = rprofiler_ProfilerJsError.createText(msg, url, lineNum);
             var errorArr = _this.data.jsErrors;
+            // If session recorder is enabled, send the error event
+            // adding error if the error is same to session recorder.
+            // sessionRecorder?.errorsCustomEvent?.(msg, url, lineNum);
+            _this.dispatchCustomEvent(RProfilerCustomEventSessionReplay.Errors, {
+                additionalData: {
+                    msg: msg,
+                    url: url,
+                    lineNum: lineNum
+                }
+            });
             for (var _i = 0, errorArr_1 = errorArr; _i < errorArr_1.length; _i++) {
                 var err = errorArr_1[_i];
                 if (err.getText() == currError) {
@@ -3453,11 +3581,13 @@ var RProfiler = /** @class */ (function () {
             D(_this.setCLS);
             ot(_this.setLCP);
             rt(_this.setINP);
+            x(_this.setFCP);
             return {
                 cls: _this.cls,
                 lcp: _this.lcp,
                 inp: _this.inp,
-                inpDe: _this.inpDe
+                inpDe: _this.inpDe,
+                fcp: _this.fcp
             };
         };
         this.getFrustrationMetrics = function () {
@@ -3468,12 +3598,177 @@ var RProfiler = /** @class */ (function () {
                 ftc: thrashedCursor.getThrashedCursor()
             };
         };
+        this.runBenchMarkForPageGroup = function () {
+            var location = window.location.href;
+            var pageGroups = _this.getBenchMarksPageGroup();
+            return pageGroups === null || pageGroups === void 0 ? void 0 : pageGroups.some(function (s) {
+                var pageGroupRegEx = new RegExp(s);
+                return pageGroupRegEx.test(location);
+            });
+        };
+        // get session replay flag
+        this.getSessionReplayFlag = function () {
+            return config.config.sessionReplayEnabled;
+        };
+        this.addSessionReplayScript = function () {
+            var canAddSessionReplayScript = _this.getSessionReplayFlag();
+            // Add session replay script if enabled
+            if (!canAddSessionReplayScript) {
+                return;
+            }
+            var sessionReplayScriptUrl = config.config.sessionReplayScriptUrl;
+            var script = document.createElement('script');
+            script.src = sessionReplayScriptUrl;
+            script.defer = true;
+            script.id = 'sessionReplayScript';
+            script.referrerPolicy = 'no-referrer';
+            document.body.appendChild(script);
+            console.log('CP: session replay script added');
+        };
+        this.getVisitorInfo = function () {
+            if (!_this.visitor || !_this.visitor.store) {
+                return;
+            }
+            return _this.visitor.store;
+        };
+        this.usePageHide = function (flag) {
+            if (flag === void 0) { flag = true; }
+            config.setAppConfig({
+                usePageHideEvent: flag
+            });
+        };
+        this.getPageHideFlag = function () {
+            return config.config.usePageHideEvent;
+        };
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        this.runCustomRumTags = function (commands) {
+            commands.forEach(function (item) {
+                var _a;
+                // Handle gtag-style format: 'command', 'param1', 'param2', ...
+                // item is the arguments object from push(...args), convert to array
+                var args = Array.prototype.slice.call(item);
+                if (args.length > 0) {
+                    var command = args[0];
+                    switch (command) {
+                        case 'tracepoint':
+                            // Format: 'tracepoint', key, value
+                            if (args.length >= 3) {
+                                var key = args[1];
+                                var value = args[2];
+                                _this.addInfo('tracepoint', key, value);
+                            }
+                            break;
+                        case 'indicator':
+                            // Format: 'indicator', key, value (numeric)
+                            if (args.length >= 3) {
+                                var key = args[1];
+                                var value = args[2];
+                                _this.addInfo('indicator', key, value);
+                            }
+                            break;
+                        case 'pageGroup':
+                            // Format: 'pageGroup', value
+                            if (args.length >= 2) {
+                                var value = args[1];
+                                _this.addInfo('pageGroup', value, '');
+                            }
+                            break;
+                        case 'variation':
+                            // Format: 'variation', value
+                            if (args.length >= 2) {
+                                var value = args[1];
+                                _this.addInfo('variation', value, '');
+                            }
+                            break;
+                        case 'conversion':
+                            // Format: 'conversion', revenue, items
+                            if (args.length >= 3) {
+                                var revenue = args[1];
+                                var items = args[2];
+                                _this.addInfo('conversion', revenue, items);
+                            }
+                            else if (args.length >= 1) {
+                                // Simple conversion without revenue details
+                                var items = args[1];
+                                _this.addInfo('conversion', items, '');
+                            }
+                            break;
+                        case 'appError':
+                            // Format: 'appError', errorCode, errorMessage
+                            if (args.length >= 3) {
+                                var errorCode = args[1];
+                                var errorMessage = args[2];
+                                _this.addInfo('appError', errorCode, errorMessage);
+                            }
+                            break;
+                        case 'excludeBenchMarks':
+                            // Format: 'excludeBenchMarks'
+                            _this.excludeBenchMarks();
+                            break;
+                        case 'usePageHide': {
+                            // Format: 'usePageHide', flag
+                            var flag = (_a = args[1]) !== null && _a !== void 0 ? _a : true;
+                            _this.usePageHide(flag);
+                            break;
+                        }
+                        case 'consentv2': {
+                            // Format: 'consentv2', options
+                            var options = args[1] || {};
+                            CPRUM('consentv2', options);
+                            break;
+                        }
+                        case 'runLastmileScript':
+                            // Format: 'runLastmileScript'
+                            _this.addLastMileScript();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+        };
+        // Process commands in CPRUMDataLayer, quueued before profiler was ready
+        this.runCPRUMTagDataLayer = function () {
+            var dataLayer = window["CPRUMDataLayer"];
+            if (!Array.isArray(dataLayer))
+                return;
+            // Only process new commands that haven't been processed yet
+            var newCommands = dataLayer.slice(_this.processedDataLayerCount);
+            _this.runCustomRumTags(newCommands);
+            // Update the count of processed commands
+            _this.processedDataLayerCount = dataLayer.length;
+        };
+        // Setup automatic processing for future CPRUMDataLayer commands, This will run after rprofiler is ready
+        this.autoRunCPRUMTagDataLayer = function () {
+            // Ensure CPRUMDataLayer exists
+            if (!window['CPRUMDataLayer']) {
+                window['CPRUMDataLayer'] = [];
+            }
+            var dataLayer = window['CPRUMDataLayer'];
+            var originalPush = dataLayer.push;
+            // Override push method to auto-process new commands
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            dataLayer.push = function () {
+                var items = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    items[_i] = arguments[_i];
+                }
+                // Call original push first
+                var result = originalPush.apply(dataLayer, items);
+                // Process only the new items immediately
+                _this.runCustomRumTags(items);
+                // Update processed count
+                _this.processedDataLayerCount = dataLayer.length;
+                return result;
+            };
+        };
         this.eventManager.add(WindowEvent.Load, window, this.recordPageLoad);
         var errorFunc = this.addError;
         this.ajaxHandler = new rprofiler_AjaxRequestsHandler();
-        D(this.setCLS);
+        D(this.setCLS, { reportAllChanges: true });
         ot(this.setLCP, { reportAllChanges: true });
         rt(this.setINP, { reportAllChanges: true });
+        x(this.setFCP, { reportAllChanges: true });
         // Frustration event
         frustrationMetrics.startListeningClickEvent();
         frustrationMetrics.startListeningMouseMove();
@@ -3526,7 +3821,8 @@ var RProfiler = /** @class */ (function () {
         }
         return false;
     };
-    RProfiler.prototype.dispatchCustomEvent = function (event) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    RProfiler.prototype.dispatchCustomEvent = function (event, data) {
         (function (w) {
             if (typeof w.CustomEvent === 'function') {
                 return false;
@@ -3544,34 +3840,151 @@ var RProfiler = /** @class */ (function () {
             // @ts-ignore
             w.CustomEvent = CustomEvent;
         })(window); //for the browsers don't support CustomEvent
-        var e = new CustomEvent(event);
+        var e = new CustomEvent(event, data ? { detail: data } : undefined);
         window.dispatchEvent(e);
+    };
+    RProfiler.prototype.checkBrowserIsBot = function () {
+        var _a;
+        var BOT_AGENT = [
+            'bot',
+            'crawl',
+            'datadog',
+            'dynatrace',
+            'newrelic',
+            'ruxit',
+            'spider',
+            'headless',
+            'phantom',
+            'facebookexternalhit',
+            'meta-external', // matches "meta-externalads"
+            'pinterestbot',
+            'headlesschrome',
+            'lighthouse',
+            'catchpoint',
+            'site24x7',
+            'google-read-aloud',
+            'pageburst'
+        ];
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        var uaData = navigator === null || navigator === void 0 ? void 0 : navigator.userAgentData;
+        var userAgent = navigator.userAgent.toLowerCase();
+        var BOT_USER_AGENT_REGEX = new RegExp(BOT_AGENT.join('|'), 'i');
+        if (uaData && ((_a = uaData.brands) === null || _a === void 0 ? void 0 : _a.length)) {
+            var isBot_1 = uaData.brands.some(function (brand) { return BOT_USER_AGENT_REGEX.test(brand.brand); });
+            return isBot_1;
+        }
+        var isBot = BOT_USER_AGENT_REGEX.test(userAgent);
+        return isBot;
+    };
+    // Check if the last mile script should be added,
+    // based on benchmark enabled, not a bot, page group allowed and excludeLastMileBenchMarks flag is false
+    RProfiler.prototype.checkLastMileScriptPermissions = function () {
+        var useBenchmark = config.getConfig().useBenchmark;
+        var isNotBot = !this.checkBrowserIsBot();
+        var isPageGroupAllowed = this.runBenchMarkForPageGroup();
+        return useBenchmark && isNotBot && isPageGroupAllowed && !this.excludeLastMileBenchMarks;
+    };
+    RProfiler.prototype.addLastMileScript = function () {
+        // Add lastmile script if conditions are met
+        var canAddLastMileScript = this.checkLastMileScriptPermissions();
+        if (!canAddLastMileScript) {
+            return;
+        }
+        var lastMileUrl = config.getConfig().lastMileUrl;
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.id = 'lastMileScriptiframe';
+        iframe.srcdoc = "<script defer src=\"".concat(lastMileUrl, "\"></script>");
+        iframe.referrerPolicy = 'no-referrer';
+        document.body.appendChild(iframe);
+        console.log('CP: Lastmile script added');
+    };
+    RProfiler.prototype.getBenchMarksPageGroup = function () {
+        var _a = config.getConfig().benchMarkPageGroups, benchMarkPageGroups = _a === void 0 ? '' : _a;
+        return benchMarkPageGroups === null || benchMarkPageGroups === void 0 ? void 0 : benchMarkPageGroups.split(',');
+    };
+    RProfiler.prototype.excludeBenchMarks = function () {
+        this.excludeLastMileBenchMarks = true;
+    };
+    RProfiler.prototype.setVisitor = function (visitor) {
+        this.visitor = visitor;
     };
     return RProfiler;
 }());
 /* harmony default export */ var rprofiler = (RProfiler);
+// cookie consent logic
+var CPRUM = function (command, options) {
+    if (command === 'consentv2') {
+        // Handle consentv2 command
+        var _a = options.analytics_storage, analytics_storage = _a === void 0 ? ConsentV2Type.Granted : _a;
+        switch (analytics_storage) {
+            case ConsentV2Type.Granted:
+            case ConsentV2Type.Denied:
+                config.config.consentv2 = analytics_storage;
+                break;
+            default:
+                // Fallback to default consent if value is different
+                config.config.consentv2 = ConsentV2Type.Granted;
+                break;
+        }
+        // delete local storage and cookie, if denied.
+        if (analytics_storage === ConsentV2Type.Denied) {
+            main_Storage.delete();
+        }
+    }
+    return;
+};
 var profiler = new RProfiler();
 window['RProfiler'] = profiler;
 window['WindowEvent'] = WindowEvent;
-// if the document state is already complete by the time script is injected - can happen in the case of tag managers like GTM
-if (document.readyState === 'complete') {
-    config.initValues();
-    main();
-    src_visComplete();
-}
-else {
-    document.addEventListener('readystatechange', function (event) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        if (event.target.readyState === 'complete') {
-            config.initValues();
-            main();
-            src_visComplete();
+window['CPRUM'] = CPRUM;
+var configInit = function () { return rprofiler_awaiter(void 0, void 0, void 0, function () {
+    return rprofiler_generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                config.initValues();
+                return [4 /*yield*/, main()];
+            case 1:
+                _a.sent();
+                src_visComplete();
+                // Setup automatic processing for future commands
+                profiler.autoRunCPRUMTagDataLayer();
+                // Add last mile script
+                profiler.addLastMileScript();
+                // Add session replay script
+                profiler.addSessionReplayScript();
+                return [2 /*return*/];
         }
     });
-}
-benchmark();
+}); };
+var init = function () { return rprofiler_awaiter(void 0, void 0, void 0, function () {
+    return rprofiler_generator(this, function (_a) {
+        // if the document state is already complete by the time script is injected - can happen in the case of tag managers like GTM
+        if (document.readyState === 'complete') {
+            configInit();
+        }
+        else {
+            document.addEventListener('readystatechange', function (event) { return rprofiler_awaiter(void 0, void 0, void 0, function () {
+                return rprofiler_generator(this, function (_a) {
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
+                    if (event.target.readyState === 'complete') {
+                        configInit();
+                    }
+                    return [2 /*return*/];
+                });
+            }); });
+        }
+        return [2 /*return*/];
+    });
+}); };
+setTimeout(function () {
+    init();
+}, 500);
 profiler.dispatchCustomEvent('GlimpseLoaded');
+// Process any queued CPRUM data layer commands
+profiler.runCPRUMTagDataLayer();
 
 /******/ })()
 ;
