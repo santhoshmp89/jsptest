@@ -34,592 +34,18 @@
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-/*!*************************************************!*\
-  !*** ./src/rprofiler/rprofiler.ts + 30 modules ***!
-  \*************************************************/
+/*!***********************************************!*\
+  !*** ./src/lastmile/lastmile.ts + 10 modules ***!
+  \***********************************************/
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ rprofiler; }
+  captureSoftNavigationsAfterRouteChange: function() { return /* binding */ captureSoftNavigationsAfterRouteChange; }
 });
 
-;// CONCATENATED MODULE: ./node_modules/web-vitals/dist/web-vitals.attribution.js
-var t,e,n,r=function(){var t=self.performance&&performance.getEntriesByType&&performance.getEntriesByType("navigation")[0];if(t&&t.responseStart>0&&t.responseStart<performance.now())return t},i=function(t){if("loading"===document.readyState)return"loading";var e=r();if(e){if(t<e.domInteractive)return"loading";if(0===e.domContentLoadedEventStart||t<e.domContentLoadedEventStart)return"dom-interactive";if(0===e.domComplete||t<e.domComplete)return"dom-content-loaded"}return"complete"},a=function(t){var e=t.nodeName;return 1===t.nodeType?e.toLowerCase():e.toUpperCase().replace(/^#/,"")},o=function(t,e){var n="";try{for(;t&&9!==t.nodeType;){var r=t,i=r.id?"#"+r.id:a(r)+(r.classList&&r.classList.value&&r.classList.value.trim()&&r.classList.value.trim().length?"."+r.classList.value.trim().replace(/\s+/g,"."):"");if(n.length+i.length>(e||100)-1)return n||i;if(n=n?i+">"+n:i,r.id)break;t=r.parentNode}}catch(t){}return n},c=-1,u=function(){return c},s=function(t){addEventListener("pageshow",(function(e){e.persisted&&(c=e.timeStamp,t(e))}),!0)},f=function(){var t=r();return t&&t.activationStart||0},d=function(t,e){var n=r(),i="navigate";u()>=0?i="back-forward-cache":n&&(document.prerendering||f()>0?i="prerender":document.wasDiscarded?i="restore":n.type&&(i=n.type.replace(/_/g,"-")));return{name:t,value:void 0===e?-1:e,rating:"good",delta:0,entries:[],id:"v4-".concat(Date.now(),"-").concat(Math.floor(8999999999999*Math.random())+1e12),navigationType:i}},l=function(t,e,n){try{if(PerformanceObserver.supportedEntryTypes.includes(t)){var r=new PerformanceObserver((function(t){Promise.resolve().then((function(){e(t.getEntries())}))}));return r.observe(Object.assign({type:t,buffered:!0},n||{})),r}}catch(t){}},m=function(t,e,n,r){var i,a;return function(o){e.value>=0&&(o||r)&&((a=e.value-(i||0))||void 0===i)&&(i=e.value,e.delta=a,e.rating=function(t,e){return t>e[1]?"poor":t>e[0]?"needs-improvement":"good"}(e.value,n),t(e))}},p=function(t){requestAnimationFrame((function(){return requestAnimationFrame((function(){return t()}))}))},v=function(t){document.addEventListener("visibilitychange",(function(){"hidden"===document.visibilityState&&t()}))},g=function(t){var e=!1;return function(){e||(t(),e=!0)}},h=-1,T=function(){return"hidden"!==document.visibilityState||document.prerendering?1/0:0},y=function(t){"hidden"===document.visibilityState&&h>-1&&(h="visibilitychange"===t.type?t.timeStamp:0,S())},E=function(){addEventListener("visibilitychange",y,!0),addEventListener("prerenderingchange",y,!0)},S=function(){removeEventListener("visibilitychange",y,!0),removeEventListener("prerenderingchange",y,!0)},b=function(){return h<0&&(h=T(),E(),s((function(){setTimeout((function(){h=T(),E()}),0)}))),{get firstHiddenTime(){return h}}},L=function(t){document.prerendering?addEventListener("prerenderingchange",(function(){return t()}),!0):t()},C=[1800,3e3],M=function(t,e){e=e||{},L((function(){var n,r=b(),i=d("FCP"),a=l("paint",(function(t){t.forEach((function(t){"first-contentful-paint"===t.name&&(a.disconnect(),t.startTime<r.firstHiddenTime&&(i.value=Math.max(t.startTime-f(),0),i.entries.push(t),n(!0)))}))}));a&&(n=m(t,i,C,e.reportAllChanges),s((function(r){i=d("FCP"),n=m(t,i,C,e.reportAllChanges),p((function(){i.value=performance.now()-r.timeStamp,n(!0)}))})))}))},w=[.1,.25],D=function(t,e){!function(t,e){e=e||{},M(g((function(){var n,r=d("CLS",0),i=0,a=[],o=function(t){t.forEach((function(t){if(!t.hadRecentInput){var e=a[0],n=a[a.length-1];i&&t.startTime-n.startTime<1e3&&t.startTime-e.startTime<5e3?(i+=t.value,a.push(t)):(i=t.value,a=[t])}})),i>r.value&&(r.value=i,r.entries=a,n())},c=l("layout-shift",o);c&&(n=m(t,r,w,e.reportAllChanges),v((function(){o(c.takeRecords()),n(!0)})),s((function(){i=0,r=d("CLS",0),n=m(t,r,w,e.reportAllChanges),p((function(){return n()}))})),setTimeout(n,0))})))}((function(e){var n=function(t){var e,n={};if(t.entries.length){var r=t.entries.reduce((function(t,e){return t&&t.value>e.value?t:e}));if(r&&r.sources&&r.sources.length){var a=(e=r.sources).find((function(t){return t.node&&1===t.node.nodeType}))||e[0];a&&(n={largestShiftTarget:o(a.node),largestShiftTime:r.startTime,largestShiftValue:r.value,largestShiftSource:a,largestShiftEntry:r,loadState:i(r.startTime)})}}return Object.assign(t,{attribution:n})}(e);t(n)}),e)},x=function(t,e){M((function(e){var n=function(t){var e={timeToFirstByte:0,firstByteToFCP:t.value,loadState:i(u())};if(t.entries.length){var n=r(),a=t.entries[t.entries.length-1];if(n){var o=n.activationStart||0,c=Math.max(0,n.responseStart-o);e={timeToFirstByte:c,firstByteToFCP:t.value-c,loadState:i(t.entries[0].startTime),navigationEntry:n,fcpEntry:a}}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},I=0,k=1/0,A=0,F=function(t){t.forEach((function(t){t.interactionId&&(k=Math.min(k,t.interactionId),A=Math.max(A,t.interactionId),I=A?(A-k)/7+1:0)}))},P=function(){"interactionCount"in performance||t||(t=l("event",F,{type:"event",buffered:!0,durationThreshold:0}))},B=[],O=new Map,R=0,j=function(){return(t?I:performance.interactionCount||0)-R},q=[],H=function(t){if(q.forEach((function(e){return e(t)})),t.interactionId||"first-input"===t.entryType){var e=B[B.length-1],n=O.get(t.interactionId);if(n||B.length<10||t.duration>e.latency){if(n)t.duration>n.latency?(n.entries=[t],n.latency=t.duration):t.duration===n.latency&&t.startTime===n.entries[0].startTime&&n.entries.push(t);else{var r={id:t.interactionId,latency:t.duration,entries:[t]};O.set(r.id,r),B.push(r)}B.sort((function(t,e){return e.latency-t.latency})),B.length>10&&B.splice(10).forEach((function(t){return O.delete(t.id)}))}}},N=function(t){var e=self.requestIdleCallback||self.setTimeout,n=-1;return t=g(t),"hidden"===document.visibilityState?t():(n=e(t),v(t)),n},W=[200,500],z=function(t,e){"PerformanceEventTiming"in self&&"interactionId"in PerformanceEventTiming.prototype&&(e=e||{},L((function(){var n;P();var r,i=d("INP"),a=function(t){N((function(){t.forEach(H);var e,n=(e=Math.min(B.length-1,Math.floor(j()/50)),B[e]);n&&n.latency!==i.value&&(i.value=n.latency,i.entries=n.entries,r())}))},o=l("event",a,{durationThreshold:null!==(n=e.durationThreshold)&&void 0!==n?n:40});r=m(t,i,W,e.reportAllChanges),o&&(o.observe({type:"first-input",buffered:!0}),v((function(){a(o.takeRecords()),r(!0)})),s((function(){R=0,B.length=0,O.clear(),i=d("INP"),r=m(t,i,W,e.reportAllChanges)})))})))},U=[],V=new Map,_=[],G=new WeakMap,J=new Map,K=-1,Q=function(t){U=U.concat(t),X()},X=function(){K<0&&(K=N(Y))},Y=function(){J.size>10&&J.forEach((function(t,e){O.has(e)||J.delete(e)})),_=_.slice(-50);var t=new Set(_.concat(B.map((function(t){return G.get(t.entries[0])}))));V.forEach((function(e,n){t.has(n)||V.delete(n)}));var e=new Set;V.forEach((function(t){nt(t.startTime,t.processingEnd).forEach((function(t){e.add(t)}))}));for(var r=0;r<50;r++){var i=U[U.length-1-r];if(!i||i.startTime<n)break;e.add(i)}U=Array.from(e),K=-1};q.push((function(t){t.interactionId&&t.target&&!J.has(t.interactionId)&&J.set(t.interactionId,t.target)}),(function(t){var e,r=t.startTime+t.duration;n=Math.max(n,t.processingEnd);for(var i=_.length-1;i>=0;i--)if(e=_[i],Math.abs(r-e)<=8){var a=V.get(e);a.startTime=Math.min(t.startTime,a.startTime),a.processingStart=Math.min(t.processingStart,a.processingStart),a.processingEnd=Math.max(t.processingEnd,a.processingEnd),a.entries.push(t),r=e;break}r!==e&&(_.push(r),V.set(r,{startTime:t.startTime,processingStart:t.processingStart,processingEnd:t.processingEnd,entries:[t]})),(t.interactionId||"first-input"===t.entryType)&&G.set(t,r),X()}));var Z,$,tt,et,nt=function(t,e){for(var n,r=[],i=0;n=U[i];i++)if(!(n.startTime+n.duration<t)){if(n.startTime>e)break;r.push(n)}return r},rt=function(t,n){e||(e=l("long-animation-frame",Q)),z((function(e){var n=function(t){var e=t.entries[0],n=G.get(e),r=V.get(n),a=e.processingStart,c=r.processingEnd,u=r.entries.sort((function(t,e){return t.processingStart-e.processingStart})),s=nt(e.startTime,c),f=t.entries.find((function(t){return t.target})),d=f&&f.target||J.get(e.interactionId),l=[e.startTime+e.duration,c].concat(s.map((function(t){return t.startTime+t.duration}))),m=Math.max.apply(Math,l),p={interactionTarget:o(d),interactionTargetElement:d,interactionType:e.name.startsWith("key")?"keyboard":"pointer",interactionTime:e.startTime,nextPaintTime:m,processedEventEntries:u,longAnimationFrameEntries:s,inputDelay:a-e.startTime,processingDuration:c-a,presentationDelay:Math.max(m-c,0),loadState:i(e.startTime)};return Object.assign(t,{attribution:p})}(e);t(n)}),n)},it=[2500,4e3],at={},ot=function(t,e){!function(t,e){e=e||{},L((function(){var n,r=b(),i=d("LCP"),a=function(t){e.reportAllChanges||(t=t.slice(-1)),t.forEach((function(t){t.startTime<r.firstHiddenTime&&(i.value=Math.max(t.startTime-f(),0),i.entries=[t],n())}))},o=l("largest-contentful-paint",a);if(o){n=m(t,i,it,e.reportAllChanges);var c=g((function(){at[i.id]||(a(o.takeRecords()),o.disconnect(),at[i.id]=!0,n(!0))}));["keydown","click"].forEach((function(t){addEventListener(t,(function(){return N(c)}),!0)})),v(c),s((function(r){i=d("LCP"),n=m(t,i,it,e.reportAllChanges),p((function(){i.value=performance.now()-r.timeStamp,at[i.id]=!0,n(!0)}))}))}}))}((function(e){var n=function(t){var e={timeToFirstByte:0,resourceLoadDelay:0,resourceLoadDuration:0,elementRenderDelay:t.value};if(t.entries.length){var n=r();if(n){var i=n.activationStart||0,a=t.entries[t.entries.length-1],c=a.url&&performance.getEntriesByType("resource").filter((function(t){return t.name===a.url}))[0],u=Math.max(0,n.responseStart-i),s=Math.max(u,c?(c.requestStart||c.startTime)-i:0),f=Math.max(s,c?c.responseEnd-i:0),d=Math.max(f,a.startTime-i);e={element:o(a.element),timeToFirstByte:u,resourceLoadDelay:s-u,resourceLoadDuration:f-s,elementRenderDelay:d-f,navigationEntry:n,lcpEntry:a},a.url&&(e.url=a.url),c&&(e.lcpResourceEntry=c)}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},ct=[800,1800],ut=function t(e){document.prerendering?L((function(){return t(e)})):"complete"!==document.readyState?addEventListener("load",(function(){return t(e)}),!0):setTimeout(e,0)},st=function(t,e){e=e||{};var n=d("TTFB"),i=m(t,n,ct,e.reportAllChanges);ut((function(){var a=r();a&&(n.value=Math.max(a.responseStart-f(),0),n.entries=[a],i(!0),s((function(){n=d("TTFB",0),(i=m(t,n,ct,e.reportAllChanges))(!0)})))}))},ft=function(t,e){st((function(e){var n=function(t){var e={waitingDuration:0,cacheDuration:0,dnsDuration:0,connectionDuration:0,requestDuration:0};if(t.entries.length){var n=t.entries[0],r=n.activationStart||0,i=Math.max((n.workerStart||n.fetchStart)-r,0),a=Math.max(n.domainLookupStart-r,0),o=Math.max(n.connectStart-r,0),c=Math.max(n.connectEnd-r,0);e={waitingDuration:i,cacheDuration:a-i,dnsDuration:o-a,connectionDuration:c-o,requestDuration:t.value-c,navigationEntry:n}}return Object.assign(t,{attribution:e})}(e);t(n)}),e)},dt={passive:!0,capture:!0},lt=new Date,mt=function(t,e){Z||(Z=e,$=t,tt=new Date,gt(removeEventListener),pt())},pt=function(){if($>=0&&$<tt-lt){var t={entryType:"first-input",name:Z.type,target:Z.target,cancelable:Z.cancelable,startTime:Z.timeStamp,processingStart:Z.timeStamp+$};et.forEach((function(e){e(t)})),et=[]}},vt=function(t){if(t.cancelable){var e=(t.timeStamp>1e12?new Date:performance.now())-t.timeStamp;"pointerdown"==t.type?function(t,e){var n=function(){mt(t,e),i()},r=function(){i()},i=function(){removeEventListener("pointerup",n,dt),removeEventListener("pointercancel",r,dt)};addEventListener("pointerup",n,dt),addEventListener("pointercancel",r,dt)}(e,t):mt(e,t)}},gt=function(t){["mousedown","keydown","touchstart","pointerdown"].forEach((function(e){return t(e,vt,dt)}))},ht=[100,300],Tt=function(t,e){e=e||{},L((function(){var n,r=b(),i=d("FID"),a=function(t){t.startTime<r.firstHiddenTime&&(i.value=t.processingStart-t.startTime,i.entries.push(t),n(!0))},o=function(t){t.forEach(a)},c=l("first-input",o);n=m(t,i,ht,e.reportAllChanges),c&&(v(g((function(){o(c.takeRecords()),c.disconnect()}))),s((function(){var r;i=d("FID"),n=m(t,i,ht,e.reportAllChanges),et=[],$=-1,Z=null,gt(addEventListener),r=a,et.push(r),pt()})))}))},yt=function(t,e){Tt((function(e){var n=function(t){var e=t.entries[0],n={eventTarget:o(e.target),eventType:e.name,eventTime:e.startTime,eventEntry:e,loadState:i(e.startTime)};return Object.assign(t,{attribution:n})}(e);t(n)}),e)};
-
-;// CONCATENATED MODULE: ./src/types.ts
-var WindowEvent;
-(function (WindowEvent) {
-    WindowEvent["Load"] = "load";
-    WindowEvent["BeforeUnload"] = "beforeunload";
-    WindowEvent["Abort"] = "abort";
-    WindowEvent["Error"] = "error";
-    WindowEvent["Unload"] = "unload";
-    WindowEvent["PageHide"] = "pagehide";
-})(WindowEvent || (WindowEvent = {}));
-var LoadStateEnum;
-(function (LoadStateEnum) {
-    LoadStateEnum[LoadStateEnum["None"] = 0] = "None";
-    LoadStateEnum[LoadStateEnum["Loading"] = 1] = "Loading";
-    LoadStateEnum[LoadStateEnum["Complete"] = 2] = "Complete";
-    LoadStateEnum[LoadStateEnum["DomInteractive"] = 3] = "DomInteractive";
-    LoadStateEnum[LoadStateEnum["DomContentLoaded"] = 4] = "DomContentLoaded";
-})(LoadStateEnum || (LoadStateEnum = {}));
-var VisibilityType;
-(function (VisibilityType) {
-    VisibilityType[VisibilityType["Focus"] = 0] = "Focus";
-    VisibilityType[VisibilityType["Blur"] = 1] = "Blur";
-})(VisibilityType || (VisibilityType = {}));
-// enum definition matches core enum
-var PostType;
-(function (PostType) {
-    PostType[PostType["OnLoad"] = 0] = "OnLoad";
-    PostType[PostType["OnBeforeUnload"] = 1] = "OnBeforeUnload";
-    PostType[PostType["OnAbort"] = 2] = "OnAbort";
-    PostType[PostType["Flush"] = 3] = "Flush";
-})(PostType || (PostType = {}));
-var Metrics;
-(function (Metrics) {
-    Metrics[Metrics["DNS"] = 0] = "DNS";
-    Metrics[Metrics["Connect"] = 1] = "Connect";
-    Metrics[Metrics["Load"] = 2] = "Load";
-    Metrics[Metrics["Wait"] = 3] = "Wait";
-    Metrics[Metrics["Start"] = 4] = "Start";
-    Metrics[Metrics["Redirect"] = 5] = "Redirect";
-    Metrics[Metrics["Duration"] = 6] = "Duration";
-    Metrics[Metrics["SSL"] = 7] = "SSL";
-    Metrics[Metrics["TransferSize"] = 8] = "TransferSize";
-})(Metrics || (Metrics = {}));
-var CookieIdentifier;
-(function (CookieIdentifier) {
-    CookieIdentifier["UserId"] = "u";
-    CookieIdentifier["SessionId"] = "s";
-    CookieIdentifier["SessionTime"] = "t";
-    CookieIdentifier["PageViewCount"] = "c";
-    CookieIdentifier["UrlCheckSum"] = "k";
-    CookieIdentifier["PostFlag"] = "f";
-})(CookieIdentifier || (CookieIdentifier = {}));
-// defined in CP.Common.Interfaces
-var WinHttpMethod;
-(function (WinHttpMethod) {
-    WinHttpMethod[WinHttpMethod["GET"] = 0] = "GET";
-    WinHttpMethod[WinHttpMethod["POST"] = 1] = "POST";
-    WinHttpMethod[WinHttpMethod["HEAD"] = 2] = "HEAD";
-    WinHttpMethod[WinHttpMethod["DELETE"] = 3] = "DELETE";
-    WinHttpMethod[WinHttpMethod["OPTIONS"] = 4] = "OPTIONS";
-    WinHttpMethod[WinHttpMethod["PUT"] = 5] = "PUT";
-    WinHttpMethod[WinHttpMethod["TRACE"] = 6] = "TRACE";
-    WinHttpMethod[WinHttpMethod["CONNECT"] = 7] = "CONNECT";
-})(WinHttpMethod || (WinHttpMethod = {}));
-var RProfilerCustomEventSessionReplay;
-(function (RProfilerCustomEventSessionReplay) {
-    RProfilerCustomEventSessionReplay["RageClick"] = "RageClick";
-    RProfilerCustomEventSessionReplay["DeadClick"] = "DeadClick";
-    RProfilerCustomEventSessionReplay["Errors"] = "Errors";
-})(RProfilerCustomEventSessionReplay || (RProfilerCustomEventSessionReplay = {}));
-var ConsentV2Type;
-(function (ConsentV2Type) {
-    ConsentV2Type["Granted"] = "granted";
-    ConsentV2Type["Denied"] = "denied";
-})(ConsentV2Type || (ConsentV2Type = {}));
-
-;// CONCATENATED MODULE: ./src/rprofiler/AjaxTiming.ts
-var AjaxTiming = /** @class */ (function () {
-    function AjaxTiming(url, method, isAsync, open) {
-        var _this = this;
-        this.getPerformanceTimings = function (entry) {
-            // If a call is being made on same url multiple time, take the first one so that we capture dns and ssl time
-            _this.connect = entry.connectEnd - entry.connectStart;
-            _this.dns = entry.domainLookupEnd - entry.domainLookupStart;
-            _this.duration = entry.duration;
-            _this.load = entry.responseEnd - entry.responseStart;
-            _this.wait = entry.responseStart - entry.requestStart;
-            _this.start = entry.startTime;
-            _this.redirect = entry.redirectEnd - entry.redirectStart;
-            if (entry['secureConnectionStart']) {
-                _this.ssl = entry.connectEnd - entry['secureConnectionStart'];
-            }
-        };
-        this.url = url;
-        this.method = method;
-        this.isAsync = isAsync;
-        this.open = open;
-    }
-    return AjaxTiming;
-}());
-/* harmony default export */ var rprofiler_AjaxTiming = (AjaxTiming);
-
-;// CONCATENATED MODULE: ./src/rprofiler/AjaxRequestsHandler.ts
-
-var AjaxRequestsHandler = /** @class */ (function () {
-    function AjaxRequestsHandler() {
-        var _this = this;
-        this.fetchRequests = [];
-        this.fetchEntriesIndices = {};
-        this.compareEntriesDelay = 100;
-        this.hasPerformance = typeof window.performance === 'object' &&
-            typeof window.performance.now === 'function' &&
-            typeof window.performance.getEntriesByType === 'function';
-        this.captureFetchRequests = function () {
-            var tempArray = [];
-            // eslint-disable-next-line @typescript-eslint/no-this-alias
-            var ajaxHandler = _this;
-            var onRequestError = function (error) {
-                return error;
-            };
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            var onResponseError = function (error) {
-                return Promise.reject(error);
-            };
-            if (!window.fetch) {
-                return;
-            }
-            /*TODO: Adding ignore to resolve the error
-            Need to relook on ts error. After adding latest vesion in tsconfig lib, It's unable to get the fetch type.*/
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
-            window.fetch = (function (fetch) {
-                return function () {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) {
-                        args[_i] = arguments[_i];
-                    }
-                    var fetchRequestIndex = 0;
-                    /*TODO: Adding ignore to resolve the error
-                    Need to relook on ts error. After adding latest vesion in tsconfig lib, It's unable to get the promise type.*/
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    var promise = Promise.resolve(args);
-                    promise = promise.then(function (args) {
-                        var firstArg;
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        var config = {};
-                        if (args.length && args.length >= 1) {
-                            firstArg = args[0];
-                            if (args.length > 1) {
-                                config = args[1];
-                            }
-                        }
-                        else {
-                            return [];
-                        }
-                        var method = 'GET';
-                        if (config.method) {
-                            method = config.method;
-                        }
-                        fetchRequestIndex = tempArray.length;
-                        var fetchUrl = '';
-                        //The first argument can be either a url or Request object
-                        if (typeof firstArg === 'object' && !!firstArg) {
-                            if (Array.isArray(firstArg) && firstArg.length > 0) {
-                                fetchUrl = firstArg[0];
-                            }
-                            else {
-                                fetchUrl = firstArg.url;
-                            }
-                        }
-                        else {
-                            fetchUrl = firstArg;
-                        }
-                        if (fetchUrl) {
-                            tempArray.push(new rprofiler_AjaxTiming(fetchUrl, method, true, ajaxHandler.now()));
-                        }
-                        return [firstArg, config];
-                    }, onRequestError);
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    promise = promise.then(function (args) { return fetch.apply(void 0, args); });
-                    promise = promise.then(function (response) {
-                        var fetchRequest = tempArray[fetchRequestIndex];
-                        var requestArray = ajaxHandler.fetchRequests;
-                        ajaxHandler.processPerformanceEntries(fetchRequest, requestArray);
-                        return response;
-                    }, onResponseError);
-                    return promise;
-                };
-            })(window.fetch);
-        };
-        this.captureFetchRequests();
-        AjaxRequestsHandler.startAjaxCapture(this);
-    }
-    AjaxRequestsHandler.prototype.getAjaxRequests = function () {
-        return this.fetchRequests;
-    };
-    AjaxRequestsHandler.prototype.clear = function () {
-        this.fetchRequests = [];
-    };
-    AjaxRequestsHandler.prototype.now = function () {
-        if (this.hasPerformance) {
-            return window.performance.now();
-        }
-        return new Date().getTime();
-    };
-    AjaxRequestsHandler.prototype.processPerformanceEntries = function (fetchRequest, requestArray) {
-        // eslint-disable-next-line @typescript-eslint/no-this-alias
-        var ajaxHandler = this;
-        setTimeout(function () {
-            if (!ajaxHandler.hasPerformance) {
-                return;
-            }
-            var url = fetchRequest.url;
-            var matches = [];
-            var entries = performance.getEntriesByType('resource');
-            for (var _i = 0, entries_1 = entries; _i < entries_1.length; _i++) {
-                var entry = entries_1[_i];
-                if (entry.name === url) {
-                    matches.push(entry);
-                }
-            }
-            requestArray.push(fetchRequest);
-            if (matches.length === 0) {
-                return;
-            }
-            if (!ajaxHandler.fetchEntriesIndices[url]) {
-                ajaxHandler.fetchEntriesIndices[url] = [];
-            }
-            if (matches.length === 1) {
-                fetchRequest.getPerformanceTimings(matches[0]);
-                ajaxHandler.fetchEntriesIndices[url].push(0);
-                return;
-            }
-            var u = ajaxHandler.fetchEntriesIndices[url];
-            for (var index in matches) {
-                if (u.indexOf(index) !== -1) {
-                    continue;
-                }
-                fetchRequest.getPerformanceTimings(matches[index]);
-                u.push(index);
-                return;
-            }
-            fetchRequest.getPerformanceTimings(matches[0]); // if we can't find it, just use the first entry
-        }, ajaxHandler.compareEntriesDelay);
-    };
-    AjaxRequestsHandler.startAjaxCapture = function (ajaxHandler) {
-        var xhr = XMLHttpRequest.prototype;
-        var open = xhr.open;
-        var send = xhr.send;
-        var tempArray = [];
-        if (ajaxHandler.hasPerformance && typeof window.performance.setResourceTimingBufferSize === 'function') {
-            window.performance.setResourceTimingBufferSize(300);
-        }
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        xhr.open = function (method, url, async, user, password) {
-            this.rpIndex = tempArray.length;
-            tempArray.push(new rprofiler_AjaxTiming(url, method, async, ajaxHandler.now()));
-            open.call(this, method, url, async === false ? false : true, user, password);
-        };
-        xhr.send = function (data) {
-            var _this = this;
-            var changeFunc = this.onreadystatechange;
-            this.onreadystatechange = function (arg) {
-                var request = tempArray[_this.rpIndex];
-                if (!request) {
-                    return;
-                }
-                var state = _this.readyState;
-                var hasResponse = !!(_this.response && _this.response !== null && _this.response !== undefined);
-                switch (state) {
-                    case 0:
-                        break;
-                    case 1:
-                        request.connectionEstablished = ajaxHandler.now();
-                        break;
-                    case 2:
-                        request.requestReceived = ajaxHandler.now();
-                        break;
-                    case 3:
-                        request.processingTime = ajaxHandler.now();
-                        break;
-                    case 4:
-                        request.complete = ajaxHandler.now();
-                        switch (_this.responseType) {
-                            case 'text':
-                            case '':
-                                if (typeof _this.responseText === 'string') {
-                                    request.responseSize = _this.responseText.length;
-                                }
-                                break;
-                            case 'json':
-                                if (hasResponse && typeof _this.response.toString === 'function') {
-                                    request.responseSize = _this.response.toString().length;
-                                }
-                                break;
-                            case 'arraybuffer':
-                                if (hasResponse && typeof _this.response.byteLength === 'number') {
-                                    request.responseSize = _this.response.byteLength;
-                                }
-                                break;
-                            case 'blob':
-                                if (hasResponse && typeof _this.response.size === 'number') {
-                                    request.responseSize = _this.response.size;
-                                }
-                                break;
-                            case 'document':
-                                break;
-                        }
-                        ajaxHandler.processPerformanceEntries(request, ajaxHandler.fetchRequests);
-                        break;
-                }
-                if (typeof changeFunc === 'function') {
-                    changeFunc.call(_this, arg);
-                }
-            };
-            var request = tempArray[this.rpIndex];
-            if (!request) {
-                return;
-            }
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            if (data && !isNaN(data.length)) {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                request.sendSize = data.length;
-            }
-            request.send = ajaxHandler.now();
-            send.call(this, data);
-        };
-    };
-    return AjaxRequestsHandler;
-}());
-/* harmony default export */ var rprofiler_AjaxRequestsHandler = (AjaxRequestsHandler);
-
-;// CONCATENATED MODULE: ./src/rprofiler/ProfilerEventManager.ts
-var ProfilerEventManager = /** @class */ (function () {
-    function ProfilerEventManager() {
-        this.events = [];
-        this.hasAttachEvent = !!window['attachEvent'];
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ProfilerEventManager.prototype.add = function (type, target, func) {
-        this.events.push({ type: type, target: target, func: func });
-        if (this.hasAttachEvent) {
-            target.attachEvent('on' + type, func);
-        }
-        else {
-            target.addEventListener(type, func, false);
-        }
-    };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ProfilerEventManager.prototype.remove = function (type, target, func) {
-        if (this.hasAttachEvent) {
-            target.detachEvent(type, func);
-        }
-        else {
-            target.removeEventListener(type, func, false);
-        }
-        var index = this.events.indexOf({ type: type, target: target, func: func });
-        if (index !== 1) {
-            this.events.splice(index, 1);
-        }
-    };
-    ProfilerEventManager.prototype.clear = function () {
-        var events = this.events;
-        for (var i = 0; i < events.length; i++) {
-            var ev = events[i];
-            this.remove(ev.type, ev.target, ev.func);
-        }
-        this.events = [];
-    };
-    return ProfilerEventManager;
-}());
-/* harmony default export */ var rprofiler_ProfilerEventManager = (ProfilerEventManager);
-
-;// CONCATENATED MODULE: ./src/rprofiler/EventsTimingHandler.ts
-
-
-var EventsTimingHandler = /** @class */ (function () {
-    function EventsTimingHandler() {
-        var _this = this;
-        //Capture window Focus (Used for Page On Time)
-        this.hiddenStrings = ['hidden', 'msHidden', 'webkitHidden', 'mozHidden'];
-        this.visibilityStrings = [
-            'visibilitychange',
-            'msvisibilitychange',
-            'webkitvisibilitychange',
-            'mozvisibilitychange'
-        ];
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        this.captureSoftNavigation = false;
-        this.hidden = 'hidden';
-        this.visibilityChange = 'visibilitychange';
-        this.visibilityEvents = [];
-        // Capture scroll, focus, resize, mouse and keyEvents
-        this.eventManager = new rprofiler_ProfilerEventManager();
-        this.engagementTimeIntervalMs = 1000;
-        this.engagementTime = 0;
-        this.firstEngagementTime = 0;
-        this.lastEventTimeStamp = 0;
-        this.timeoutId = undefined;
-        this.startTime = new Date().getTime();
-        this.now = function () {
-            return new Date().getTime();
-        };
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        this.startVisibilityCapture = function () {
-            _this.initializeVisibilityProperties();
-            document.addEventListener(_this.visibilityChange, _this.captureFocusEvent, false);
-        };
-        this.initializeVisibilityProperties = function () {
-            var values = _this.hiddenStrings;
-            var propertyIndex = 0;
-            for (var i = 0; i < values.length; i++) {
-                if (typeof document[values[i]] !== 'undefined') {
-                    propertyIndex = i;
-                }
-            }
-            _this.visibilityChange = _this.visibilityStrings[propertyIndex];
-            _this.hidden = _this.hiddenStrings[propertyIndex];
-        };
-        this.captureFocusEvent = function () {
-            _this.updateVisibilityChangeTime();
-            if (!document[_this.hidden]) {
-                _this.captureEngagementTime();
-            }
-        };
-        this.updateVisibilityChangeTime = function () {
-            if (document[_this.hidden]) {
-                _this.captureVisibilityEvent(VisibilityType.Blur);
-            }
-            else {
-                _this.captureVisibilityEvent(VisibilityType.Focus);
-            }
-        };
-        this.onBlur = function () {
-            _this.captureVisibilityEvent(VisibilityType.Blur);
-        };
-        this.onFocus = function () {
-            _this.captureVisibilityEvent(VisibilityType.Focus);
-        };
-        this.captureVisibilityEvent = function (type) {
-            _this.visibilityEvents.push({
-                type: type,
-                time: _this.now()
-            });
-        };
-        this.captureEngagementTime = function (isFirstEngagement) {
-            if (isFirstEngagement === void 0) { isFirstEngagement = true; }
-            // 1000 ms for default focus
-            if (!_this.lastEventTimeStamp) {
-                _this.engagementTime = _this.engagementTimeIntervalMs;
-                _this.lastEventTimeStamp = _this.now();
-                return;
-            }
-            var timeBetweenEvents = _this.now() - _this.lastEventTimeStamp;
-            _this.lastEventTimeStamp = _this.now();
-            if (isFirstEngagement && _this.firstEngagementTime === 0) {
-                _this.firstEngagementTime = _this.now();
-            }
-            if (timeBetweenEvents > 0 && timeBetweenEvents < _this.engagementTimeIntervalMs) {
-                clearTimeout(_this.timeoutId);
-                _this.engagementTime += timeBetweenEvents;
-                return;
-            }
-            _this.startTimer();
-        };
-        //Do not include mousemove for first engagement, as it doesn't really indicate engagement if use just moved mouse to close the page
-        this.captureMouseMove = function () {
-            _this.captureEngagementTime(false);
-        };
-        this.startTimer = function () {
-            _this.timeoutId = window.setTimeout(function () {
-                _this.engagementTime += _this.engagementTimeIntervalMs;
-            }, _this.engagementTimeIntervalMs);
-        };
-        this.getFocusAwayTime = function () {
-            var events = _this.visibilityEvents;
-            var resetIndex = -1;
-            if (events.length === 0) {
-                return 0;
-            }
-            var currentBlurIndex = resetIndex;
-            var index = 0;
-            var currentFocusIndex = resetIndex;
-            var hiddenTimeLapsed = 0;
-            while (index < events.length) {
-                if (events[index].type === VisibilityType.Blur && currentBlurIndex === resetIndex) {
-                    currentBlurIndex = index;
-                }
-                var isNewFocusEvent = currentFocusIndex === resetIndex && currentBlurIndex !== resetIndex;
-                if (events[index].type === VisibilityType.Focus && isNewFocusEvent) {
-                    currentFocusIndex = index;
-                }
-                var validFocusChange = currentBlurIndex !== resetIndex && currentFocusIndex !== resetIndex;
-                if (validFocusChange) {
-                    var diff = events[currentFocusIndex].time - events[currentBlurIndex].time;
-                    if (diff > 0) {
-                        hiddenTimeLapsed += diff;
-                    }
-                    currentBlurIndex = resetIndex;
-                    currentFocusIndex = resetIndex;
-                }
-                index = index + 1;
-            }
-            if (currentBlurIndex === events.length - 1) {
-                hiddenTimeLapsed += _this.now() - events[currentBlurIndex].time;
-            }
-            return hiddenTimeLapsed;
-        };
-        this.getEngagementTime = function () {
-            return _this.engagementTime;
-        };
-        this.getStartTime = function () {
-            return _this.startTime;
-        };
-        this.getFirstEngagementTime = function () {
-            return _this.firstEngagementTime;
-        };
-        this.startSoftNavigationCapture = function () {
-            _this.captureSoftNavigation = true;
-        };
-        this.resetSoftNavigationCapture = function () {
-            _this.resetEngagementMetrics();
-            _this.visibilityEvents = [];
-        };
-        this.resetEngagementMetrics = function () {
-            _this.engagementTime = 0;
-            _this.lastEventTimeStamp = _this.now();
-            _this.firstEngagementTime = 0;
-        };
-        this.clear = function () {
-            _this.eventManager.clear();
-        };
-        this.captureEngagementTime(false);
-        this.eventManager.add('scroll', document, this.captureEngagementTime);
-        this.eventManager.add('resize', window, this.captureEngagementTime);
-        this.eventManager.add('mouseup', document, this.captureEngagementTime);
-        this.eventManager.add('keyup', document, this.captureEngagementTime);
-        this.eventManager.add('mousemove', document, this.captureMouseMove);
-        this.eventManager.add('focus', window, this.onFocus);
-        this.eventManager.add('blur', window, this.onBlur);
-        this.eventManager.add('focus', document, this.onFocus);
-        this.eventManager.add('blur', document, this.onBlur);
-    }
-    return EventsTimingHandler;
-}());
-/* harmony default export */ var rprofiler_EventsTimingHandler = (EventsTimingHandler);
-
-;// CONCATENATED MODULE: ./src/rprofiler/ProfilerJsError.ts
-var ProfilerJsError = /** @class */ (function () {
-    function ProfilerJsError(message, url, lineNumber) {
-        this.count = 0;
-        this.message = message;
-        this.url = url;
-        this.lineNumber = lineNumber;
-    }
-    ProfilerJsError.createText = function (msg, url, num) {
-        return [msg, url, num].join(':');
-    };
-    ProfilerJsError.prototype.getText = function () {
-        return ProfilerJsError.createText(this.message, this.url, this.lineNumber);
-    };
-    return ProfilerJsError;
-}());
-/* harmony default export */ var rprofiler_ProfilerJsError = (ProfilerJsError);
-
-;// CONCATENATED MODULE: ./src/main/config.ts
+;// CONCATENATED MODULE: ./src/lastmile/benchmarkAppConfig.ts
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -631,320 +57,464 @@ var __assign = (undefined && undefined.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-
-var MainConfig = /** @class */ (function () {
-    function MainConfig() {
+var BenchmarkAppConfig = /** @class */ (function () {
+    function BenchmarkAppConfig() {
     }
-    MainConfig.now = function () {
-        return new Date().getTime();
+    BenchmarkAppConfig.setAppConfig = function (config) {
+        BenchmarkAppConfig.config = __assign(__assign({}, BenchmarkAppConfig.config), config);
     };
-    MainConfig.setWindowEvent = function () {
-        _g.windowEvent = this.pageWindow['WindowEvent'];
+    BenchmarkAppConfig.getConfig = function () {
+        return BenchmarkAppConfig.config;
     };
-    MainConfig.setRProfiler = function () {
-        _g.profiler = this.pageWindow['RProfiler'];
+    BenchmarkAppConfig.config = {
+        appId: -111,
+        version: 'v4.0.11',
+        appStatus: -111,
+        isbenchmarkApp: 'false',
+        publicTestsList: '[{"key":"92412","value":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92413","value":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92410","value":"https://kpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92411","value":"https://kpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92408","value":"https://jpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92409","value":"https://jpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92414","value":"https://apulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92415","value":"https://apulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92418","value":"https://xpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92419","value":"https://xpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"}]',
+        privateBenchmarkTestsList: '[{"DestinationUrls":[{"Id":99202,"Url":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"Id":99214,"Url":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"}],"Locations":[],"ParentBenchmarkId":99200},{"DestinationUrls":[{"Id":104675,"Url":"https://ctchpnt.akamaized.net/ipulse/ad/cp.com/creative/1p.gif"}],"Locations":[],"ParentBenchmarkId":104674},{"DestinationUrls":[{"Id":105693,"Url":"https://ctchpnt.akamaized.net/ipulse/ad/cp.com/creative/1p.gif"},{"Id":111836,"Url":"https://xpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"}],"Locations":[],"ParentBenchmarkId":104854}]',
+        userCountry: -888
     };
-    MainConfig.setWindowEventDef = function () {
-        var _a, _b, _c, _d, _e, _f;
-        _g.windowEventDef = {
-            Load: (_a = _g.windowEvent) === null || _a === void 0 ? void 0 : _a.Load,
-            BeforeUnload: (_b = _g.windowEvent) === null || _b === void 0 ? void 0 : _b.BeforeUnload,
-            Unload: (_c = _g.windowEvent) === null || _c === void 0 ? void 0 : _c.Unload,
-            Abort: (_d = _g.windowEvent) === null || _d === void 0 ? void 0 : _d.Abort,
-            Error: (_e = _g.windowEvent) === null || _e === void 0 ? void 0 : _e.Error,
-            PageHide: (_f = this.windowEvent) === null || _f === void 0 ? void 0 : _f.PageHide
-        };
-    };
-    MainConfig.setAppConfig = function (config) {
-        _g.config = __assign(__assign({}, _g.config), config);
-    };
-    MainConfig.initValues = function () {
-        _g.setWindowEvent();
-        _g.setRProfiler();
-        _g.setWindowEventDef();
-    };
-    MainConfig.getConfig = function () {
-        return _g.config;
-    };
-    MainConfig.isConsentV2Granted = function () {
-        return _g.config.consentv2 === ConsentV2Type.Granted;
-    };
-    var _a, _b, _c, _d, _e, _f;
-    var _g;
-    _g = MainConfig;
-    MainConfig.pageWindow = window;
-    MainConfig.location = _g.pageWindow.location;
-    MainConfig.profiler = _g.pageWindow['RProfiler'];
-    MainConfig.windowEvent = _g.pageWindow['WindowEvent'];
-    MainConfig.protocol = _g.location.protocol + '//';
-    MainConfig.windowEventDef = {
-        Load: (_a = _g.windowEvent) === null || _a === void 0 ? void 0 : _a.Load,
-        BeforeUnload: (_b = _g.windowEvent) === null || _b === void 0 ? void 0 : _b.BeforeUnload,
-        Unload: (_c = _g.windowEvent) === null || _c === void 0 ? void 0 : _c.Unload,
-        Abort: (_d = _g.windowEvent) === null || _d === void 0 ? void 0 : _d.Abort,
-        Error: (_e = _g.windowEvent) === null || _e === void 0 ? void 0 : _e.Error,
-        PageHide: (_f = _g.windowEvent) === null || _f === void 0 ? void 0 : _f.PageHide
-    };
-    MainConfig.hasPerformanceApi = !!_g.pageWindow.performance && typeof _g.pageWindow.performance === 'object';
-    MainConfig.hasGetEntriesApi = _g.hasPerformanceApi && typeof _g.pageWindow.performance.getEntriesByType === 'function';
-    MainConfig.testUserId = 'test'; // wrapping in curly braces and converting to string to match exact string instead partial replacement
-    MainConfig.version = 'v4.0.11';
-    MainConfig.config = {
-        sampleRate: -999, // range [0 - 100]
-        waterfallSampleRate: -888, // range [0 - 100]
-        postUrl: _g.protocol + 'lst01a.3genlabs.net/hawklogserver/r.p',
-        siteId: 91733,
-        debugParameter: 'GlimpseDebug',
-        debugUrl: 'localhost:44394/jp/v4.0.11/s.D',
-        waterfallParameter: 'GlimpseWaterfall',
-        sendOnLoad: false, // default is send onunload
-        clearResources: true, // clear performance entries when we send data to core. using performance.clearResourceTimings()
-        ajaxDomains: '',
-        useBenchmark: false,
-        lastMileUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.11/LastMileScript.js',
-        benchMarkPageGroups: '',
-        sessionReplayEnabled: false,
-        sessionReplayScriptUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.11/SessionReplayScript.js',
-        usePageHideEvent: false, // use pagehide event instead of unload, Default to false
-        consentv2: ConsentV2Type.Granted
-    };
-    return MainConfig;
+    return BenchmarkAppConfig;
 }());
+/* harmony default export */ var benchmarkAppConfig = (BenchmarkAppConfig);
 
-/* harmony default export */ var config = (MainConfig);
-
-;// CONCATENATED MODULE: ./src/main/DataWrapper.ts
-var DataWrapper = /** @class */ (function () {
-    function DataWrapper() {
-        // insight
-        this.hasErrors = false;
-        this._appErrors = null;
-        this.hasIndicators = false;
-        this._indicators = null;
-        this.hasTracepoints = false;
-        this._tracepoints = null;
+;// CONCATENATED MODULE: ./src/lastmile/InitLastMile.utils.ts
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
     }
-    DataWrapper.prototype.addError = function (key, value) {
-        if (!this.hasErrors) {
-            this._appErrors = new Object();
-            this.hasErrors = true;
-        }
-        this._appErrors[key] = value;
-    };
-    DataWrapper.prototype.getErrors = function () {
-        return this._appErrors;
-    };
-    DataWrapper.prototype.addIndicator = function (obj) {
-        if (!this.hasIndicators) {
-            this._indicators = {};
-            this.hasIndicators = true;
-        }
-        for (var key in obj) {
-            this._indicators[key] = obj[key];
-        }
-    };
-    DataWrapper.prototype.getIndicators = function () {
-        return this._indicators;
-    };
-    DataWrapper.prototype.addTracepoint = function (obj) {
-        if (!this.hasTracepoints) {
-            this._tracepoints = {};
-            this.hasTracepoints = true;
-        }
-        for (var key in obj) {
-            this._tracepoints[key] = obj[key];
-        }
-    };
-    DataWrapper.prototype.getTracepoints = function () {
-        return this._tracepoints;
-    };
-    return DataWrapper;
-}());
-/* harmony default export */ var main_DataWrapper = (DataWrapper);
-
-;// CONCATENATED MODULE: ./src/main/Util.ts
-
-
-var Util = /** @class */ (function () {
-    function Util() {
-    }
-    Util.getValue = function (resource, metric) {
-        var allowOrigin = resource.responseStart !== 0;
-        switch (metric) {
-            case Metrics.DNS:
-                return Util.getMetricValue(resource.domainLookupEnd, resource.domainLookupStart, allowOrigin);
-            case Metrics.Connect:
-                return Util.getMetricValue(resource.connectEnd, resource.connectStart, allowOrigin);
-            case Metrics.Load:
-                return Util.getMetricValue(resource.responseEnd, resource.responseStart, allowOrigin);
-            case Metrics.Wait:
-                return Util.getMetricValue(resource.responseStart, resource.requestStart, allowOrigin);
-            case Metrics.Start:
-                return resource.startTime;
-            case Metrics.Redirect:
-                return Util.getMetricValue(resource.redirectEnd, resource.redirectStart);
-            case Metrics.Duration:
-                return resource.duration;
-            case Metrics.SSL:
-                if (resource['secureConnectionStart']) {
-                    return allowOrigin ? resource.connectEnd - resource['secureConnectionStart'] : null;
-                }
-                break;
-            case Metrics.TransferSize:
-                return resource.transferSize;
-        }
-        return 0;
-    };
-    Util.getMetricValue = function (end, start, allowOrigin) {
-        if (allowOrigin === void 0) { allowOrigin = true; }
-        if (!allowOrigin) {
-            return null;
-        }
-        else if (end >= 0 && end >= start && start >= 0) {
-            var value = end - start;
-            return Math.round(value);
-        }
-    };
-    Util.getRoundedValue = function (value) {
-        return value ? Math.round(value) : value;
-    };
-    Util.getQueryStringValue = function (val) {
-        var query = location.search.substring(1);
-        var values = query.split('&');
-        var arr;
-        for (var i = 0; i < values.length; i++) {
-            arr = values[i].split('=');
-            if (arr[0] == val) {
-                return arr[1];
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+var PUBLIC_TEST_PAIRS_FOR_PAGE_VIEW = 5;
+var PRIVATE_TEST_PAIRS_FOR_PAGE_VIEW = 5;
+var publicTestToRunByCountryWeights = function (testWeights, userCountry, testRuns) {
+    var copyTestWeights = __spreadArray([], testWeights, true);
+    var pickedAds = [];
+    var pickOne = function (list) {
+        var checkCountry = list.map(function (can) {
+            if (!can.countries || can.countries.length === 0) {
+                return can;
             }
+            var hasCountry = can.countries.includes(userCountry);
+            if (!hasCountry) {
+                can.weight = 10;
+            }
+            return can;
+        });
+        var totalWeight = checkCountry.reduce(function (sum, ad) { return sum + ad.weight; }, 0);
+        var randomNum = Math.random() * totalWeight;
+        for (var _i = 0, checkCountry_1 = checkCountry; _i < checkCountry_1.length; _i++) {
+            var ad = checkCountry_1[_i];
+            if (randomNum < ad.weight)
+                return ad;
+            randomNum -= ad.weight;
         }
-        return '';
     };
-    Util.stopEvents = function () {
-        if (!config.profiler) {
+    // delete ads which is pushed to the pickedAds
+    // and remove them from copyTestWeights
+    while (pickedAds.length < testRuns && copyTestWeights.length > 0) {
+        var ad = pickOne(copyTestWeights);
+        pickedAds.push(ad);
+        // remove picked ad
+        var index = copyTestWeights.indexOf(ad);
+        copyTestWeights.splice(index, 1);
+    }
+    return pickedAds;
+};
+// Transform destinationUrls from PrivateTestObj[] to UrlDetail[]
+var transformDestinationUrls = function (destinationUrls) {
+    return destinationUrls.map(function (item) {
+        return {
+            id: item.Id,
+            url: item.Url
+        };
+    });
+};
+// Convert and filter private benchmark tests based on user country
+var convertAndFilterPrivateBenchmarkTestsByCountry = function (testConfig, userCountry) {
+    var convertedTests = [];
+    testConfig.forEach(function (test) {
+        var _a;
+        var testPair = {
+            weight: 0,
+            location: 0,
+            urls: []
+        };
+        testPair.urls = transformDestinationUrls(test.DestinationUrls);
+        var hasCountry = test.Locations.find(function (loc) { return loc.LocationId === userCountry; });
+        var isExcluded = (_a = hasCountry === null || hasCountry === void 0 ? void 0 : hasCountry.isExclude) !== null && _a !== void 0 ? _a : false;
+        if (isExcluded) {
             return;
         }
-        config.profiler.eventManager.clear();
-        config.profiler.getEventTimingHandler().clear();
-    };
-    Util.getLoadStateEnum = function (state) {
-        switch (state) {
-            case 'loading':
-                return LoadStateEnum.Loading;
-            case "dom-content-loaded":
-                return LoadStateEnum.DomContentLoaded;
-            case 'dom-interactive':
-                return LoadStateEnum.DomInteractive;
-            case 'complete':
-                return LoadStateEnum.Complete;
-            default:
-                return LoadStateEnum.None;
-        }
-    };
-    Util.getNavigationTime = function () {
-        var timing = null;
-        var navigationTime = config.hasGetEntriesApi && config.pageWindow.performance.getEntriesByType('navigation');
-        if (navigationTime && navigationTime.length !== 0) {
-            timing = navigationTime[0];
-        }
-        return timing;
-    };
-    Util.getNavigationStart = function (timing) {
-        var navigationtiming = timing;
-        return navigationtiming.startTime;
-    };
-    return Util;
-}());
-/* harmony default export */ var main_Util = (Util);
-
-;// CONCATENATED MODULE: ./src/main/WaterfallItem.ts
-
-
-var WaterfallItem = /** @class */ (function () {
-    function WaterfallItem(resource) {
-        this.dns = null;
-        this.connect = null;
-        this.load = null;
-        this.wait = null;
-        this.start = 0;
-        this.duration = 0;
-        this.redirect = 0;
-        this.ssl = null;
-        this.url = resource.name;
-        var func = main_Util.getValue;
-        this.dns = func(resource, Metrics.DNS);
-        this.connect = func(resource, Metrics.Connect);
-        this.wait = func(resource, Metrics.Wait);
-        this.load = func(resource, Metrics.Load);
-        this.start = func(resource, Metrics.Start);
-        this.duration = func(resource, Metrics.Duration);
-        this.redirect = func(resource, Metrics.Redirect);
-        this.ssl = func(resource, Metrics.SSL);
-        this.transferSize = func(resource, Metrics.TransferSize);
-    }
-    Object.defineProperty(WaterfallItem.prototype, "url", {
-        get: function () {
-            return this._url;
-        },
-        set: function (u) {
-            if (u.indexOf('http://') !== -1) {
-                this.protocol = 0;
-            }
-            else if (u.indexOf('https://') !== -1) {
-                this.protocol = 1;
-            }
-            var host = u.split('/').slice(1, 3).join('');
-            var index = host.indexOf(':');
-            if (index != -1) {
-                var p = host.substr(index + 1);
-                var num = parseInt(p);
-                if (!isNaN(num)) {
-                    this.port = num;
-                }
-            }
-            u = u.substr(u.indexOf(host) + host.length);
-            index = u.indexOf('?');
-            if (index != -1) {
-                u = u.substr(0, index);
-            }
-            index = u.indexOf('#');
-            if (index != -1) {
-                u = u.substr(0, index);
-            }
-            u = u.substr(0, 64);
-            this._url = u;
-        },
-        enumerable: false,
-        configurable: true
+        testPair.weight = hasCountry ? hasCountry.Weight : 10;
+        testPair.location = hasCountry ? hasCountry.LocationId : userCountry;
+        convertedTests.push(testPair);
     });
-    WaterfallItem.prototype.translateForPost = function () {
-        var roundedValue = main_Util.getRoundedValue;
-        var obj = {
-            u: this.url,
-            pr: this.protocol
-        };
-        var setIfNumber = function (key, num) {
-            if (typeof num == 'number' && !isNaN(num)) {
-                obj[key] = num;
+    return convertedTests;
+};
+// Function to run private benchmark tests based on weights and user country
+var privateTestToRunByCountryWeights = function (testConfig, testRuns) {
+    var copyTestWeights = __spreadArray([], testConfig, true);
+    var pickedAds = [];
+    var pickOne = function (list) {
+        var totalWeight = list.reduce(function (sum, ad) { return sum + ad.weight; }, 0);
+        var randomNum = Math.random() * totalWeight;
+        for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
+            var ad = list_1[_i];
+            if (randomNum < ad.weight)
+                return ad;
+            randomNum -= ad.weight;
+        }
+    };
+    // delete ads which is pushed to the pickedAds
+    // and remove them from copyTestWeights
+    while (pickedAds.length < testRuns && copyTestWeights.length > 0) {
+        var ad = pickOne(copyTestWeights);
+        pickedAds.push(ad);
+        // remove picked ad
+        var index = copyTestWeights.indexOf(ad);
+        copyTestWeights.splice(index, 1);
+    }
+    return pickedAds;
+};
+// map all public first pair test IDs with their country weights
+var getAllMappedPublicTestsWithCountryWeights = function (testsToCreate, testWeightsByCountryJson) {
+    if (testsToCreate.length % 2 !== 0) {
+        console.error('[Catchpoint][Error] JSP - Lastmile: Public Test IDs for public tests should be in pairs.');
+        return [];
+    }
+    var testWeightsByCountryList = [];
+    var _loop_1 = function (i) {
+        var firstTestId = testsToCreate[i].key;
+        // add existing weight obj if available
+        var existingWeightObj = testWeightsByCountryJson.find(function (weightObj) { return weightObj.id === firstTestId; });
+        var weightByCountryObj = void 0;
+        if (existingWeightObj) {
+            weightByCountryObj = {
+                id: firstTestId,
+                countries: existingWeightObj.countries,
+                weight: existingWeightObj.weight
+            };
+        }
+        else {
+            weightByCountryObj = {
+                id: firstTestId,
+                countries: [],
+                weight: 10 // default weight
+            };
+        }
+        testWeightsByCountryList.push(weightByCountryObj);
+    };
+    for (var i = 0; i < testsToCreate.length; i += 2) {
+        _loop_1(i);
+    }
+    return testWeightsByCountryList;
+};
+
+;// CONCATENATED MODULE: ./src/lastmile/ConfigRequest.ts
+var ConfigRequest = /** @class */ (function () {
+    function ConfigRequest() {
+    }
+    ConfigRequest.prototype.toString = function () {
+        var config = this.prepareConfigRequest();
+        return JSON.stringify(config);
+    };
+    ConfigRequest.prototype.prepareConfigRequest = function () {
+        var jsonConfig = new Object();
+        jsonConfig['t'] = this.siteTypeFlags;
+        jsonConfig['d'] = this.divisionId;
+        jsonConfig['l'] = this.licenseKey;
+        return jsonConfig;
+    };
+    return ConfigRequest;
+}());
+
+
+;// CONCATENATED MODULE: ./src/lastmile/ConfigResponse.ts
+var ScheduledTest = /** @class */ (function () {
+    function ScheduledTest(v, s, u, m, c) {
+        this.v = v;
+        this.s = s;
+        this.u = u;
+        this.m = m;
+        this.c = c;
+    }
+    return ScheduledTest;
+}());
+
+var ConfigResponse = /** @class */ (function () {
+    function ConfigResponse(v, freq_sec_diagnostics, monitor_type_bit_flags, tests_scheduled, machine_id, change_date, logger_time, error_message) {
+        this.v = v;
+        this.freq_sec_diagnostics = freq_sec_diagnostics;
+        this.monitor_type_bit_flags = monitor_type_bit_flags;
+        this.tests_scheduled = tests_scheduled;
+        this.machine_id = machine_id;
+        this.change_date = change_date;
+        this.logger_time = logger_time;
+        this.error_message = error_message;
+    }
+    return ConfigResponse;
+}());
+
+
+;// CONCATENATED MODULE: ./src/lastmile/LastMileResult.ts
+
+var LastMileResult = /** @class */ (function () {
+    function LastMileResult() {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        this.siteId = 0;
+        this.monitorType = 0;
+        this.testStartTime = 0;
+        this.version = ((_b = (_a = benchmarkAppConfig === null || benchmarkAppConfig === void 0 ? void 0 : benchmarkAppConfig.getConfig) === null || _a === void 0 ? void 0 : _a.call(benchmarkAppConfig)) === null || _b === void 0 ? void 0 : _b.version) || '0';
+        // eslint-disable-next-line
+        // @ts-ignore
+        var appId = ((_d = (_c = benchmarkAppConfig === null || benchmarkAppConfig === void 0 ? void 0 : benchmarkAppConfig.getConfig) === null || _c === void 0 ? void 0 : _c.call(benchmarkAppConfig)) === null || _d === void 0 ? void 0 : _d.isbenchmarkApp) === 'true'
+            ? (_f = (_e = benchmarkAppConfig === null || benchmarkAppConfig === void 0 ? void 0 : benchmarkAppConfig.getConfig) === null || _e === void 0 ? void 0 : _e.call(benchmarkAppConfig)) === null || _f === void 0 ? void 0 : _f.appId
+            // eslint-disable-next-line
+            // @ts-ignore
+            : ((_h = (_g = window === null || window === void 0 ? void 0 : window.parent) === null || _g === void 0 ? void 0 : _g.RProfiler) === null || _h === void 0 ? void 0 : _h.siteId) || 0;
+        this.singleObjectResult = {
+            url: '',
+            connectTime: 0,
+            dnsTime: 0,
+            sslTime: 0,
+            waitTime: 0,
+            loadTime: 0,
+            codeReturn: 0,
+            bytesContent: 0,
+            bytesHeader: 0,
+            codeError: 0,
+            httpVersion: '',
+            rumAppId: appId,
+            fullConnectTime: 0,
+            tracePoints: {
+                clientId: 0,
+                pageUrl: '',
+                packetLoss: false,
+                rtts: []
             }
         };
-        setIfNumber('pt', this.port);
-        setIfNumber('dn', roundedValue(this.dns));
-        setIfNumber('fc', roundedValue(this.connect));
-        setIfNumber('ld', roundedValue(this.load));
-        setIfNumber('wt', roundedValue(this.wait));
-        setIfNumber('st', roundedValue(this.start));
-        setIfNumber('rd', roundedValue(this.redirect));
-        setIfNumber('dr', roundedValue(this.duration));
-        setIfNumber('ssl', roundedValue(this.ssl));
-        setIfNumber('ts', this.transferSize);
-        return obj;
+    }
+    LastMileResult.prototype.toString = function () {
+        var config = this.prepareResultForCore();
+        return JSON.stringify(config);
     };
-    return WaterfallItem;
+    LastMileResult.prototype.toResultObject = function () {
+        return this.prepareResultForCore();
+    };
+    LastMileResult.prototype.prepareResultForCore = function () {
+        var jsonConfig = new Object();
+        jsonConfig['di'] = this.siteId;
+        jsonConfig['m'] = this.monitorType;
+        jsonConfig['so'] = this.singleObjectResult;
+        jsonConfig['v'] = this.version;
+        jsonConfig['so'] = {
+            url: this.singleObjectResult.url,
+            tc: this.singleObjectResult.connectTime,
+            td: this.singleObjectResult.dnsTime,
+            ts: this.singleObjectResult.sslTime,
+            tw: this.singleObjectResult.waitTime,
+            tl: this.singleObjectResult.loadTime,
+            cr: this.singleObjectResult.codeReturn,
+            ce: this.singleObjectResult.codeError,
+            ss: this.singleObjectResult.rumAppId,
+            bc: this.singleObjectResult.bytesContent,
+            bh: this.singleObjectResult.bytesHeader,
+            hv: this.singleObjectResult.httpVersion,
+            fc: this.singleObjectResult.fullConnectTime,
+            tra: {
+                cid: this.singleObjectResult.tracePoints.clientId,
+                adid: this.singleObjectResult.tracePoints.pageUrl
+                // dont need to stringify the rtts or packet loss. Essentiall metadata for now
+                // and is likely temporary.
+            }
+        };
+        // dont post connect time and ssl time for HTTP/3
+        if (jsonConfig['so'].hv === '3') {
+            delete jsonConfig['so'].tc;
+            delete jsonConfig['so'].ts;
+        }
+        return jsonConfig;
+    };
+    return LastMileResult;
 }());
-/* harmony default export */ var main_WaterfallItem = (WaterfallItem);
 
-;// CONCATENATED MODULE: ./src/main/AjaxItem.ts
+
+;// CONCATENATED MODULE: ./src/lastmile/StatusCodes.ts
+var HttpStatusCode;
+(function (HttpStatusCode) {
+    HttpStatusCode[HttpStatusCode["None"] = 0] = "None";
+    HttpStatusCode[HttpStatusCode["HttpContinue"] = 100] = "HttpContinue";
+    HttpStatusCode[HttpStatusCode["HttpSwitchingProtocols"] = 101] = "HttpSwitchingProtocols";
+    HttpStatusCode[HttpStatusCode["HttpOk"] = 200] = "HttpOk";
+    HttpStatusCode[HttpStatusCode["HttpCreated"] = 201] = "HttpCreated";
+    HttpStatusCode[HttpStatusCode["HttpAccepted"] = 202] = "HttpAccepted";
+    HttpStatusCode[HttpStatusCode["HttpNonAuthoritativeInformation"] = 203] = "HttpNonAuthoritativeInformation";
+    HttpStatusCode[HttpStatusCode["HttpNoContent"] = 204] = "HttpNoContent";
+    HttpStatusCode[HttpStatusCode["HttpResetContent"] = 205] = "HttpResetContent";
+    HttpStatusCode[HttpStatusCode["HttpPartialContent"] = 206] = "HttpPartialContent";
+    HttpStatusCode[HttpStatusCode["HttpAmbiguous"] = 300] = "HttpAmbiguous";
+    HttpStatusCode[HttpStatusCode["HttpMoved"] = 301] = "HttpMoved";
+    HttpStatusCode[HttpStatusCode["HttpRedirect"] = 302] = "HttpRedirect";
+    HttpStatusCode[HttpStatusCode["HttpRedirectMethod"] = 303] = "HttpRedirectMethod";
+    HttpStatusCode[HttpStatusCode["HttpNotModified"] = 304] = "HttpNotModified";
+    HttpStatusCode[HttpStatusCode["HttpUseProxy"] = 305] = "HttpUseProxy";
+    HttpStatusCode[HttpStatusCode["HttpUnused"] = 306] = "HttpUnused";
+    HttpStatusCode[HttpStatusCode["HttpRedirectKeepVerb"] = 307] = "HttpRedirectKeepVerb";
+    HttpStatusCode[HttpStatusCode["HttpBadRequest"] = 400] = "HttpBadRequest";
+    HttpStatusCode[HttpStatusCode["HttpUnauthorized"] = 401] = "HttpUnauthorized";
+    HttpStatusCode[HttpStatusCode["HttpPaymentRequired"] = 402] = "HttpPaymentRequired";
+    HttpStatusCode[HttpStatusCode["HttpForbidden"] = 403] = "HttpForbidden";
+    HttpStatusCode[HttpStatusCode["HttpNotFound"] = 404] = "HttpNotFound";
+    HttpStatusCode[HttpStatusCode["HttpMethodNotAllowed"] = 405] = "HttpMethodNotAllowed";
+    HttpStatusCode[HttpStatusCode["HttpNotAcceptable"] = 406] = "HttpNotAcceptable";
+    HttpStatusCode[HttpStatusCode["HttpProxyAuthenticationRequired"] = 407] = "HttpProxyAuthenticationRequired";
+    HttpStatusCode[HttpStatusCode["HttpRequestTimeout"] = 408] = "HttpRequestTimeout";
+    HttpStatusCode[HttpStatusCode["HttpConflict"] = 409] = "HttpConflict";
+    HttpStatusCode[HttpStatusCode["HttpGone"] = 410] = "HttpGone";
+    HttpStatusCode[HttpStatusCode["HttpLengthRequired"] = 411] = "HttpLengthRequired";
+    HttpStatusCode[HttpStatusCode["HttpPreconditionFailed"] = 412] = "HttpPreconditionFailed";
+    HttpStatusCode[HttpStatusCode["HttpRequestEntityTooLarge"] = 413] = "HttpRequestEntityTooLarge";
+    HttpStatusCode[HttpStatusCode["HttpRequestUriTooLong"] = 414] = "HttpRequestUriTooLong";
+    HttpStatusCode[HttpStatusCode["HttpUnsupportedMediaType"] = 415] = "HttpUnsupportedMediaType";
+    HttpStatusCode[HttpStatusCode["HttpRequestedRangeNotSatisfiable"] = 416] = "HttpRequestedRangeNotSatisfiable";
+    HttpStatusCode[HttpStatusCode["HttpExpectationFailed"] = 417] = "HttpExpectationFailed";
+    HttpStatusCode[HttpStatusCode["HttpInternalServerError"] = 500] = "HttpInternalServerError";
+    HttpStatusCode[HttpStatusCode["HttpNotImplemented"] = 501] = "HttpNotImplemented";
+    HttpStatusCode[HttpStatusCode["HttpBadGateway"] = 502] = "HttpBadGateway";
+    HttpStatusCode[HttpStatusCode["HttpServiceUnavailable"] = 503] = "HttpServiceUnavailable";
+    HttpStatusCode[HttpStatusCode["HttpGatewayTimeout"] = 504] = "HttpGatewayTimeout";
+    HttpStatusCode[HttpStatusCode["HttpVersionNotSupported"] = 505] = "HttpVersionNotSupported";
+})(HttpStatusCode || (HttpStatusCode = {}));
+// export enum AvailableRealUserWebNetworkError {
+//     HttpError = 28,
+//     HttpTimedOutError = 46
+// }
+var AvailableRealUserWebNetworkError;
+(function (AvailableRealUserWebNetworkError) {
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["None"] = 0] = "None";
+    /// <summary>
+    /// This is an error that is unknown to the NEL logic (something that the NEL returns as an unknown error).
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Unknown"] = 1] = "Unknown";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsUnreachable"] = 2] = "DnsUnreachable";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsNameNotResolved"] = 3] = "DnsNameNotResolved";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsFailed"] = 4] = "DnsFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpTimedOut"] = 5] = "TcpTimedOut";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpClosed"] = 6] = "TcpClosed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpReset"] = 7] = "TcpReset";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpRefused"] = 8] = "TcpRefused";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpAborted"] = 9] = "TcpAborted";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpAddressInvalid"] = 10] = "TcpAddressInvalid";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpAddressUnreachable"] = 11] = "TcpAddressUnreachable";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TcpFailed"] = 12] = "TcpFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsVersionOrCipherMismatch"] = 13] = "TlsVersionOrCipherMismatch";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsBadClientAuthCert"] = 14] = "TlsBadClientAuthCert";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsCertNameInvalid"] = 15] = "TlsCertNameInvalid";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsCertDateInvalid"] = 16] = "TlsCertDateInvalid";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsCertAuthorityInvalid"] = 17] = "TlsCertAuthorityInvalid";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsCertInvalid"] = 18] = "TlsCertInvalid";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsCertRevoked"] = 19] = "TlsCertRevoked";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsCertPinnedKeyNotInCertChain"] = 20] = "TlsCertPinnedKeyNotInCertChain";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsProtocolError"] = 21] = "TlsProtocolError";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsFailed"] = 22] = "TlsFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpProtocolError"] = 23] = "HttpProtocolError";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseInvalid"] = 24] = "HttpResponseInvalid";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseRedirectLoop"] = 25] = "HttpResponseRedirectLoop";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpFailed"] = 26] = "HttpFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Abandoned"] = 27] = "Abandoned";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpError"] = 28] = "HttpError";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsAddressChanged"] = 29] = "DnsAddressChanged";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsTimedOut"] = 30] = "DnsTimedOut";
+    /// <summary>
+    /// Malformed Response
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsProtocol"] = 31] = "DnsProtocol";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DnsServer"] = 32] = "DnsServer";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TlsUnrecognizedNameAlert"] = 33] = "TlsUnrecognizedNameAlert";
+    /// <summary>
+    /// H2 == HTTP2
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["H2PingFailed"] = 34] = "H2PingFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["H2ProtocolError"] = 35] = "H2ProtocolError";
+    /// <summary>
+    /// H3 == HTTP3/QUIC
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["H3ProtocolError"] = 36] = "H3ProtocolError";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseInvalidEmpty"] = 37] = "HttpResponseInvalidEmpty";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseInvalidContentLengthMismatch"] = 38] = "HttpResponseInvalidContentLengthMismatch";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseInvalidIncompleteChunkedEncoding"] = 39] = "HttpResponseInvalidIncompleteChunkedEncoding";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseInvalidInvalidChunkedEncoding"] = 40] = "HttpResponseInvalidInvalidChunkedEncoding";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpRequestRangeNotSatisfiable"] = 41] = "HttpRequestRangeNotSatisfiable";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseHeadersTruncated"] = 42] = "HttpResponseHeadersTruncated";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseHeadersMultipleContentDisposition"] = 43] = "HttpResponseHeadersMultipleContentDisposition";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpResponseHeadersMultipleContentLength"] = 44] = "HttpResponseHeadersMultipleContentLength";
+    /// <summary>
+    /// This is a generic error for when an Endpoint request hits a 400 or 500 error without a specified error.
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["UnspecifiedPageLoadError"] = 45] = "UnspecifiedPageLoadError";
+    /// <summary>
+    /// This is an HTTP timeout which is used with Single-Object Endpoint tests.
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpTimedOut"] = 46] = "HttpTimedOut";
+    /// <summary>
+    /// Endpoint Curl Errors
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Internal"] = 47] = "Internal";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpResponse"] = 48] = "FtpResponse";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpPasswordResponse"] = 49] = "FtpPasswordResponse";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpTimeout"] = 50] = "FtpTimeout";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpPasvResponse"] = 51] = "FtpPasvResponse";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpSetType"] = 52] = "FtpSetType";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpFileResponse"] = 53] = "FtpFileResponse";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Quote"] = 54] = "Quote";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Write"] = 55] = "Write";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Upload"] = 56] = "Upload";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Read"] = 57] = "Read";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["OutOfMemory"] = 58] = "OutOfMemory";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["OperationTimeout"] = 59] = "OperationTimeout";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpPort"] = 60] = "FtpPort";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpRest"] = 61] = "FtpRest";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["HttpPostInternal"] = 62] = "HttpPostInternal";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FileRead"] = 63] = "FileRead";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["LdapOperationFailed"] = 64] = "LdapOperationFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FunctionNotFound"] = 65] = "FunctionNotFound";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["CallbackAbort"] = 66] = "CallbackAbort";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["BadParameter"] = 67] = "BadParameter";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["InterfaceFailed"] = 68] = "InterfaceFailed";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["UnknownParameter"] = 69] = "UnknownParameter";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["OptionFormatting"] = 70] = "OptionFormatting";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["NoResponse"] = 71] = "NoResponse";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["NetworkSend"] = 72] = "NetworkSend";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["ContentEncoding"] = 73] = "ContentEncoding";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FileSize"] = 74] = "FileSize";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Rewind"] = 75] = "Rewind";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TftpFileAccess"] = 76] = "TftpFileAccess";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["DiskFull"] = 77] = "DiskFull";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TftpFileOperation"] = 78] = "TftpFileOperation";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TftpTransferId"] = 79] = "TftpTransferId";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FileAlreadyExists"] = 80] = "FileAlreadyExists";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["TftpInvalidUser"] = 81] = "TftpInvalidUser";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Conversion"] = 82] = "Conversion";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FileNotFound"] = 83] = "FileNotFound";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Ssh"] = 84] = "Ssh";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Retry"] = 85] = "Retry";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpPret"] = 86] = "FtpPret";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["RtspMismatch"] = 87] = "RtspMismatch";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["FtpFileList"] = 88] = "FtpFileList";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["ConnectionUnvailable"] = 89] = "ConnectionUnvailable";
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["Recursion"] = 90] = "Recursion";
+    /// <summary>
+    /// This is an error that has been added to NEL that was previously not available (something that is a known error to the NEL but that we haven't added to this enum)
+    /// </summary>
+    AvailableRealUserWebNetworkError[AvailableRealUserWebNetworkError["NotImplemented"] = 255] = "NotImplemented";
+})(AvailableRealUserWebNetworkError || (AvailableRealUserWebNetworkError = {}));
+
+;// CONCATENATED MODULE: ./src/lastmile/TimeoutError.ts
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -960,1676 +530,182 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-
-
-
-var AjaxItem = /** @class */ (function (_super) {
-    __extends(AjaxItem, _super);
-    function AjaxItem(timing, resource, isSummary) {
-        var _this = _super.call(this, resource) || this;
-        _this.responseTime = 0; // calculated from readyState changes
-        _this.sendSize = 0;
-        _this.responseSize = 0;
-        _this.method = WinHttpMethod[timing.method.toUpperCase()];
-        if (timing.complete && timing.connectionEstablished) {
-            _this.responseTime = timing.complete - timing.connectionEstablished;
-        }
-        _this.isSummary = isSummary;
-        if (isSummary) {
-            _this.start = undefined; // summary items should not have start time
-            _this.count = 1;
-        }
-        else {
-            _this.isAsync = timing.isAsync;
-        }
-        _this.sendSize = timing.sendSize || 0;
-        _this.responseSize = timing.responseSize || 0;
+var TimeoutError = /** @class */ (function (_super) {
+    __extends(TimeoutError, _super);
+    function TimeoutError(message) {
+        var _this = _super.call(this, message) || this;
+        _this.name = 'TimeoutError';
+        _this.isTimeout = true;
         return _this;
     }
-    AjaxItem.prototype.update = function (timing, resource) {
-        var func = main_Util.getValue;
-        if (resource.responseStart) {
-            this.dns += func(resource, Metrics.DNS);
-            this.connect += func(resource, Metrics.Connect);
-            this.wait += func(resource, Metrics.Wait);
-            this.load += func(resource, Metrics.Load);
-            this.ssl += func(resource, Metrics.SSL);
-        }
-        this.duration += func(resource, Metrics.Duration);
-        this.redirect += func(resource, Metrics.Redirect);
-        this.sendSize += timing.sendSize || 0;
-        this.responseSize += timing.responseSize || 0;
-        this.count++;
-    };
-    AjaxItem.prototype.translateForPost = function () {
-        var obj = _super.prototype.translateForPost.call(this);
-        if (this.isSummary) {
-            obj['n'] = this.count;
-        }
-        else {
-            obj['ia'] = this.isAsync ? 1 : 0;
-        }
-        obj['md'] = this.method;
-        obj['rp'] = Math.round(this.responseTime);
-        obj['ss'] = this.sendSize;
-        obj['rs'] = this.responseSize;
-        return obj;
-    };
-    return AjaxItem;
-}(main_WaterfallItem));
-/* harmony default export */ var main_AjaxItem = (AjaxItem);
-
-;// CONCATENATED MODULE: ./src/main/HostSummary.ts
+    return TimeoutError;
+}(Error));
 
 
+;// CONCATENATED MODULE: ./src/lastmile/errorCode.ts
 
-var HostSummary = /** @class */ (function () {
-    function HostSummary() {
-        this.count = 0;
-        this.dns = null;
-        this.connect = null;
-        this.load = null;
-        this.wait = null;
-        this.duration = 0;
-        this.redirect = 0;
-        this.ssl = null;
+
+var mapErrorToNetworkError = function (error) {
+    var errorMessage = error.message.toLowerCase();
+    // Timeout errors
+    if (error instanceof TimeoutError || error.name === 'AbortError' || errorMessage.includes('timeout')) {
+        return AvailableRealUserWebNetworkError.HttpTimedOut;
     }
-    HostSummary.prototype.addAjaxItem = function (timing, resource) {
-        this.update(resource);
-        var ajax = new main_AjaxItem(timing, resource, true);
-        if (typeof this._ajax == 'undefined') {
-            this._ajax = [];
-            this._ajax.push(ajax);
-            return;
-        }
-        for (var _i = 0, _a = this._ajax; _i < _a.length; _i++) {
-            var a = _a[_i];
-            if (a.url == ajax.url) {
-                a.update(timing, resource);
-                return;
-            }
-        }
-        if (this._ajax.length < 10) {
-            this._ajax.push(ajax);
-        }
-    };
-    HostSummary.prototype.update = function (resource) {
-        var func = main_Util.getValue;
-        if (resource.responseStart) {
-            this.dns += func(resource, Metrics.DNS);
-            this.connect += func(resource, Metrics.Connect);
-            this.wait += func(resource, Metrics.Wait);
-            this.load += func(resource, Metrics.Load);
-            this.ssl += func(resource, Metrics.SSL);
-        }
-        this.duration += func(resource, Metrics.Duration);
-        this.redirect += func(resource, Metrics.Redirect);
-        this.count++;
-    };
-    HostSummary.prototype.translateForPost = function () {
-        var roundedValue = main_Util.getRoundedValue;
-        var obj = {
-            n: this.count,
-            dn: roundedValue(this.dns),
-            fc: roundedValue(this.connect),
-            ld: roundedValue(this.load),
-            wt: roundedValue(this.wait),
-            dr: roundedValue(this.duration),
-            rd: roundedValue(this.redirect),
-            ssl: roundedValue(this.ssl)
-        };
-        if (this._ajax) {
-            var ajax = [];
-            for (var _i = 0, _a = this._ajax; _i < _a.length; _i++) {
-                var a = _a[_i];
-                ajax.push(a.translateForPost());
-            }
-            obj['ax'] = ajax;
-        }
-        return obj;
-    };
-    return HostSummary;
-}());
-/* harmony default export */ var main_HostSummary = (HostSummary);
-
-;// CONCATENATED MODULE: ./src/main/HostWaterfall.ts
-
-
-var HostWaterfall = /** @class */ (function () {
-    function HostWaterfall() {
-        this._resources = [];
+    // Network connectivity errors
+    if (errorMessage.includes('network error') || errorMessage.includes('failed to fetch')) {
+        return AvailableRealUserWebNetworkError.HttpFailed;
     }
-    HostWaterfall.prototype.translateForPost = function () {
-        var a = [];
-        for (var _i = 0, _a = this._resources; _i < _a.length; _i++) {
-            var res = _a[_i];
-            a.push(res.translateForPost());
+    // DNS resolution errors
+    if (errorMessage.includes('dns') ||
+        errorMessage.includes('nxdomain') ||
+        errorMessage.includes('name not resolved') ||
+        errorMessage.includes('getaddrinfo failed')) {
+        if (errorMessage.includes('timeout')) {
+            return AvailableRealUserWebNetworkError.DnsTimedOut;
         }
-        return a;
-    };
-    HostWaterfall.prototype.addItem = function (resource) {
-        var item = new main_WaterfallItem(resource);
-        this._resources.push(item);
-    };
-    HostWaterfall.prototype.addAjaxItem = function (timing, resource) {
-        var ajax = new main_AjaxItem(timing, resource, false);
-        this._resources.push(ajax);
-    };
-    return HostWaterfall;
-}());
-/* harmony default export */ var main_HostWaterfall = (HostWaterfall);
-
-;// CONCATENATED MODULE: ./src/main/TreeNode.ts
-var TreeNode = /** @class */ (function () {
-    function TreeNode(char) {
-        this.char = char;
-        this.children = [];
+        if (errorMessage.includes('server')) {
+            return AvailableRealUserWebNetworkError.DnsServer;
+        }
+        return AvailableRealUserWebNetworkError.DnsNameNotResolved;
     }
-    return TreeNode;
-}());
-/* harmony default export */ var main_TreeNode = (TreeNode);
-
-;// CONCATENATED MODULE: ./src/main/Tree.ts
-
-var Tree = /** @class */ (function () {
-    function Tree() {
-        this.root = new main_TreeNode('');
-        this.isReversed = true;
+    // SSL/TLS Certificate errors
+    if (errorMessage.includes('ssl') ||
+        errorMessage.includes('tls') ||
+        errorMessage.includes('certificate') ||
+        errorMessage.includes('cert')) {
+        if (errorMessage.includes('invalid') || errorMessage.includes('bad')) {
+            return AvailableRealUserWebNetworkError.TlsCertInvalid;
+        }
+        if (errorMessage.includes('authority')) {
+            return AvailableRealUserWebNetworkError.TlsCertAuthorityInvalid;
+        }
+        if (errorMessage.includes('name')) {
+            return AvailableRealUserWebNetworkError.TlsCertNameInvalid;
+        }
+        if (errorMessage.includes('date') || errorMessage.includes('expired')) {
+            return AvailableRealUserWebNetworkError.TlsCertDateInvalid;
+        }
+        if (errorMessage.includes('revoked')) {
+            return AvailableRealUserWebNetworkError.TlsCertRevoked;
+        }
+        return AvailableRealUserWebNetworkError.TlsFailed;
     }
-    Tree.prototype.add = function (parent, char) {
-        if (parent === void 0) { parent = this.root; }
-        var children = parent.children;
-        for (var _i = 0, children_1 = children; _i < children_1.length; _i++) {
-            var child = children_1[_i];
-            if (child.char == char) {
-                return child;
-            }
-        }
-        var node = new main_TreeNode(char);
-        children.push(node);
-        node.parent = parent;
-        return node;
-    };
-    Tree.prototype.toObject = function () {
-        var obj = {};
-        var isSuffix = this.isReversed;
-        (function recurse(curr, obj) {
-            var isRoot = curr.char == '';
-            var arg;
-            if (isRoot) {
-                arg = obj;
-            }
-            else {
-                var key = curr.char;
-                if (curr.children.length == 1) {
-                    while (curr.children.length == 1) {
-                        curr = curr.children[0];
-                        key = isSuffix ? curr.char + key : key + curr.char;
-                        if (curr.data) {
-                            obj[key] = curr.data;
-                        }
-                    }
-                }
-                obj[key] = curr.data || {};
-                arg = obj[key];
-            }
-            for (var i = 0; i < curr.children.length; i++) {
-                recurse(curr.children[i], arg);
-            }
-        })(this.root, obj);
-        return obj;
-    };
-    return Tree;
-}());
-/* harmony default export */ var main_Tree = (Tree);
-
-;// CONCATENATED MODULE: ./src/main/PostData.ts
-var PostData_extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-
-
-
-var PostData = /** @class */ (function (_super) {
-    PostData_extends(PostData, _super);
-    function PostData() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.maxJsErrors = 10;
-        _this.charCodes = {
-            '\b': '\\b',
-            '\t': '\\t',
-            '\n': '\\n',
-            '\f': '\\f',
-            '\r': '\\r',
-            '"': '\\"',
-            '\\': '\\\\',
-            '&': '%26'
-        };
-        // eslint-disable-next-line no-control-regex
-        _this.strRegex = /["&\\\x00-\x1f\x7f-\x9f]/g;
-        return _this;
+    // Connection refused/reset errors
+    if (errorMessage.includes('connection refused') ||
+        errorMessage.includes('econnrefused') ||
+        errorMessage.includes('net::err_connection_refused')) {
+        return AvailableRealUserWebNetworkError.TcpRefused;
     }
-    PostData.prototype.toString = function (type, includeWaterfall) {
-        var obj = this.translateForPost(type, includeWaterfall);
-        if (typeof JSON == 'undefined') {
-            return this.jsonStringify(obj);
-        }
-        return JSON.stringify(obj);
-    };
-    PostData.prototype.strEscape = function (value) {
-        var char = this.charCodes[value];
-        if (char) {
-            return char;
-        }
-        var index = value.charCodeAt(0);
-        return '\\u00' + Math.floor(index / 16).toString(16) + (index % 16).toString(16);
-    };
-    PostData.prototype.jsonStringify = function (value) {
-        var arr = new Array();
-        switch (typeof value) {
-            case 'string':
-                return this.strRegex.test(value)
-                    ? '"' + value.replace(this.strRegex, this.strEscape) + '"'
-                    : '"' + value + '"';
-            case 'number':
-                return isFinite(value) ? String(value) : 'null';
-            case 'boolean':
-                return String(value);
-            case 'object':
-                if (!value) {
-                    return 'null';
-                }
-                if (value.constructor === Date) {
-                    /* empty */
-                }
-                // eslint-disable-next-line no-prototype-builtins
-                if (typeof value.length == 'number' && !value.propertyIsEnumerable('length')) {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    for (var _i = 0, _a = value; _i < _a.length; _i++) {
-                        var a = _a[_i];
-                        arr.push(this.jsonStringify(a));
-                    }
-                    return '[' + arr.join(',') + ']';
-                }
-                for (var key in value) {
-                    if (typeof key == 'string') {
-                        var str = this.jsonStringify(value[key]);
-                        if (!!str) {
-                            arr.push(this.jsonStringify(key) + ':' + str);
-                        }
-                    }
-                }
-                return '{' + arr.join(',') + '}';
-        }
-        return '';
-    };
-    PostData.prototype.translateForPost = function (type, includeWaterfall) {
-        var isSoftNavigation = this.viewCount > 1;
-        var obj = new Object();
-        obj['v'] = config.version;
-        obj['pt'] = this.postType;
-        obj['ui'] = this.userId;
-        obj['si'] = this.sessionId;
-        obj['di'] = this.siteId;
-        obj['pi'] = this.pageViewId;
-        obj['jsc'] = this.jsErrorCount || 0;
-        obj['rf'] = this.referrer;
-        obj['pc'] = this.pageViewCount;
-        obj['vc'] = this.viewCount;
-        obj['rc'] = this.redirectCount || 0;
-        if (this.jsErrors && this.jsErrors.length > 0) {
-            var arr = [];
-            for (var i = 0; i < Math.min(this.jsErrors.length, this.maxJsErrors); i++) {
-                arr.push(this.translateErrorForPost(this.jsErrors[i]));
-            }
-            obj['jse'] = arr;
-        }
-        if (this.hasErrors) {
-            obj['ae'] = this.getErrors();
-        }
-        if (this.pageGroup) {
-            obj['pg'] = this.pageGroup;
-        }
-        if (this.variation) {
-            obj['ab'] = this.variation;
-        }
-        if (this.resources || this.ajaxRequests) {
-            var r = this.translateResources(this.resources, this.ajaxRequests);
-            obj['res'] = r.summary;
-            if (includeWaterfall) {
-                obj['wf'] = r.waterfall;
-            }
-        }
-        if (typeof this.isNewView == 'boolean') {
-            obj['nv'] = this.isNewView ? 1 : 0;
-        }
-        if (this.hasIndicators) {
-            obj['ind'] = this.getIndicators();
-        }
-        if (this.hasTracepoints) {
-            obj['tra'] = this.getTracepoints();
-        }
-        if (this.isConversion) {
-            obj['cv'] = this.isConversion ? 1 : 0;
-            if (this.revenue) {
-                obj['rv'] = this.revenue;
-            }
-            if (this.revenueItems) {
-                obj['ri'] = this.revenueItems;
-            }
-        }
-        obj['np'] = this.isNewPageView ? 1 : 0;
-        if (type === PostType.OnLoad || type === PostType.OnAbort) {
-            obj['dh'] = this.screenHeight;
-            obj['dw'] = this.screenWidth;
-            if (this.isNewPageView) {
-                obj['dn'] = Math.round(this.dns);
-                obj['fc'] = Math.round(this.fullConnect);
-                obj['wt'] = Math.round(this.wait);
-                obj['ld'] = Math.round(this.load);
-                obj['de'] = this.domInteractive;
-                obj['dl'] = this.domLoaded;
-                obj['dc'] = this.docComplete;
-                obj['rp'] = this.response;
-                obj['cl'] = this.contentLoad;
-                obj['rd'] = this.redirect;
-                obj['rc'] = this.redirectCount || 0;
-                obj['cls'] = this.cls;
-                obj['lcp'] = this.lcp;
-                obj['inp'] = this.inp;
-                obj['frc'] = this.frc;
-                obj['fec'] = this.fec;
-                obj['fdc'] = this.fdc;
-                obj['ftc'] = this.ftc;
-                if (this.secureConnect) {
-                    obj['sc'] = this.secureConnect;
-                }
-                if (this.exitToEntry) {
-                    obj['xe'] = this.exitToEntry;
-                }
-                if (this.entryToOnLoad) {
-                    obj['el'] = this.entryToOnLoad;
-                }
-                if (this.prerender) {
-                    obj['pr'] = this.prerender;
-                }
-            }
-        }
-        if (type === PostType.OnBeforeUnload) {
-            obj['maf'] = this.markAboveTheFold;
-            obj['mfl'] = this.markFullyLoaded;
-            obj['mfv'] = this.markFullyVisible;
-            obj['mtu'] = this.markTimeToUserAction;
-            obj['tp'] = this.timeOnPage;
-            obj['et'] = this.engagementTime;
-            obj['fet'] = this.firstEngagementTime;
-            obj['vct'] = this.visComplete;
-            if (!isSoftNavigation) {
-                obj['fp'] = this.firstPaint;
-                obj['fcp'] = this.firstContentPaint;
-                obj['cls'] = this.cls;
-                obj['lcp'] = this.lcp;
-                obj['inp'] = this.inp;
-                obj['frc'] = this.frc;
-                obj['fec'] = this.fec;
-                obj['fdc'] = this.fdc;
-                obj['ftc'] = this.ftc;
-                obj['inpDe'] = this.inpDe;
-            }
-        }
-        if (type === PostType.OnBeforeUnload || type === PostType.OnAbort) {
-            obj['rqc'] = this.rqc;
-        }
-        return obj;
-    };
-    PostData.prototype.translateErrorForPost = function (error) {
-        var obj = {};
-        obj['m'] = error.message;
-        obj['n'] = error.lineNumber;
-        obj['c'] = error.count + 1; // starts at 0
-        var url = error.url;
-        if (url) {
-            var qStrIndex = url.indexOf('?');
-            if (qStrIndex != -1) {
-                url = url.substr(0, qStrIndex);
-            }
-        }
-        obj['u'] = url;
-        return obj;
-    };
-    PostData.prototype.translateResources = function (resources, ajaxResources) {
-        var _this = this;
-        var hasResources = !!resources;
-        var hasAjaxResources = !!ajaxResources;
-        if (!hasResources && !hasAjaxResources) {
-            return null;
-        }
-        var getAjaxTiming = function (resource) {
-            if (!hasResources || !hasAjaxResources) {
-                return null;
-            }
-            var filteredAjaxResources = _this.filterAjaxResources(ajaxResources);
-            for (var _i = 0, filteredAjaxResources_1 = filteredAjaxResources; _i < filteredAjaxResources_1.length; _i++) {
-                var a = filteredAjaxResources_1[_i];
-                var url = a.url;
-                var targetUrl = '';
-                if (url && url.indexOf('http') != 0) {
-                    var charCount = 0;
-                    var mainUrl = location.href;
-                    for (var i = 0; i < mainUrl.length; i++) {
-                        if (mainUrl[i] === '/') {
-                            charCount += 1;
-                        }
-                        if (charCount === 3) {
-                            targetUrl = mainUrl.slice(0, i);
-                            targetUrl = targetUrl + url;
-                            break;
-                        }
-                    }
-                    if (targetUrl === resource.name) {
-                        return a;
-                    }
-                }
-                if (url === resource.name) {
-                    return a;
-                }
-            }
-            return null;
-        };
-        var hostObj = {};
-        if (resources) {
-            for (var _i = 0, resources_1 = resources; _i < resources_1.length; _i++) {
-                var res = resources_1[_i];
-                if (!res) {
-                    continue;
-                }
-                var host = res.name.split('/').slice(1, 3).join('');
-                if (!host || host.length == 0) {
-                    continue;
-                }
-                var portIndex = host.indexOf(':');
-                if (portIndex != -1) {
-                    host = host.substr(0, portIndex);
-                }
-                // eslint-disable-next-line no-prototype-builtins
-                if (!hostObj.hasOwnProperty(host)) {
-                    hostObj[host] = {
-                        summary: new main_HostSummary(),
-                        waterfall: new main_HostWaterfall()
-                    };
-                }
-                var h = hostObj[host];
-                var ajax = getAjaxTiming(res);
-                if (ajax) {
-                    h.summary.addAjaxItem(ajax, res);
-                    h.waterfall.addAjaxItem(ajax, res);
-                }
-                else {
-                    h.summary.update(res);
-                    h.waterfall.addItem(res);
-                }
-            }
-        }
-        var tree1 = new main_Tree();
-        for (var name_1 in hostObj) {
-            var node = undefined;
-            for (var i = name_1.length - 1; i >= 0; i--) {
-                var char = name_1[i];
-                node = tree1.add(node, char);
-            }
-            node.data = hostObj[name_1].summary.translateForPost();
-        }
-        var tree2 = new main_Tree();
-        for (var name_2 in hostObj) {
-            var node = undefined;
-            for (var i = name_2.length - 1; i >= 0; i--) {
-                var char = name_2[i];
-                node = tree2.add(node, char);
-            }
-            node.data = hostObj[name_2].waterfall.translateForPost();
-        }
-        var container = {
-            summary: tree1.toObject(),
-            waterfall: tree2.toObject()
-        };
-        return container;
-    };
-    PostData.prototype.filterAjaxResources = function (ajaxResources) {
-        if (config.config.ajaxDomains === '' || config.config.ajaxDomains === undefined) {
-            return ajaxResources;
-        }
-        // Returns the host with subdomain from the url
-        var getHostNameWithSubdomain = function (url) {
-            // eslint-disable-next-line no-useless-escape
-            var regex = /^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)/;
-            var output = regex.exec(url);
-            if (output !== null) {
-                return output[1];
-            }
-        };
-        // Returns the host without subdomain from the url
-        var getHostNameWithoutSubdomain = function (url) {
-            // eslint-disable-next-line no-useless-escape
-            var regex = /([a-z\-0-9]{2,63})\.([a-z\.]{2,5})$/;
-            var urlParts = regex.exec(url);
-            return urlParts && urlParts[0];
-        };
-        // Returns the url with protocal
-        var getFullUrl = function (url) {
-            var regex = /(http|https)?:\/\/(\S+)/g;
-            var hasSchema = regex.test(url);
-            return hasSchema ? url : "https://".concat(url);
-        };
-        var filterAjaxDomainsList = config.config.ajaxDomains.split(',');
-        var filteredAjaxResources = ajaxResources.filter(function (resource) {
-            var resourceWithSubdomain = getHostNameWithSubdomain(resource.url);
-            var resourceUrl = getFullUrl(resource.url);
-            var resourceHostName = new URL(resourceUrl).host;
-            var resourceWithoutSubdomain = getHostNameWithoutSubdomain(resourceHostName);
-            var result = filterAjaxDomainsList.some(function (domain) {
-                var domainUrl = getFullUrl(domain);
-                var filterHostName = new URL(domainUrl).host;
-                var filterDomainWithSubdomain = filterHostName.replace('www.', '');
-                var filterDomainWithoutSubdomain = getHostNameWithoutSubdomain(filterHostName);
-                var hasFilterSubdomain = filterDomainWithSubdomain !== filterDomainWithoutSubdomain;
-                if (hasFilterSubdomain) {
-                    return filterDomainWithSubdomain === resourceWithSubdomain;
-                }
-                else {
-                    return resourceWithoutSubdomain === filterDomainWithoutSubdomain;
-                }
-            });
-            return result;
-        });
-        return filteredAjaxResources;
-    };
-    return PostData;
-}(main_DataWrapper));
-/* harmony default export */ var main_PostData = (PostData);
-
-;// CONCATENATED MODULE: ./src/main/Storage.ts
-
-var Storage = /** @class */ (function () {
-    function Storage() {
+    if (errorMessage.includes('connection reset') ||
+        errorMessage.includes('econnreset') ||
+        errorMessage.includes('net::err_connection_reset')) {
+        return AvailableRealUserWebNetworkError.TcpReset;
     }
-    Storage.save = function (value) {
-        // If consent is not granted, delete any stored data.
-        if (!config.isConsentV2Granted()) {
-            Storage.delete();
-            return;
-        }
-        if (Storage.canUseLocalStorage()) {
-            config.pageWindow.localStorage.setItem(Storage.storeKey, value);
-            return;
-        }
-        Storage.setCookie(value);
-    };
-    Storage.read = function () {
-        // If consent is not granted, delete any stored data.
-        if (!config.isConsentV2Granted()) {
-            Storage.delete();
-            return;
-        }
-        if (Storage.canUseLocalStorage()) {
-            var store = config.pageWindow.localStorage.getItem(Storage.storeKey);
-            if (store) {
-                return store;
-            }
-        }
-        return this.readCookie();
-    };
-    Storage.delete = function () {
-        if (Storage.canUseLocalStorage()) {
-            config.pageWindow.localStorage.removeItem(Storage.storeKey);
-        }
-        Storage.deleteCookie();
-    };
-    Storage.canUseLocalStorage = function () {
-        var canUse = true;
-        try {
-            var key = Storage.storeKey + 'delete';
-            var value = key + 0;
-            config.pageWindow.localStorage.setItem(key, value);
-            var valueFromStorage = config.pageWindow.localStorage.getItem(key);
-            canUse = value === valueFromStorage;
-            if (canUse) {
-                config.pageWindow.localStorage.removeItem(key);
-            }
-        }
-        catch (ex) {
-            canUse = false;
-        }
-        return canUse;
-    };
-    Storage.setCookie = function (value) {
-        var date = new Date();
-        date.setTime(date.getTime() + Storage.cookieExpireDays * 24 * 60 * 60 * 1000);
-        var expires = '; expires=' + date.toUTCString();
-        var split = config.pageWindow.document.domain.split('.');
-        var length = split.length;
-        var domain = split[length - 2] + '.' + split[length - 1];
-        document.cookie =
-            Storage.storeKey +
-                '=' +
-                encodeURIComponent(value) +
-                expires +
-                '; path=/; domain=' +
-                domain +
-                '; SameSite=Lax;';
-    };
-    Storage.deleteCookie = function () {
-        var split = config.pageWindow.document.domain.split('.');
-        var length = split.length;
-        var domain = split[length - 2] + '.' + split[length - 1];
-        // Set cookie with past expiration date to delete it
-        document.cookie =
-            Storage.storeKey + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain + '; SameSite=Lax;';
-    };
-    Storage.readCookie = function () {
-        var split = config.pageWindow.document.cookie.split(';');
-        var regex = Storage.storeRegex;
-        for (var _i = 0, split_1 = split; _i < split_1.length; _i++) {
-            var c = split_1[_i];
-            if (regex.test(c)) {
-                return decodeURIComponent(c.substring(c.indexOf('=') + 1, c.length));
-            }
-        }
-        return '';
-    };
-    Storage.cookieExpireDays = 365;
-    Storage.storeKey = '__CG';
-    Storage.storeRegex = new RegExp('^(\\s)*' + Storage.storeKey + '=', 'i');
-    return Storage;
-}());
-/* harmony default export */ var main_Storage = (Storage);
-
-;// CONCATENATED MODULE: ./src/main/VisitorStorage.ts
-
-
-var VisitorStorage = /** @class */ (function () {
-    function VisitorStorage() {
-        this.userId = -1;
-        this.sessionId = 0;
-        this.sessionTime = 0;
-        this.pageViewCount = 0;
-        this.viewCount = 0;
-        this.pageViewId = 0;
-        this.postFlag = -1;
-        this.sendWaterfall = false;
-        this.exitToEntry = 0;
+    if (errorMessage.includes('connection closed')) {
+        return AvailableRealUserWebNetworkError.TcpClosed;
     }
-    VisitorStorage.prototype.resetViewCount = function () {
-        this.viewCount = 1;
-    };
-    VisitorStorage.prototype.save = function () {
-        var text = this.getText();
-        main_Storage.save(text);
-    };
-    VisitorStorage.prototype.load = function () {
-        var storeValue = main_Storage.read();
-        if (!storeValue) {
-            return false;
-        }
-        var split = storeValue.split(',');
-        for (var _i = 0, split_1 = split; _i < split_1.length; _i++) {
-            var visitorVal = split_1[_i];
-            var array = visitorVal.split(':');
-            if (array.length !== 2) {
-                continue;
-            }
-            var key = array[0];
-            if (typeof key === 'string') {
-                key = key.trim();
-            }
-            var value = array[1];
-            if (key === CookieIdentifier.UrlCheckSum) {
-                this.urlCheckSum = value;
-                continue;
-            }
-            var num = parseInt(array[1], 10);
-            if (isNaN(num)) {
-                continue;
-            }
-            switch (key) {
-                case CookieIdentifier.UserId:
-                    this.userId = num;
-                    break;
-                case CookieIdentifier.SessionId:
-                    this.sessionId = num;
-                    break;
-                case CookieIdentifier.SessionTime:
-                    this.sessionTime = num;
-                    break;
-                case CookieIdentifier.PageViewCount:
-                    this.pageViewCount = num;
-                    break;
-                case CookieIdentifier.PostFlag:
-                    this.postFlag = num;
-                    break;
-            }
-        }
-        return true;
-    };
-    VisitorStorage.prototype.getText = function () {
-        var text = CookieIdentifier.UserId + ':' + this.userId + ',';
-        text += CookieIdentifier.SessionId + ':' + this.sessionId + ',';
-        text += CookieIdentifier.SessionTime + ':' + this.sessionTime + ',';
-        text += CookieIdentifier.PageViewCount + ':' + this.pageViewCount + ',';
-        text += CookieIdentifier.UrlCheckSum + ':' + this.urlCheckSum + ',';
-        text += CookieIdentifier.PostFlag + ':' + this.postFlag;
-        return text;
-    };
-    return VisitorStorage;
-}());
-/* harmony default export */ var main_VisitorStorage = (VisitorStorage);
-
-;// CONCATENATED MODULE: ./src/main/Visitor.ts
-
-
-var Visitor = /** @class */ (function () {
-    function Visitor() {
-        this.sessionExpire = 30 * 60 * 1000;
-        this.store = new main_VisitorStorage();
+    if (errorMessage.includes('connection timeout')) {
+        return AvailableRealUserWebNetworkError.TcpTimedOut;
     }
-    Visitor.prototype.updateSessionTime = function () {
-        if (!this.store) {
-            return;
-        }
-        var time = new Date().getTime();
-        if (time - this.store.sessionTime > this.sessionExpire) {
-            this.store.sessionId = 0;
-        }
-        this.store.sessionTime = time;
-        this.updateStore();
-    };
-    Visitor.prototype.updatePageViewId = function () {
-        if (!this.store) {
-            return;
-        }
-        this.store.pageViewId = this.generatePageViewID();
-    };
-    // Generate a new page view ID
-    Visitor.prototype.generatePageViewID = function () {
-        if (!this.store) {
-            return;
-        }
-        return Math.floor(1 + Math.random() * ((Math.pow(2, 16) - 2) / 2));
-    };
-    Visitor.prototype.updateStore = function () {
-        if (!this.store) {
-            return;
-        }
-        this.store.save();
-    };
-    Visitor.prototype.initStore = function () {
-        var hasStoredValue = this.store.load();
-        if (!hasStoredValue) {
-            return;
-        }
-    };
-    Visitor.prototype.checkAndResetPostFlags = function () {
-        this.store.postFlag = 0;
-        if (config.config.sampleRate < 0) {
-            this.store.postFlag = -1;
-            return;
-        }
-        var rate = this.getUserId(config.config.sampleRate / 100);
-        if (this.store.userId <= rate) {
-            this.store.postFlag = 1;
-            var waterfallRate = rate / (100 / config.config.waterfallSampleRate);
-            this.store.sendWaterfall = this.store.userId <= waterfallRate;
-        }
-    };
-    Visitor.prototype.getReferrer = function (url) {
-        var host = this.getHostName(url).replace(':', '-');
-        var index = url.indexOf('?');
-        var n = 0;
-        for (var i = host.length; i < url.length; i++) {
-            n += url.charCodeAt(i) % i;
-        }
-        return host + '/' + (index < 0 ? url.length : index) + '/' + url.length + '/' + n;
-    };
-    Visitor.prototype.getHostName = function (url) {
-        var start = url.indexOf('//') + 2;
-        var end = url.indexOf('/', start);
-        if (start < 2 && end == -1) {
-            return url;
-        }
-        if (end == -1) {
-            end = url.length;
-        }
-        return url.substring(start, end);
-    };
-    Visitor.prototype.init = function () {
-        var start = config.profiler.data.start;
-        this.initStore();
-        if (this.store.userId == -1 || this.store.userId == config.testUserId) {
-            this.store.userId = this.getUserId();
-        }
-        this.checkAndResetPostFlags();
-        if (this.store.sessionId == 0 || start - this.store.sessionTime > this.sessionExpire) {
-            this.store.sessionId = Math.floor(1 + Math.random() * ((Math.pow(2, 32) - 2) / 2));
-            this.store.pageViewCount = 1;
-        }
-        else {
-            if (this.store.pageViewCount < 65535) {
-                this.store.pageViewCount++;
-            }
-            if (this.getReferrer(config.pageWindow.document.referrer) == this.store.urlCheckSum &&
-                this.store.sessionTime > 0) {
-                this.store.exitToEntry = start - this.store.sessionTime;
-            }
-        }
-        this.store.sessionTime = new Date().getTime();
-        this.store.pageViewId = this.generatePageViewID();
-        this.store.urlCheckSum = this.getReferrer(config.pageWindow.location.href);
-        this.store.resetViewCount();
-        this.updateStore();
-        // If consent is granted then only load visitor data from storage.
-        if (config.isConsentV2Granted()) {
-            var hasVisitorData = this.store.load();
-            return hasVisitorData;
-        }
-        return true;
-    };
-    //This method is used for 2 purpose
-    // 1. When the userId is -1 (no id assigned for user), user id is created randomly. So method is called without a param
-    // 2. A seed is used when we sample the user and sample rate is passed as param in that case.
-    // This logic for sampling is happening in Core as well. Any changes in this method should be approved by Core as well.
-    Visitor.prototype.getUserId = function (seed) {
-        if (seed === void 0) { seed = Math.random(); }
-        var userId = Math.floor(1 + seed * ((Math.pow(2, 64) - 2) / 2));
-        return userId;
-    };
-    Visitor.prototype.shouldPost = function () {
-        return this.store.postFlag == 1;
-    };
-    return Visitor;
-}());
-/* harmony default export */ var main_Visitor = (Visitor);
-
-;// CONCATENATED MODULE: ./src/main/PerformanceObserver.ts
-
-
-var PerformanceObserver_PerformanceObserver = /** @class */ (function () {
-    function PerformanceObserver(isSoftnav) {
-        var _this = this;
-        this.longTaskEndTime = 0;
-        this.waitTime = 5000;
-        this.performanceObserverApi = config.pageWindow['PerformanceObserver'];
-        this.performanceLongTaskTiming = config.pageWindow['PerformanceLongTaskTiming'];
-        this.nowTime = 0;
-        this.isSoftnav = false;
-        this.getDomContentLoad = function () {
-            var timing = main_Util.getNavigationTime();
-            if (timing) {
-                var navStart = main_Util.getNavigationStart(timing);
-                var domContentLoad = main_Util.getMetricValue(timing.domContentLoadedEventEnd, navStart);
-                return domContentLoad;
-            }
-        };
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        this.observeLongTask = function (entries) {
-            for (var i = 0; i < entries.length; i++) {
-                var currEntry = entries[i];
-                var startTime = _this.isSoftnav ? currEntry.startTime - _this.nowTime : currEntry.startTime;
-                var idleTimeBetweenLongTasks = startTime - _this.longTaskEndTime;
-                if (idleTimeBetweenLongTasks >= _this.waitTime) {
-                    _this.performanceObserver.disconnect();
-                }
-                else {
-                    _this.setLongTaskTime(currEntry);
-                }
-            }
-        };
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        this.setLongTaskTime = function (entry) {
-            var newLongTaskTime = Math.round(entry.startTime + entry.duration);
-            _this.longTaskEndTime = newLongTaskTime;
-        };
-        this.getLongTaskTime = function () {
-            return _this.longTaskEndTime;
-        };
-        if (this.performanceLongTaskTiming) {
-            // setting default TTI as domContentLoad on Load (not soft navigation).
-            this.isSoftnav = isSoftnav;
-            this.nowTime = config.pageWindow.performance.now();
-            var domContentLoad = this.getDomContentLoad();
-            if (!isSoftnav) {
-                this.longTaskEndTime = domContentLoad;
-            }
-            this.observe(['longtask'], this.observeLongTask);
-        }
+    if (errorMessage.includes('connection aborted')) {
+        return AvailableRealUserWebNetworkError.TcpAborted;
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    PerformanceObserver.prototype.observe = function (entryTypes, callBack) {
-        if (this.performanceObserverApi) {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            this.performanceObserver = new this.performanceObserverApi(function (list, _obj) {
-                var entries = list.getEntries();
-                callBack(entries);
-            });
-            this.performanceObserver.observe({ entryTypes: entryTypes });
-        }
-    };
-    return PerformanceObserver;
-}());
-/* harmony default export */ var main_PerformanceObserver = (PerformanceObserver_PerformanceObserver);
-
-;// CONCATENATED MODULE: ./src/main/DataProvider.ts
-
-
-
-
-
-
-var performanceObserver = new main_PerformanceObserver(false);
-var DataProvider = /** @class */ (function () {
-    function DataProvider() {
-        var _this = this;
-        this.visitor = new main_Visitor();
-        this.postUrl = config.config.postUrl;
-        this.didSendInitial = false;
-        this.isDebugging = false;
-        this.countResourcesSent = 0;
-        this.didSoftNavigation = false;
-        this.currentUrl = '';
-        this.softNavigationStart = 0;
-        // limit to protect us from processing very large numbers of performance marks that the client
-        // may have added to their page.
-        this.MaxNumberOfPerformanceMarks = 1000;
-        this.updatePerformanceMetrics = function (postObj) {
-            var timing = main_Util.getNavigationTime();
-            if (!timing) {
-                return;
-            }
-            var navigationtiming = timing;
-            var navStart = main_Util.getNavigationStart(timing);
-            var domLoading = navigationtiming.loadEventEnd;
-            var allowOrigin = timing.responseStart;
-            postObj.dns = allowOrigin ? timing.domainLookupEnd - timing.domainLookupStart : null;
-            postObj.fullConnect = allowOrigin ? timing.connectEnd - timing.connectStart : null;
-            postObj.wait = allowOrigin ? timing.responseStart - timing.requestStart : null;
-            postObj.load = allowOrigin ? timing.responseEnd - timing.responseStart : null;
-            postObj.domInteractive = main_Util.getMetricValue(timing.domInteractive, navStart);
-            postObj.domLoaded = main_Util.getMetricValue(timing.domContentLoadedEventStart, navStart);
-            postObj.docComplete = main_Util.getMetricValue(timing.domComplete, navStart);
-            postObj.response = main_Util.getMetricValue(timing.responseEnd, navStart);
-            postObj.contentLoad = main_Util.getMetricValue(timing.loadEventStart, domLoading);
-            postObj.redirect = timing.redirectEnd - timing.redirectStart;
-            if (timing['secureConnectionStart']) {
-                postObj.secureConnect = timing.connectEnd - timing['secureConnectionStart'];
-            }
-        };
-        this.updateResources = function (ev, postObj) {
-            if (config.hasPerformanceApi) {
-                var arr = [];
-                if (config.hasGetEntriesApi) {
-                    arr = config.pageWindow.performance.getEntriesByType('resource');
-                }
-                if (ev != PostType.OnLoad) {
-                    _this.setClearResources();
-                    if (config.config.clearResources && config.pageWindow.performance.clearResourceTimings) {
-                        postObj.resources = arr;
-                        postObj.rqc = arr.length;
-                        config.pageWindow.performance.clearResourceTimings();
-                    }
-                    else {
-                        postObj.resources = arr.slice(_this.countResourcesSent);
-                        _this.countResourcesSent = arr.length;
-                    }
-                }
-            }
-        };
-        this.getTimeOnPage = function (isSoftNavigation) {
-            var focusAwayTime = _this.getFocusAwayTime();
-            var navigationStart = _this.getNavigationStart(isSoftNavigation);
-            var timeOnPage = config.now() - navigationStart - focusAwayTime;
-            return timeOnPage;
-        };
-        this.getVisuallyComplete = function (isSoftNavigation) {
-            if (config.pageWindow['CPVisuallyComplete']) {
-                var val = config.pageWindow['CPVisuallyComplete'].getValue(isSoftNavigation);
-                if (typeof val == 'number' && val >= 0) {
-                    return val;
-                }
-            }
-        };
-        this.updateEngagementMetrics = function (postObj, isSoftNavigation) {
-            if (config.hasGetEntriesApi) {
-                var paintTimings = config.pageWindow.performance.getEntriesByType('paint');
-                if (paintTimings && paintTimings.length > 0) {
-                    postObj.firstPaint = _this.getPaintTimings(paintTimings, 'first-paint');
-                    // Commenting this as we are getting the FCP from core web vitals package.
-                    // postObj.firstContentPaint = this.getPaintTimings(paintTimings, 'first-contentful-paint');
-                }
-            }
-            if (config.profiler.getEventTimingHandler) {
-                postObj.engagementTime = config.profiler.getEventTimingHandler().getEngagementTime();
-                postObj.timeOnPage = _this.getTimeOnPage(isSoftNavigation);
-                postObj.firstEngagementTime = _this.getFirstEngagementTime(isSoftNavigation);
-            }
-        };
-        this.getFirstEngagementTime = function (isSoftNavigation) {
-            var navigationStart = _this.getNavigationStart(isSoftNavigation);
-            var engagementStartTime = config.profiler.getEventTimingHandler().getFirstEngagementTime();
-            if (engagementStartTime && navigationStart) {
-                var firstEngagementTime = engagementStartTime - navigationStart;
-                return firstEngagementTime;
-            }
-            return 0;
-        };
-        this.getNavigationStart = function (isSoftNavigation) {
-            var navigationStart = config.profiler.getEventTimingHandler &&
-                typeof config.profiler.getEventTimingHandler === 'function' &&
-                config.profiler.getEventTimingHandler().getStartTime &&
-                typeof config.profiler.getEventTimingHandler().getStartTime === 'function'
-                ? config.profiler.getEventTimingHandler().getStartTime()
-                : 0;
-            return isSoftNavigation ? _this.softNavigationStart : navigationStart;
-        };
-        this.getElapsedTimeSinceLatestNavStart = function () {
-            var navStart = config.profiler.data.start;
-            if (_this.didSoftNavigation && navStart) {
-                return _this.softNavigationStart - navStart;
-            }
-            else {
-                return 0;
-            }
-        };
-        this.getFocusAwayTime = function () {
-            return config.profiler.getEventTimingHandler().getFocusAwayTime() || 0;
-        };
-        this.updateDebugData = function () {
-            var postObj = _this.createInitPostObject(PostType.OnBeforeUnload, false);
-            var sendWaterfall = _this.visitor.store.sendWaterfall || !!main_Util.getQueryStringValue(config.config.waterfallParameter);
-            var dataStr = postObj.toString(PostType.OnLoad, sendWaterfall);
-            config.profiler['debugData'] = postObj;
-            config.profiler['unloadDebugData'] = dataStr;
-        };
-        this.onPageLoad = function () {
-            if (_this.isDebugging) {
-                config.profiler['debugData'] = _this.createInitPostObject(PostType.OnLoad, false);
-                config.profiler['updateDebugData'] = _this.updateDebugData;
-                config.profiler['sendData'] = function () {
-                    _this.doPost(PostType.OnBeforeUnload, false);
-                };
-                main_Util.stopEvents();
-                return;
-            }
-            _this.visitor.updateSessionTime();
-            _this.doPost(PostType.OnLoad, false);
-        };
-        this.captureSoftNavigations = function () {
-            config.profiler.eventManager.add('hashchange', config.pageWindow, _this.onSoftNavigation);
-            config.profiler.eventManager.add('hashchange', config.pageWindow, _this.onAfterSoftNavigation);
-            var history = config.pageWindow.history;
-            if (!history) {
-                return;
-            }
-            var functionStr = 'function';
-            if (typeof history.go === functionStr) {
-                var origGo_1 = history.go;
-                history.go = function (delta) {
-                    _this.onSoftNavigation();
-                    origGo_1.call(history, delta);
-                    _this.onAfterSoftNavigation();
-                };
-            }
-            if (typeof history.back === functionStr) {
-                var origBack_1 = history.back;
-                history.back = function () {
-                    _this.onSoftNavigation();
-                    origBack_1.call(history);
-                    _this.onAfterSoftNavigation();
-                };
-            }
-            if (typeof history.forward === functionStr) {
-                var origForward_1 = history.forward;
-                history.forward = function () {
-                    _this.onSoftNavigation();
-                    origForward_1.call(history);
-                    _this.onAfterSoftNavigation();
-                };
-            }
-            if (typeof history.pushState === functionStr) {
-                var origPush_1 = history.pushState;
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                history.pushState = function (data, title, url) {
-                    _this.onSoftNavigation();
-                    origPush_1.call(history, data, title, url);
-                    _this.onAfterSoftNavigation();
-                };
-            }
-            if (typeof history.replaceState === functionStr) {
-                var origReplace_1 = history.replaceState;
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                history.replaceState = function (data, title, url) {
-                    _this.onSoftNavigation();
-                    origReplace_1.call(history, data, title, url);
-                    _this.onAfterSoftNavigation();
-                };
-            }
-        };
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        this.onViewVisuallyComplete = function (_val) {
-            if (_this.didSoftNavigation) {
-                _this.doPost(PostType.OnLoad, true);
-            }
-        };
-        this.onSoftNavigation = function () {
-            // do not consider softnavigation when load is not fired yet .....
-            if (!config.profiler.data.loadFired) {
-                return;
-            }
-            var vc;
-            if (performanceObserver) {
-                performanceObserver = new main_PerformanceObserver(true);
-            }
-            if (config.pageWindow['CPVisuallyComplete']) {
-                vc = config.pageWindow['CPVisuallyComplete'];
-                vc.onComplete(_this.onViewVisuallyComplete);
-            }
-            _this.doPost(PostType.OnBeforeUnload, _this.didSoftNavigation);
-            _this.visitor.store.viewCount++;
-            if (vc) {
-                config.pageWindow.setTimeout(function () {
-                    vc.reset();
-                }, 0);
-            }
-            //Capture navigation start for each soft navigation
-            config.pageWindow.setTimeout(function () {
-                _this.softNavigationStart = config.now();
-                if (config.profiler.getEventTimingHandler) {
-                    var handler = config.profiler.getEventTimingHandler();
-                    handler.startSoftNavigationCapture();
-                    handler.resetSoftNavigationCapture();
-                }
-            }, 0);
-            _this.didSoftNavigation = true;
-            config.profiler.excludeLastMileBenchMarks = false; // before the soft navigation resetting the benchmark to false.
-        };
-        this.onAfterSoftNavigation = function () {
-            _this.runBenchmarkForSoftNavigation();
-        };
-        this.runBenchmarkForSoftNavigation = function () {
-            var _a, _b, _c, _d, _e;
-            var hasLastMileScript = document.getElementById('lastMileScriptiframe');
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            var canAddLastMileScript = (_b = (_a = window === null || window === void 0 ? void 0 : window.RProfiler) === null || _a === void 0 ? void 0 : _a.checkLastMileScriptPermissions) === null || _b === void 0 ? void 0 : _b.call(_a);
-            if (canAddLastMileScript) {
-                if (hasLastMileScript) {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    (_c = window === null || window === void 0 ? void 0 : window.lastMileInitScript) === null || _c === void 0 ? void 0 : _c.call(window);
-                }
-                else {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    (_e = (_d = window === null || window === void 0 ? void 0 : window.RProfiler) === null || _d === void 0 ? void 0 : _d.addLastMileScript) === null || _e === void 0 ? void 0 : _e.call(_d);
-                }
-            }
-        };
-        this.doPost = function (type, isSoftNavigation) {
-            if (!_this.visitor.shouldPost()) {
-                return;
-            }
-            if (type == PostType.OnBeforeUnload && !config.profiler.data.loadFired) {
-                type = PostType.OnAbort;
-            }
-            var postObj;
-            if (_this.didSendInitial) {
-                postObj = _this.createDiffPostObject(type, isSoftNavigation);
-            }
-            else {
-                postObj = _this.createInitPostObject(type, isSoftNavigation);
-                _this.didSendInitial = true;
-            }
-            var canSendWaterfall = _this.visitor.store.sendWaterfall || !!main_Util.getQueryStringValue(config.config.waterfallParameter);
-            var isWaterfallPost = type == PostType.OnBeforeUnload || type == PostType.OnAbort;
-            var sendWaterfall = canSendWaterfall && isWaterfallPost;
-            _this.makeRequest(type, postObj, sendWaterfall);
-        };
-        if (!config.profiler || !config.profiler.data) {
-            return;
-        }
-        var didInitVisitor = this.visitor.init();
-        this.isDebugging = !!main_Util.getQueryStringValue(config.config.debugParameter);
-        if (!this.isDebugging && !didInitVisitor) {
-            main_Util.stopEvents();
-            return;
-        }
-        this.captureSoftNavigations();
-        // page load event capture
-        var didLoadPost = false;
-        var loadPost = function () {
-            if (didLoadPost) {
-                return;
-            }
-            config.profiler.data.loadFired = true;
-            didLoadPost = true;
-            _this.onPageLoad();
-        };
-        if (!config.profiler.data.loadFired && !!config.pageWindow.document) {
-            config.profiler.data.loadFired = config.pageWindow.document.readyState === 'complete';
-        }
-        if (config.profiler.data.loadFired) {
-            loadPost();
-        }
-        else {
-            config.profiler.eventManager.add(config.windowEventDef.Load, window, loadPost);
-        }
-        // need on both "beforeunload" and "unload" for cross-browser compatibility
-        var didUnloadPost = false;
-        var unloadPost = function () {
-            if (didUnloadPost) {
-                return;
-            }
-            didUnloadPost = true;
-            _this.doPost(PostType.OnBeforeUnload, false);
-        };
-        // use pagehide event if flag is set true.
-        if (config.config.usePageHideEvent) {
-            config.profiler.eventManager.add(config.windowEventDef.PageHide, config.pageWindow, unloadPost);
-        }
-        else {
-            // use beforeunload event, if flag is false.
-            config.profiler.eventManager.add(config.windowEventDef.BeforeUnload, config.pageWindow, unloadPost);
-            config.profiler.eventManager.add(config.windowEventDef.Unload, config.pageWindow, unloadPost);
-        }
+    // Protocol errors
+    if (errorMessage.includes('protocol') ||
+        errorMessage.includes('net::err_invalid_response') ||
+        errorMessage.includes('net::err_response_headers') ||
+        errorMessage.includes('invalid http response')) {
+        return AvailableRealUserWebNetworkError.HttpProtocolError;
     }
-    DataProvider.prototype.getVisitor = function () {
-        return this.visitor;
-    };
-    DataProvider.prototype.createInitPostObject = function (ev, isSoftNavigation) {
-        var postObj = this.createBasePostObj(ev, true, isSoftNavigation);
-        this.updatePerformanceMetrics(postObj);
-        var info = this.visitor.store;
-        if (info.exitToEntry > 0) {
-            postObj.exitToEntry = info.exitToEntry;
+    // HTTP/2 specific errors
+    if (errorMessage.includes('h2') || errorMessage.includes('http/2')) {
+        if (errorMessage.includes('ping')) {
+            return AvailableRealUserWebNetworkError.H2PingFailed;
         }
-        var entryToLoad = config.profiler.data.loadTime - config.profiler.data.start;
-        if (entryToLoad > 0) {
-            postObj.entryToOnLoad = entryToLoad;
+        return AvailableRealUserWebNetworkError.H2ProtocolError;
+    }
+    // HTTP/3 specific errors
+    if (errorMessage.includes('h3') || errorMessage.includes('http/3') || errorMessage.includes('quic')) {
+        return AvailableRealUserWebNetworkError.H3ProtocolError;
+    }
+    // Content length/encoding errors
+    if (errorMessage.includes('content-length')) {
+        return AvailableRealUserWebNetworkError.HttpResponseInvalidContentLengthMismatch;
+    }
+    if (errorMessage.includes('chunked encoding')) {
+        if (errorMessage.includes('incomplete')) {
+            return AvailableRealUserWebNetworkError.HttpResponseInvalidIncompleteChunkedEncoding;
         }
-        if (document['webkitVisibilityState'] === 'prerender') {
-            postObj.prerender = 1;
-        }
-        if (config.hasPerformanceApi) {
-            var arr = void 0;
-            if (config.hasGetEntriesApi) {
-                // This is less than optimal but that's down to the API we're working with:
-                // https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByType .
-                // We have to tell the TS compiler that we "know" the returned objects are in
-                // fact PerformanceResourceTiming's.
-                arr = config.pageWindow.performance.getEntriesByType('resource');
-                postObj.resources = arr;
-            }
-            if (ev != PostType.OnLoad) {
-                this.setClearResources();
-                if (config.config.clearResources && config.pageWindow.performance.clearResourceTimings) {
-                    config.pageWindow.performance.clearResourceTimings();
-                }
-                else {
-                    this.countResourcesSent = arr.length;
-                }
-            }
-        }
-        return postObj;
-    };
-    DataProvider.prototype.createDiffPostObject = function (ev, isSoftNavigation) {
-        var _a, _b, _c, _d;
-        var postObj = this.createBasePostObj(ev, false, isSoftNavigation);
-        this.updateResources(ev, postObj);
-        this.updateEngagementMetrics(postObj, isSoftNavigation);
-        this.addPerformanceMarksToPostData(config.pageWindow.performance, postObj);
-        var visComplete = this.getVisuallyComplete(isSoftNavigation);
-        if (visComplete) {
-            postObj.visComplete = visComplete;
-        }
-        if ((_a = config === null || config === void 0 ? void 0 : config.profiler) === null || _a === void 0 ? void 0 : _a.getCPWebVitals) {
-            var cpWebVitals = config.profiler.getCPWebVitals();
-            if (cpWebVitals.cls) {
-                postObj.cls = cpWebVitals.cls;
-            }
-            if (cpWebVitals.lcp) {
-                postObj.lcp = cpWebVitals.lcp;
-            }
-            if (cpWebVitals.inp) {
-                postObj.inp = cpWebVitals.inp;
-            }
-            if (cpWebVitals.inpDe && cpWebVitals.inpDe.length > 0) {
-                postObj.inpDe = cpWebVitals.inpDe;
-            }
-            if (cpWebVitals.fcp) {
-                postObj.firstContentPaint = cpWebVitals.fcp;
-            }
-            // Checking fp is greater than fcp. If fp is greater than fcp, then assigning the fcp to fp.
-            if (postObj.firstPaint > postObj.firstContentPaint || postObj.firstContentPaint === undefined) {
-                postObj.firstPaint = postObj.firstContentPaint;
-            }
-            // Checking lcp is less than fcp. If lcp is lessthan fcp, then assigning the fcp to lcp.
-            if (postObj.lcp < postObj.firstContentPaint) {
-                postObj.lcp = postObj.firstContentPaint;
-            }
-        }
-        if (((_c = (_b = config === null || config === void 0 ? void 0 : config.profiler) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.jsCount) > 0) {
-            postObj.jsErrorCount = config.profiler.data.jsCount;
-            postObj.jsErrors = config.profiler.data.jsErrors;
-            config.profiler.clearErrors();
-        }
-        if ((_d = config === null || config === void 0 ? void 0 : config.profiler) === null || _d === void 0 ? void 0 : _d.getAjaxRequests) {
-            var ajaxRequests = config.profiler.getAjaxRequests();
-            if (ajaxRequests) {
-                postObj.ajaxRequests = ajaxRequests.slice();
-                config.profiler.clearAjaxRequests();
-            }
-        }
-        if (config === null || config === void 0 ? void 0 : config.profiler.getFrustrationMetrics) {
-            var cpFrustrationMetrics = config.profiler.getFrustrationMetrics();
-            if (cpFrustrationMetrics) {
-                postObj.frc = cpFrustrationMetrics.frc;
-                postObj.fec = cpFrustrationMetrics.fec;
-                postObj.fdc = cpFrustrationMetrics.fdc;
-                postObj.ftc = cpFrustrationMetrics.ftc;
-            }
-        }
-        return postObj;
-    };
-    DataProvider.prototype.createBasePostObj = function (ev, isNewPageView, isSoftNavigation) {
-        var postObj = new main_PostData();
-        postObj.postType = ev;
-        postObj.isNewPageView = isNewPageView;
-        postObj.siteId = config.config.siteId;
-        // We need to decode first because if the url is already encoded, it is getting double encoded
-        // Eg: if url is google.com/test%20me then encodeURI is converting to google.com/test%2520me
-        postObj.referrer = encodeURI(decodeURI(config.pageWindow.location.href));
-        postObj.sampleRate = config.config.sampleRate;
-        postObj.waterfallSampleRate = config.config.waterfallSampleRate;
-        var info = this.visitor.store;
-        postObj.userId = info.userId;
-        postObj.sessionId = info.sessionId;
-        postObj.pageViewId = info.pageViewId;
-        postObj.pageViewCount = info.pageViewCount;
-        postObj.viewCount = info.viewCount;
-        postObj.screenHeight = screen.height;
-        postObj.screenWidth = screen.width;
-        this.currentUrl = postObj.referrer;
-        if (ev === PostType.OnBeforeUnload || ev === PostType.OnAbort) {
-            postObj.referrer = this.currentUrl || encodeURI(decodeURI(config.pageWindow.location.href));
-        }
-        else {
-            postObj.referrer = encodeURI(decodeURI(config.pageWindow.location.href));
-        }
-        var consentDenied = !config.isConsentV2Granted();
-        if (isSoftNavigation) {
-            postObj.isNewView = ev == PostType.OnLoad;
-            // create new pageViewId for new view, if consent is denied for softnavigation.
-            if (postObj.isNewView === true && consentDenied) {
-                this.visitor.updatePageViewId();
-                postObj.pageViewId = info.pageViewId;
-            }
-        }
-        // Commeting this as there is some issue in core. For now we go with unique values for sessionId and pageViewId
-        // if consent is denied for MPA, then update the sessionId and pageViewId same as userId
-        // if (!isSoftNavigation && consentDenied) {
-        //     postObj.sessionId = postObj.userId;
-        //     postObj.pageViewId = postObj.userId;
-        // }
-        if (config.profiler.hasInsight) {
-            this.addInsightForPost(postObj);
-            config.profiler.clearInfo();
-        }
-        return postObj;
-    };
-    /**
-     * Iterate (if any) the "mark"'s (see https://www.w3.org/TR/user-timing/#extensions-performance-interface)
-     * that have been added to the page's Performance object. For each one, check if its one of the four standard
-     * ones that we capture. If it is, add it to the matching property in PostData. If there has been a soft
-     * navigation only capture marks that were set after it occurred.
-     * @param performance the w3.org Performance API object.
-     * @param postObj the DTO Post object we use to populate our POST to the Logger.
-     * @param isSoftNavigation true if this method is being invoked as part of a soft nav, false otherwise.
-     */
-    DataProvider.prototype.addPerformanceMarksToPostData = function (performance, postObj) {
-        if (config.hasPerformanceApi && performance.getEntriesByType) {
-            var marks = performance.getEntriesByType('mark');
-            if (marks && marks.length > 0 && marks.length < this.MaxNumberOfPerformanceMarks) {
-                var elapsedNavStartTime_1 = this.getElapsedTimeSinceLatestNavStart();
-                var validMarks = marks.filter(function (x) {
-                    return x.startTime != null && x.startTime >= elapsedNavStartTime_1;
-                });
-                for (var _i = 0, validMarks_1 = validMarks; _i < validMarks_1.length; _i++) {
-                    var mark = validMarks_1[_i];
-                    this.addMarkToPostData(mark, postObj);
-                }
-            }
-        }
-    };
-    /**
-     * Given a performance mark (see https://www.w3.org/TR/user-timing/#extensions-performance-interface),
-     * see if it's a standard one that we're interested in. If it is, set the matching PostData property.
-     * @param mark the performance mark set on the clients' page that we're interrogating
-     * @param postObj the DTO object into which we put the mark value
-     */
-    DataProvider.prototype.addMarkToPostData = function (mark, postObj) {
-        var markTime = main_Util.getRoundedValue(mark.startTime + mark.duration);
-        switch (mark.name) {
-            case 'mark_fully_loaded':
-                postObj.markFullyLoaded = markTime;
-                break;
-            case 'mark_fully_visible':
-                postObj.markFullyVisible = markTime;
-                break;
-            case 'mark_above_the_fold':
-                postObj.markAboveTheFold = markTime;
-                break;
-            case 'mark_time_to_user_action':
-                postObj.markTimeToUserAction = markTime;
-                break;
-            default:
-                break; // arriving here means it's a nonstandard mark that we don't care about
-        }
-    };
-    DataProvider.prototype.getPaintTimings = function (paintTimings, type) {
-        var paintType = paintTimings.filter(function (x) { return x.name === type; });
-        if (paintType && paintType.length > 0 && paintType[0].startTime) {
-            return paintType[0].startTime;
-        }
-    };
-    DataProvider.prototype.setClearResources = function () {
-        if (config.pageWindow['__cpPreventResourceClear']) {
-            config.config.clearResources = config.pageWindow['__cpPreventResourceClear'] === false;
-        }
-    };
-    DataProvider.prototype.addInsightForPost = function (postObj) {
-        var insight = config.profiler.info;
-        for (var name_1 in insight) {
-            switch (name_1) {
-                case 'appError': {
-                    var n = insight[name_1];
-                    if (n && typeof n == 'object') {
-                        var num = void 0;
-                        for (var key in n) {
-                            num = Number(key);
-                            if (isNaN(num)) {
-                                continue;
-                            }
-                            var tmp = n[key];
-                            if (tmp && typeof tmp == 'string') {
-                                var str = tmp;
-                                if (str.length > 32) {
-                                    str = str.substring(0, 32);
-                                }
-                                postObj.addError(key, str);
-                            }
-                        }
-                    }
-                    break;
-                }
-                case 'conversion': {
-                    var n = insight[name_1];
-                    postObj.isConversion = true;
-                    if (n) {
-                        if (typeof n == 'object') {
-                            var num = void 0;
-                            for (var key in n) {
-                                num = Number(key);
-                                if (isNaN(num)) {
-                                    continue;
-                                }
-                                var tmp = n[key];
-                                if (tmp && typeof tmp == 'number') {
-                                    postObj.revenue = num;
-                                    postObj.revenueItems = tmp;
-                                }
-                            }
-                        }
-                    }
-                    break;
-                }
-                case 'indicator': {
-                    var ind = this.buildInsight(insight[name_1], 0);
-                    if (ind[0]) {
-                        postObj.addIndicator(ind[1]);
-                    }
-                    break;
-                }
-                case 'tracepoint': {
-                    var tra = this.buildInsight(insight[name_1], '');
-                    if (tra[0]) {
-                        postObj.addTracepoint(tra[1]);
-                    }
-                    break;
-                }
-                case 'pageGroup': {
-                    var n = insight[name_1];
-                    if (n !== undefined && typeof n == 'string') {
-                        postObj.pageGroup = n;
-                    }
-                    break;
-                }
-                case 'variation': {
-                    var n = insight[name_1];
-                    if (n !== undefined && typeof n == 'string') {
-                        postObj.variation = n;
-                    }
-                    break;
-                }
-            }
-        }
-    };
-    DataProvider.prototype.buildInsight = function (insight, expected) {
-        var obj = {};
-        var ret = false;
-        if (insight && typeof insight == 'object') {
-            for (var key in insight) {
-                if (key) {
-                    var n = insight[key];
-                    if (n != null && typeof n == typeof expected) {
-                        obj[key] = n;
-                        ret = true;
-                    }
-                }
-            }
-        }
-        if (!ret) {
-            return [ret, obj];
-        }
-        return [ret, obj];
-    };
-    DataProvider.prototype.makeRequest = function (type, postObj, sendWaterfall) {
-        var dataStr = postObj.toString(type, sendWaterfall);
-        // if consent is not required or different type dont add.
-        var urlWithQueryParam = this.postUrl;
-        // add query param for consent, If granted add a_s=1
-        if (config.config.consentv2 === ConsentV2Type.Granted) {
-            var params = new URLSearchParams({
-                a_s: '1'
-            });
-            urlWithQueryParam = "".concat(this.postUrl, "?").concat(params.toString());
-        }
-        // add query param for consent, If denied add a_s=0
-        if (config.config.consentv2 === ConsentV2Type.Denied) {
-            var params = new URLSearchParams({
-                a_s: '0'
-            });
-            urlWithQueryParam = "".concat(this.postUrl, "?").concat(params.toString());
-        }
-        if (config.pageWindow.navigator && typeof config.pageWindow.navigator['sendBeacon'] == 'function') {
-            try {
-                config.pageWindow.navigator['sendBeacon'](urlWithQueryParam, dataStr);
-            }
-            catch (error) {
-                console.error('Error sending RUM data:', error);
-            }
-        }
-        else {
-            var request_1 = new XMLHttpRequest();
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            if (window.XDomainRequest) {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                request_1 = new window.XDomainRequest();
-                //Set all the fields so that the request can be made succesfully
-                request_1.timeout = 0;
-                request_1.onload = function () {
-                    // do nothing
-                };
-                request_1.onerror = function () {
-                    // do nothing
-                };
-                request_1.ontimeout = function () {
-                    // do nothing
-                };
-                request_1.onprogress = function () {
-                    // do nothing
-                };
-            }
-            request_1.open('POST', urlWithQueryParam, false);
-            request_1.setRequestHeader
-                ? request_1.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
-                : null;
-            request_1.onreadystatechange = function () {
-                if (request_1.readyState === 4) {
-                    if (request_1.status >= 200 && request_1.status < 300) {
-                        console.log('JSP Request succeeded with status:', request_1.status);
-                    }
-                    else {
-                        console.error('JSP Request failed with status:', request_1.status);
-                        console.error('JSP Response text:', request_1.responseText);
-                    }
-                }
-            };
-            try {
-                request_1.send(dataStr);
-            }
-            catch (e) {
-                console.error('CP JSP Request failed to send:', e);
-            }
-            request_1 = null;
-        }
-    };
-    return DataProvider;
-}());
-/* harmony default export */ var main_DataProvider = (DataProvider);
+        return AvailableRealUserWebNetworkError.HttpResponseInvalidInvalidChunkedEncoding;
+    }
+    // Response validation errors
+    if (errorMessage.includes('empty response')) {
+        return AvailableRealUserWebNetworkError.HttpResponseInvalidEmpty;
+    }
+    if (errorMessage.includes('invalid response')) {
+        return AvailableRealUserWebNetworkError.HttpResponseInvalid;
+    }
+    // Redirect errors
+    if (errorMessage.includes('redirect') || errorMessage.includes('net::err_too_many_redirects')) {
+        return AvailableRealUserWebNetworkError.HttpResponseRedirectLoop;
+    }
+    // Range request errors
+    if (errorMessage.includes('range not satisfiable')) {
+        return AvailableRealUserWebNetworkError.HttpRequestRangeNotSatisfiable;
+    }
+    // Header errors
+    if (errorMessage.includes('headers truncated')) {
+        return AvailableRealUserWebNetworkError.HttpResponseHeadersTruncated;
+    }
+    // CORS errors (map to generic HTTP error since there's no specific CORS enum)
+    if (errorMessage.includes('cors') ||
+        errorMessage.includes('cross-origin') ||
+        errorMessage.includes('access-control-allow-origin')) {
+        return AvailableRealUserWebNetworkError.HttpError;
+    }
+    // File/read errors
+    if (errorMessage.includes('file not found')) {
+        return AvailableRealUserWebNetworkError.FileNotFound;
+    }
+    if (errorMessage.includes('file read')) {
+        return AvailableRealUserWebNetworkError.FileRead;
+    }
+    // Memory/resource errors
+    if (errorMessage.includes('out of memory')) {
+        return AvailableRealUserWebNetworkError.OutOfMemory;
+    }
+    // Operation timeout (different from HTTP timeout)
+    if (errorMessage.includes('operation timeout')) {
+        return AvailableRealUserWebNetworkError.OperationTimeout;
+    }
+    // Callback/abort errors
+    if (errorMessage.includes('callback') && errorMessage.includes('abort')) {
+        return AvailableRealUserWebNetworkError.CallbackAbort;
+    }
+    // Network send errors
+    if (errorMessage.includes('network send')) {
+        return AvailableRealUserWebNetworkError.NetworkSend;
+    }
+    // Content encoding errors
+    if (errorMessage.includes('content encoding') || errorMessage.includes('encoding')) {
+        return AvailableRealUserWebNetworkError.ContentEncoding;
+    }
+    // Default fallback for generic HTTP errors
+    return AvailableRealUserWebNetworkError.HttpError;
+};
 
-;// CONCATENATED MODULE: ./src/main/main.ts
+;// CONCATENATED MODULE: ./src/lastmile/LastMileApi.ts
+var LastMileApi_assign = (undefined && undefined.__assign) || function () {
+    LastMileApi_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return LastMileApi_assign.apply(this, arguments);
+};
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -2668,719 +744,680 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 };
 
 
-var mainScript = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var getAppDetails, appDetails, error_1, dataProvider;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                if (!document.getElementById || !(window['attachEvent'] || window.addEventListener)) {
-                    return [2 /*return*/];
-                }
-                if (!config.windowEvent || !config.profiler) {
-                    return [2 /*return*/];
-                }
-                if (!!config.pageWindow['__cpPostUrl']) {
-                    config.config.postUrl = config.pageWindow['__cpPostUrl'].trim();
-                }
-                if (!!config.pageWindow['__cpSendOnLoad']) {
-                    config.config.sendOnLoad = config.pageWindow['__cpSendOnLoad'] === true;
-                }
-                getAppDetails = function () { return __awaiter(void 0, void 0, void 0, function () {
-                    var response, data;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0: return [4 /*yield*/, fetch('https://localhost:44394/jp/91733/v4.0.11/s.AC')];
-                            case 1:
-                                response = _a.sent();
-                                return [4 /*yield*/, response.json()];
-                            case 2:
-                                data = _a.sent();
-                                return [2 /*return*/, data];
-                        }
-                    });
-                }); };
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, getAppDetails()];
-            case 2:
-                appDetails = _a.sent();
-                config.setAppConfig({
-                    sampleRate: appDetails.SampleRate,
-                    ajaxDomains: appDetails.AjaxDomains,
-                    waterfallSampleRate: appDetails.WaterfallSampleRate,
-                    useBenchmark: appDetails.UseBenchmark,
-                    benchMarkPageGroups: appDetails.BenchmarkPageGroups,
-                    sessionReplayEnabled: appDetails.SessionReplayEnabled
+
+
+
+
+
+// TODO: This would need to be dynamically generated based on environment (staging, qa, etc.)
+// same as how RUM does it. These should be log servers
+var configUrl = 'https://lst01a.3genlabs.net/hawklogserver/l.p';
+var resultsUrl = 'https://lst01a.3genlabs.net/hawklogserver/rl.p';
+var maxRetryAttempts = 3; // Maximum number of retry attempts for the test
+// Timeout constants for different test types - can be reset in Lasmile.dev.json
+var SINGLE_PACKET_TIMEOUT_MS = Number('3000');
+var KB100_TIMEOUT_MS = Number('3000');
+// TEMPORARY
+var siteTypeFlags = 2;
+var divisionId = 4291; // PROD
+var licenseKey = '65aeb00b09d2409199ef333d41e6264c'; // PROD
+var maxTestTime = 120000; // 2 minutes
+var timeoutStatusCode = 408; // HTTP timeout status code
+function getUTCTimestamp() {
+    var now = new Date();
+    var year = now.getUTCFullYear();
+    var month = String(now.getUTCMonth() + 1).padStart(2, '0');
+    var day = String(now.getUTCDate()).padStart(2, '0');
+    var hours = String(now.getUTCHours()).padStart(2, '0');
+    var minutes = String(now.getUTCMinutes()).padStart(2, '0');
+    var seconds = String(now.getUTCSeconds()).padStart(2, '0');
+    var milliseconds = String(now.getUTCMilliseconds()).padStart(3, '0');
+    var timestamp = "".concat(year).concat(month).concat(day).concat(hours).concat(minutes).concat(seconds).concat(milliseconds);
+    return timestamp;
+}
+function requestTest() {
+    return __awaiter(this, void 0, void 0, function () {
+        // Internal function
+        function getConfigData() {
+            var configRequest = new ConfigRequest();
+            configRequest.siteTypeFlags = siteTypeFlags; // TODO: Input from portal (2 is scheduled tests)
+            configRequest.divisionId = divisionId; // TODO: Input from portal
+            configRequest.licenseKey = licenseKey; // TODO: Input from portal
+            return configRequest.toString();
+        }
+        // Internal Step 2: Process the Core response.
+        function processResponse(response) {
+            return __awaiter(this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    if (response.error_message !== undefined && response.error_message.length > 0) {
+                        throw new Error("[Catchpoint][Error] JSP - Lastmile: ".concat(response.error_message));
+                    }
+                    if (response.tests_scheduled !== undefined && response.tests_scheduled.length <= 0) {
+                        throw new Error('[Catchpoint][Error] JSP - Lastmile: No tests scheduled');
+                    }
+                    if (response.tests_scheduled === undefined) {
+                        console.log('[Catchpoint][Info] JSP - Lastmile: no scheduled tests available.');
+                        response.tests_scheduled = [];
+                    }
+                    return [2 /*return*/, response.tests_scheduled];
                 });
-                return [3 /*break*/, 4];
-            case 3:
-                error_1 = _a.sent();
-                console.error('CP RUM Error', error_1);
-                return [3 /*break*/, 4];
-            case 4:
-                dataProvider = new main_DataProvider();
-                // Pass the visitor instance to RProfiler
-                if (config.profiler && dataProvider) {
-                    config.profiler.setVisitor(dataProvider.getVisitor());
-                }
-                return [2 /*return*/];
+            });
         }
+        var config, options, response, data, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    config = getConfigData();
+                    options = {
+                        method: 'POST',
+                        body: config
+                    };
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 5, , 6]);
+                    return [4 /*yield*/, fetch(configUrl, options)];
+                case 2:
+                    response = _a.sent();
+                    if (!response.ok) {
+                        throw new Error("[Catchpoint][Info] JSP - Lastmile: HTTP error! Status: ".concat(response.status));
+                    }
+                    return [4 /*yield*/, response.json()];
+                case 3:
+                    data = _a.sent();
+                    console.log('[Catchpoint][Info] JSP - Lastmile: Config Response Data:', data);
+                    return [4 /*yield*/, processResponse(data)];
+                case 4: return [2 /*return*/, _a.sent()];
+                case 5:
+                    error_1 = _a.sent();
+                    console.error('[Catchpoint][Info] JSP - Lastmile: There was a problem with the fetch operation: ', error_1);
+                    throw error_1;
+                case 6: return [2 /*return*/];
+            }
+        });
     });
-}); };
-/* harmony default export */ var main = (mainScript);
-
-;// CONCATENATED MODULE: ./src/utils.ts
-var extractImageUrl = function (backgroundImage) {
-    if (backgroundImage && backgroundImage.startsWith('url')) {
-        var match = backgroundImage.match(/url\(["']?([^"']*)["']?\)/);
-        var url = match && match.length > 1 && match[1];
-        if (url && !url.startsWith('data')) {
-            return url;
-        }
-    }
-    return null;
+}
+function runSyntheticTests(testsToRun) {
+    return __awaiter(this, void 0, void 0, function () {
+        var testPromises, testResults;
+        var _this = this;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    testPromises = testsToRun.map(function (test) { return __awaiter(_this, void 0, void 0, function () {
+                        var result;
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, executeTest(test, runSingleObjectTest)];
+                                case 1:
+                                    result = _a.sent();
+                                    if (!isValidResults(result)) {
+                                        return [2 /*return*/, null];
+                                    }
+                                    return [2 /*return*/, result];
+                            }
+                        });
+                    }); });
+                    return [4 /*yield*/, Promise.all(testPromises)];
+                case 1:
+                    testResults = _a.sent();
+                    return [2 /*return*/, testResults.filter(function (result) { return result !== null; })];
+            }
+        });
+    });
+}
+var isValidResults = function (results) {
+    var _a = results.singleObjectResult, dnsTime = _a.dnsTime, connectTime = _a.connectTime, sslTime = _a.sslTime, waitTime = _a.waitTime, loadTime = _a.loadTime;
+    var totalTime = dnsTime + connectTime + sslTime + waitTime + loadTime;
+    return totalTime <= maxTestTime;
 };
-var getSelectorFromTarget = function (target) {
-    var className = target.className !== '' ? ".".concat(target.className) : '';
-    var targetId = target.id !== '' ? "#".concat(target.id) : '';
-    return [target.nodeName, className, targetId].join(' ');
-};
-
-;// CONCATENATED MODULE: ./src/visComplete.ts
-
-/**
- * Visually completed is calculated using Mutation observer, when elements added to the page we are tracking the time stamp.
- * After page load VisComplete listen to mutations for 5sec and will disconnect mutation observer.
- * If the difference between previous mutation and the current mutation is greater than 1000ms mutation observer will be disconnected.
- * VisComplete also listen to all the resources being loaded on the page (till 2s after page load) and take the end time of the last resource.
- * Max value of the Mutation and the last resource to get the response will be considered as Visually complete
- * VisComplete listen to scroll and click events to avoid miscalculation of VCT and will stop calculating if one of the events fired.
- * */
-var windowItem = window;
-var visComplete = function () {
-    windowItem['CPVisuallyComplete'] = (function () {
-        var VisComplete = /** @class */ (function () {
-            function VisComplete() {
-                var _this = this;
-                this.targetWindow = windowItem;
-                this.mutationObserver = undefined;
-                this.start = 0;
-                this.waitMs = 2000; //The time to wait after onload, before we start running our vis complete logic
-                this.maxResourceTiming = 0;
-                this.mutationObserverVal = 0;
-                this.scroll = 'scroll';
-                this.click = 'click';
-                this.maxDiffBetweenMutation = 1000;
-                this.sinceLastXHR = 500;
-                this.disconnectObserverTimeout = 5000;
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                this.hasPerformance = typeof this.targetWindow.performance === 'object' &&
-                    typeof this.targetWindow.performance.getEntriesByType === 'function';
-                this.removeListeners = function () {
-                    document.removeEventListener(_this.scroll, _this.clear);
-                    document.removeEventListener(_this.click, _this.clear);
-                };
-                this.addListeners = function () {
-                    document.addEventListener(_this.scroll, _this.clear);
-                    document.addEventListener(_this.click, _this.clear);
-                };
-                this.imageListener = function (event) {
-                    var requests = _this.targetWindow.performance.getEntriesByType('resource');
-                    var request = undefined;
-                    for (var i = 0; i < requests.length; i++) {
-                        if (requests[i].name === event.target.currentSrc) {
-                            request = requests[i];
-                            break;
+function runPairedSyntheticTests(testsToRun) {
+    return __awaiter(this, void 0, void 0, function () {
+        var results, promises, _loop_1, testIndex, pairsResults;
+        var _this = this;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    results = [];
+                    if (0 !== testsToRun.length % 2) {
+                        throw new Error('[Catchpoint][Error] JSP - Lastmile: Even number of tests required for paired tests.');
+                    }
+                    promises = [];
+                    _loop_1 = function (testIndex) {
+                        var subTestsToRun = testsToRun.slice(testIndex, testIndex + 2);
+                        // Ping test is made of 2 separate tests
+                        if (subTestsToRun.length !== 2) {
+                            throw new Error('[Catchpoint][Error] JSP - Lastmile: Running paired tests requires 2 tests!');
                         }
-                    }
-                    if (request) {
-                        _this.maxResourceTiming = Math.max(_this.maxResourceTiming, Math.round(request.responseEnd));
-                    }
-                    event.currentTarget.removeEventListener('load', _this.imageListener);
-                };
-                this.videoListener = function (event) {
-                    _this.maxResourceTiming = Math.max(_this.maxResourceTiming, Math.round(_this.getPerformanceTime()));
-                    event.currentTarget.removeEventListener('canplay', _this.videoListener);
-                };
-                this.addListenersForDynamicContent = function (element) {
-                    var images = element.querySelectorAll('img');
-                    for (var i = 0; i < images.length; i += 1) {
-                        var image = images[i];
-                        if (_this.isVisible(image)) {
-                            image.addEventListener('load', _this.imageListener);
-                        }
-                    }
-                    var videos = element.querySelectorAll('video');
-                    for (var i = 0; i < videos.length; i += 1) {
-                        var video = videos[i];
-                        if (_this.isVisible(video)) {
-                            video.addEventListener('canplay', _this.videoListener);
-                        }
-                    }
-                };
-                this.clear = function () {
-                    clearTimeout(_this.timeout);
-                    _this.removeListeners();
-                    _this.trigger();
-                };
-                this.onLoad = function () {
-                    _this.timeout = window.setTimeout(function () {
-                        _this.removeListeners();
-                        _this.calculate();
-                    }, _this.waitMs);
-                };
-                this.getBackgroundImagesTiming = function () {
-                    var imagesToCheck = [];
-                    for (var i = 0; i < document.styleSheets.length; i += 1) {
-                        var styleSheet = document.styleSheets[i];
-                        try {
-                            for (var j = 0; j < styleSheet.cssRules.length; j += 1) {
-                                var cssRule = styleSheet.cssRules[j];
-                                var selector = cssRule.selectorText;
-                                var style = cssRule.style;
-                                if (style) {
-                                    for (var k = 0; k < style.length; k += 1) {
-                                        var propertyName = style[k];
-                                        if (propertyName === 'background-image') {
-                                            var propertyValue = style[propertyName];
-                                            var url = extractImageUrl(propertyValue);
-                                            if (url) {
-                                                var element = _this.targetWindow.document.querySelector(selector);
-                                                if (_this.isVisible(element)) {
-                                                    imagesToCheck.push(url);
-                                                }
+                        // Create a promise for the sequential execution of the pair
+                        var pairPromise = (function () { return __awaiter(_this, void 0, void 0, function () {
+                            var firstResult, attempt, isTimeoutError, isHttpError, secondResult;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        firstResult = null;
+                                        attempt = 1;
+                                        _a.label = 1;
+                                    case 1:
+                                        if (!(attempt <= maxRetryAttempts)) return [3 /*break*/, 4];
+                                        return [4 /*yield*/, executeTest(subTestsToRun[0], runSingleObjectTest)];
+                                    case 2:
+                                        firstResult = _a.sent();
+                                        isTimeoutError = firstResult.singleObjectResult.codeError === AvailableRealUserWebNetworkError.HttpTimedOut;
+                                        isHttpError = firstResult.singleObjectResult.codeError === AvailableRealUserWebNetworkError.HttpError;
+                                        if (isHttpError || isTimeoutError) {
+                                            console.warn("Test attempt ".concat(attempt, " failed for test ").concat(subTestsToRun[0].s, ". ").concat(attempt < maxRetryAttempts ? 'Retrying...' : 'Max retries reached.'));
+                                            // On final attempt, ensure it's marked as timeout error
+                                            if (attempt === maxRetryAttempts && isTimeoutError) {
+                                                firstResult.singleObjectResult.codeError = AvailableRealUserWebNetworkError.HttpTimedOut;
+                                                return [3 /*break*/, 4];
                                             }
                                         }
-                                    }
+                                        else {
+                                            // If result is successful, break the loop
+                                            return [3 /*break*/, 4];
+                                        }
+                                        _a.label = 3;
+                                    case 3:
+                                        attempt++;
+                                        return [3 /*break*/, 1];
+                                    case 4:
+                                        if (!isValidResults(firstResult)) {
+                                            return [2 /*return*/, []];
+                                        }
+                                        return [4 /*yield*/, executeTest(subTestsToRun[1], runSingleObjectTest)];
+                                    case 5:
+                                        secondResult = _a.sent();
+                                        if (!isValidResults(secondResult)) {
+                                            return [2 /*return*/, []];
+                                        }
+                                        return [2 /*return*/, [firstResult, secondResult]];
                                 }
-                            }
-                            // eslint-disable-next-line no-empty
-                        }
-                        catch (e) { }
+                            });
+                        }); })();
+                        promises.push(pairPromise);
+                    };
+                    for (testIndex = 0; testIndex < testsToRun.length; testIndex += 2) {
+                        _loop_1(testIndex);
                     }
-                    var elements = _this.targetWindow.document.querySelectorAll('[style*="background"]');
-                    for (var i = 0; i < elements.length; i++) {
-                        if (_this.isVisible(elements[i])) {
-                            var styles = _this.targetWindow.getComputedStyle(elements[i]);
-                            var backgroundImage = styles.getPropertyValue('background-image');
-                            var url = extractImageUrl(backgroundImage);
-                            if (url) {
-                                imagesToCheck.push(url);
-                            }
-                        }
-                    }
-                    for (var _i = 0, imagesToCheck_1 = imagesToCheck; _i < imagesToCheck_1.length; _i++) {
-                        var url = imagesToCheck_1[_i];
-                        var requests = _this.targetWindow.performance.getEntriesByType('resource');
-                        var request = undefined;
-                        for (var i = 0; i < requests.length; i++) {
-                            if (requests[i].name === new URL(url, _this.targetWindow.location.href).href) {
-                                request = requests[i];
-                                break;
-                            }
-                        }
-                        if (request) {
-                            _this.maxResourceTiming = Math.max(_this.maxResourceTiming, Math.round(request.responseEnd));
-                        }
-                    }
-                };
-                this.calculate = function () {
-                    if (!_this.targetWindow.performance) {
-                        _this.trigger();
-                        return;
-                    }
-                    _this.getBackgroundImagesTiming();
-                    _this.trigger();
-                };
-                this.getPerformanceTime = function () {
-                    return _this.targetWindow['performance'].now();
-                };
-                this.resetValueOnSoftNav = function () {
-                    _this.mutationObserverVal = 0;
-                    _this.maxResourceTiming = 0;
-                    _this.isSoftNav = false;
-                };
-                this.isVisible = function (node) {
-                    var rect = typeof node.getBoundingClientRect === 'function' && node.getBoundingClientRect();
-                    // if the added element is Visible in the view port
-                    var isNodeInViewport = rect &&
-                        rect.width * rect.height >= 8 &&
-                        rect.right >= 0 &&
-                        rect.bottom >= 0 &&
-                        rect.left <= _this.targetWindow.innerWidth &&
-                        rect.top <= _this.targetWindow.innerHeight &&
-                        !node.hidden &&
-                        node.type !== 'hidden';
-                    if (isNodeInViewport) {
-                        var style = window.getComputedStyle(node);
-                        return (style.display !== 'none' &&
-                            style.visibility !== 'hidden' &&
-                            style.visibility !== 'collapse' &&
-                            +style.opacity > 0);
-                    }
-                    return false;
-                };
-                this.mutationCallback = function (mutationsList) {
-                    mutationsList.forEach(function (mutation) {
-                        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                            var addedNode = mutation.addedNodes[0];
-                            if (_this.isVisible(addedNode)) {
-                                if (addedNode.nodeName.toLowerCase() === 'img') {
-                                    addedNode.addEventListener('load', _this.imageListener);
-                                }
-                                if (addedNode.nodeName.toLowerCase() === 'video') {
-                                    addedNode.addEventListener('canplay', _this.videoListener);
-                                }
-                                var perfTime = _this.getPerformanceTime();
-                                if (_this.isSoftNav) {
-                                    _this.resetValueOnSoftNav();
-                                }
-                                var requests = _this.targetWindow.performance.getEntriesByType('resource');
-                                var lastXHR = undefined;
-                                for (var i = 0; i < requests.length; i++) {
-                                    if (requests[i].initiatorType === 'xmlhttprequest') {
-                                        lastXHR = requests[i];
-                                        break;
-                                    }
-                                }
-                                if (_this.mutationObserverVal === 0 ||
-                                    (lastXHR && perfTime - lastXHR.responseEnd < _this.sinceLastXHR) ||
-                                    perfTime - _this.mutationObserverVal <= _this.maxDiffBetweenMutation) {
-                                    _this.mutationObserverVal = Math.round(perfTime);
-                                }
-                            }
-                        }
-                        else if (mutation.type === 'attributes') {
-                            if (mutation.target.nodeName.toLowerCase() === 'img' && mutation.attributeName === 'src') {
-                                if (_this.isVisible(mutation.target)) {
-                                    mutation.target.addEventListener('load', _this.imageListener);
-                                }
-                            }
-                        }
-                    });
-                };
-                this.initMutationObserver = function () {
-                    var browserMutationObserver = _this.targetWindow['MutationObserver'] ||
-                        _this.targetWindow['WebKitMutationObserver'] ||
-                        _this.targetWindow['MozMutationObserver'];
-                    if (browserMutationObserver && _this.targetWindow['performance']) {
-                        _this.mutationObserver = new browserMutationObserver(_this.mutationCallback);
-                        _this.observe();
-                    }
-                };
-                this.trigger = function () {
-                    if (_this.callback) {
-                        var visCompTime = _this.getValue(false);
-                        _this.callback(visCompTime);
-                    }
-                };
-                this.observe = function () {
-                    _this.mutationObserver.observe(_this.targetWindow.document, {
-                        childList: true,
-                        attributes: true,
-                        characterData: true,
-                        subtree: true
-                    });
-                    setTimeout(function () {
-                        _this.mutationObserver.disconnect();
-                    }, _this.disconnectObserverTimeout);
-                };
-                this.getValue = function (isSoftNavigation) {
-                    //If isSoftNavigation is not set, look for isSoftNav value captured by CPVisuallyComplete
-                    var isSoftNav = isSoftNavigation || _this.isSoftNav;
-                    if (_this.maxResourceTiming || _this.mutationObserverVal) {
-                        var visCompTime = 0;
-                        if (_this.maxResourceTiming && _this.mutationObserverVal) {
-                            visCompTime = Math.max(_this.maxResourceTiming, _this.mutationObserverVal);
-                        }
-                        else if (_this.maxResourceTiming) {
-                            visCompTime = _this.maxResourceTiming;
-                        }
-                        else if (_this.mutationObserverVal) {
-                            visCompTime = _this.mutationObserverVal;
-                        }
-                        if (!isSoftNav) {
-                            return Math.round(Math.max(visCompTime - _this.start, _this.getFirstPaintTime()));
-                        }
-                        return Math.round(visCompTime - _this.start);
-                    }
-                    return undefined;
-                };
-                this.onComplete = function (callback) {
-                    _this.callback = callback;
-                };
-                this.reset = function () {
-                    _this.isSoftNav = true;
-                    if (_this.targetWindow['performance']) {
-                        _this.start = _this.getPerformanceTime();
-                        _this.mutationObserver.disconnect();
-                        _this.observe();
-                        _this.onLoad();
-                    }
-                };
-                this.captureSoftNavigations = function () {
-                    if (!_this.targetWindow['HashChangeEvent'] || _this.targetWindow['RProfiler']) {
-                        return;
-                    }
-                    _this.addEvent('hashchange', _this.targetWindow, _this.reset);
-                    var history = _this.targetWindow.history;
-                    if (!history) {
-                        return;
-                    }
-                    var functionStr = 'function';
-                    if (typeof history.go === functionStr) {
-                        var origGo_1 = history.go;
-                        history.go = function (delta) {
-                            _this.reset();
-                            origGo_1.call(history, delta);
-                        };
-                    }
-                    if (typeof history.back === functionStr) {
-                        var origBack_1 = history.back;
-                        history.back = function () {
-                            _this.reset();
-                            origBack_1.call(history);
-                        };
-                    }
-                    if (typeof history.forward === functionStr) {
-                        var origForward_1 = history.forward;
-                        history.forward = function () {
-                            _this.reset();
-                            origForward_1.call(history);
-                        };
-                    }
-                    if (typeof history.pushState === functionStr) {
-                        var origPush_1 = history.pushState;
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        history.pushState = function (data, title, url) {
-                            _this.reset();
-                            origPush_1.call(history, data, title, url);
-                        };
-                    }
-                    if (typeof history.replaceState === functionStr) {
-                        var origReplace_1 = history.replaceState;
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        history.replaceState = function (data, title, url) {
-                            _this.reset();
-                            origReplace_1.call(history, data, title, url);
-                        };
-                    }
-                };
-                this.initMutationObserver();
-                this.captureSoftNavigations();
-                this.init();
+                    return [4 /*yield*/, Promise.all(promises)];
+                case 1:
+                    pairsResults = _a.sent();
+                    // Flatten the results array
+                    results = pairsResults.flat();
+                    return [2 /*return*/, results];
             }
-            VisComplete.prototype.init = function () {
-                var _this = this;
-                var document = this.targetWindow.document;
-                if (document.readyState === 'complete') {
-                    this.onLoad();
-                }
-                else {
-                    this.targetWindow.addEventListener('load', this.onLoad);
-                }
-                if (document.readyState === 'interactive') {
-                    this.addListenersForDynamicContent(document);
-                }
-                else {
-                    this.targetWindow.addEventListener('DOMContentLoaded', function () {
-                        _this.addListenersForDynamicContent(document);
-                    });
-                }
-                this.removeListeners();
-                this.addListeners();
-            };
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            VisComplete.prototype.addEvent = function (type, target, func) {
-                if (this.targetWindow['attachEvent']) {
-                    target.attachEvent('on' + type, func);
-                }
-                else {
-                    target.addEventListener(type, func, false);
-                }
-            };
-            VisComplete.prototype.getFirstPaintTime = function () {
-                var paintTime = 0;
-                try {
-                    var paintTimings = this.targetWindow.performance.getEntriesByType('paint');
-                    if (paintTimings && paintTimings.length > 0) {
-                        var firstPaint = paintTimings.filter(function (x) { return x.name === 'first-paint'; });
-                        if (firstPaint && firstPaint.length > 0 && firstPaint[0].startTime) {
-                            paintTime = Math.round(firstPaint[0].startTime);
-                        }
-                        var firstContentfulPaint = paintTimings.filter(function (x) { return x.name === 'first-contentful-paint'; });
-                        if (firstContentfulPaint &&
-                            firstContentfulPaint.length > 0 &&
-                            firstContentfulPaint[0].startTime) {
-                            paintTime = Math.round(firstContentfulPaint[0].startTime);
-                        }
+        });
+    });
+}
+function runPairedPrivateTests(testsToRun) {
+    return __awaiter(this, void 0, void 0, function () {
+        var results, promises, _loop_2, testIndex;
+        var _this = this;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    results = [];
+                    promises = [];
+                    _loop_2 = function (testIndex) {
+                        var subTestsToRun = testsToRun[testIndex];
+                        // Create a promise for the sequential execution of the pair
+                        var pairPromise = (function () { return __awaiter(_this, void 0, void 0, function () {
+                            var result, attempt;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        result = null;
+                                        attempt = 1;
+                                        _a.label = 1;
+                                    case 1:
+                                        if (!(attempt <= maxRetryAttempts)) return [3 /*break*/, 4];
+                                        return [4 /*yield*/, executeTest(subTestsToRun, runSingleObjectTest)];
+                                    case 2:
+                                        result = _a.sent();
+                                        if (result.singleObjectResult.codeError === AvailableRealUserWebNetworkError.HttpError) {
+                                            // If result containes an error, retry the test
+                                            result.singleObjectResult.codeError = AvailableRealUserWebNetworkError.HttpTimedOut;
+                                        }
+                                        else {
+                                            // If result is successful, break the loop
+                                            return [3 /*break*/, 4]; // Exit the loop if successful
+                                        }
+                                        _a.label = 3;
+                                    case 3:
+                                        attempt++;
+                                        return [3 /*break*/, 1];
+                                    case 4:
+                                        if (!isValidResults(result)) {
+                                            return [2 /*return*/, null];
+                                        }
+                                        return [2 /*return*/, result];
+                                }
+                            });
+                        }); })();
+                        promises.push(pairPromise);
+                    };
+                    for (testIndex = 0; testIndex < testsToRun.length; testIndex++) {
+                        _loop_2(testIndex);
                     }
+                    return [4 /*yield*/, Promise.all(promises)];
+                case 1:
+                    // Wait for all pairs to complete
+                    results = _a.sent();
+                    return [2 /*return*/, results];
+            }
+        });
+    });
+}
+function runCustomTest(testsToRun, testCallback) {
+    return __awaiter(this, void 0, void 0, function () {
+        var testPromises, testResults;
+        var _this = this;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    testPromises = testsToRun.map(function (test) { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, executeTestWithObserver(test, testCallback)];
+                                case 1: return [2 /*return*/, _a.sent()];
+                            }
+                        });
+                    }); });
+                    return [4 /*yield*/, Promise.all(testPromises)];
+                case 1:
+                    testResults = _a.sent();
+                    return [2 /*return*/, testResults];
+            }
+        });
+    });
+}
+function postResults(testResultsList, benchmarkTestType) {
+    var _a;
+    if (benchmarkTestType === void 0) { benchmarkTestType = BenchmarkTestType.Public; }
+    return __awaiter(this, void 0, void 0, function () {
+        var requestBody, options, appId, loggerUrl;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (testResultsList.length === 0) {
+                        console.log('[Catchpoint][Info] JSP - Lastmile: No test results to post.');
+                        return [2 /*return*/];
+                    }
+                    requestBody = JSON.stringify(testResultsList.map(function (result) { return result.toResultObject(); }));
+                    options = {
+                        method: 'POST',
+                        body: requestBody
+                    };
+                    appId = (_a = testResultsList[0].singleObjectResult.rumAppId) !== null && _a !== void 0 ? _a : 0;
+                    loggerUrl = resultsUrl + "?aId=".concat(appId, "&isPb=").concat(benchmarkTestType);
+                    return [4 /*yield*/, fetch(loggerUrl, options)];
+                case 1:
+                    _b.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function createScheduledTest(version, testId, url, monitorType, timeStamp) {
+    return new ScheduledTest(version, testId, url, monitorType, timeStamp);
+}
+/********************************************************************************************************************************************** */
+/*******************************************************************PRIVATE METHODS************************************************************ */
+/********************************************************************************************************************************************** */
+// Shared observer logic extracted into reusable helper function
+function createAndWaitForObserver(urlToTest, observerTimeout) {
+    if (observerTimeout === void 0) { observerTimeout = 3000; }
+    return __awaiter(this, void 0, void 0, function () {
+        var observer, entriesByName, observerPromise, observerError_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    entriesByName = [];
+                    observerPromise = new Promise(function (resolve, reject) {
+                        observer = new PerformanceObserver(function (list) {
+                            entriesByName = list.getEntriesByName(urlToTest);
+                            if (entriesByName.length > 0) {
+                                resolve();
+                            }
+                        });
+                        observer.observe({ entryTypes: ['resource'] });
+                        setTimeout(function () {
+                            observer.disconnect();
+                            reject(new Error("Observer timeout - no performance entry found within ".concat(observerTimeout, "ms")));
+                        }, observerTimeout);
+                    });
+                    observerPromise
+                        .then(function () {
+                        observer.disconnect();
+                    })
+                        .catch(function (error) {
+                        console.log('[Catchpoint][Info] JSP - Lastmile: Performance Observer timeout or error:', error);
+                        observer.disconnect();
+                    });
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, observerPromise];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    observerError_1 = _a.sent();
+                    console.log('[Catchpoint][Info] JSP - Lastmile: Observer failed, proceeding with basic metrics');
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/, entriesByName];
+            }
+        });
+    });
+}
+function executeTest(test, testFunction) {
+    return __awaiter(this, void 0, void 0, function () {
+        var url, queryParams, urlWithParams, results, error_2;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    url = test.u;
+                    queryParams = { rand: "".concat(getRandomInt()) };
+                    urlWithParams = appendQueryParams(url, queryParams);
+                    console.log('[Catchpoint][Info] JSP - Lastmile: Starting ExecuteTest');
+                    results = new LastMileResult();
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, testFunction(urlWithParams, test, results)];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_2 = _a.sent();
+                    console.error("[Catchpoint][Info] JSP - Lastmile: runTest: Error - Site ID ".concat(test.s, " failed to run"), error_2);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/, Promise.resolve(results)];
+            }
+        });
+    });
+}
+function executeTestWithObserver(test, testFunction) {
+    return __awaiter(this, void 0, void 0, function () {
+        var url, queryParams, urlWithParams, observerPromise, results, currentTime, error_3, entries;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    url = test.u;
+                    queryParams = { rand: "".concat(getRandomInt()) };
+                    urlWithParams = appendQueryParams(url, queryParams);
+                    console.log('[Catchpoint][Info] JSP - Lastmile: Starting ExecuteTest');
+                    observerPromise = createAndWaitForObserver(urlWithParams, 3000);
+                    results = new LastMileResult();
+                    currentTime = performance.now();
+                    results.siteId = test.s;
+                    results.monitorType = test.m;
+                    results.testStartTime = currentTime;
+                    results.singleObjectResult.url = test.u;
+                    results.singleObjectResult.tracePoints.pageUrl = getCurrentPageUrl();
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, testFunction(urlWithParams, test, results)];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_3 = _a.sent();
+                    console.error("[Catchpoint][Info] JSP - Lastmile: runTest: Error - Site ID ".concat(test.s, " failed to run"), error_3);
+                    return [3 /*break*/, 4];
+                case 4: return [4 /*yield*/, observerPromise];
+                case 5:
+                    entries = _a.sent();
+                    getSingleObjectTestMetrics(entries, test, results);
+                    return [2 /*return*/, results];
+            }
+        });
+    });
+}
+function handleTimeoutOrAbort(controller, timeout) {
+    return new Promise(function (_, reject) {
+        var timeoutId = setTimeout(function () {
+            controller.abort();
+            reject(new TimeoutError("Request timeout error after ".concat(timeout, "ms")));
+        }, timeout);
+        controller.signal.addEventListener('abort', function () { return clearTimeout(timeoutId); });
+    });
+}
+function handleError(error) {
+    if (error instanceof TimeoutError || error.message.includes('timeout')) {
+        return AvailableRealUserWebNetworkError.HttpTimedOut;
+    }
+    return mapErrorToNetworkError(error);
+}
+function fetchWithTimeout(url, options, timeout) {
+    if (options === void 0) { options = {}; }
+    if (timeout === void 0) { timeout = 3000; }
+    return __awaiter(this, void 0, void 0, function () {
+        var controller, signal, fetchOptions, timeoutPromise, fetchPromise;
+        return __generator(this, function (_a) {
+            controller = new AbortController();
+            signal = controller.signal;
+            fetchOptions = LastMileApi_assign(LastMileApi_assign({}, options), { signal: signal });
+            timeoutPromise = handleTimeoutOrAbort(controller, timeout)
+                .then(function () {
+                // Return a timeout response instead of throwing
+                return new Response(null, { status: timeoutStatusCode, statusText: 'Request Timeout' });
+            })
+                .catch(function (error) {
+                // If it's a timeout error, return timeout response
+                if (error instanceof TimeoutError) {
+                    return new Response(null, { status: timeoutStatusCode, statusText: 'Request Timeout' });
                 }
-                catch (_a) {
-                    // do nothing
+                throw error; // Re-throw other errors
+            });
+            fetchPromise = fetch(url, fetchOptions).catch(function (error) {
+                // Use handleError to properly map the error
+                var networkError = handleError(error);
+                // Create appropriate response based on error type
+                if (networkError === AvailableRealUserWebNetworkError.HttpTimedOut) {
+                    return new Response(null, { status: timeoutStatusCode, statusText: 'Request Timeout' });
                 }
-                return paintTime;
-            };
-            return VisComplete;
-        }());
-        var visComplete = new VisComplete();
-        return {
-            getValue: visComplete.getValue,
-            onComplete: visComplete.onComplete,
-            reset: visComplete.reset
-        };
-    })();
+                else {
+                    // For other network errors, return a generic error response
+                    return new Response(null, { status: 0, statusText: 'Network Error' });
+                }
+            });
+            return [2 /*return*/, Promise.race([fetchPromise, timeoutPromise])];
+        });
+    });
+}
+// ...existing code...
+function runSingleObjectTest(urlToTest, test, results) {
+    return __awaiter(this, void 0, void 0, function () {
+        var options, testTimeout, observerPromise, currentTime, response, statusCode, headers, bytesHeader_1, error_4, entries_1, entries;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    options = { method: 'GET' };
+                    testTimeout = getTestTimeout(test);
+                    observerPromise = createAndWaitForObserver(urlToTest, testTimeout);
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 5]);
+                    currentTime = performance.now();
+                    return [4 /*yield*/, fetchWithTimeout(urlToTest, options, testTimeout)];
+                case 2:
+                    response = _a.sent();
+                    statusCode = response.status;
+                    results.siteId = test.s;
+                    results.monitorType = test.m;
+                    results.testStartTime = currentTime;
+                    results.singleObjectResult.url = test.u;
+                    results.singleObjectResult.tracePoints.pageUrl = getCurrentPageUrl();
+                    headers = response.headers;
+                    bytesHeader_1 = 0;
+                    headers.forEach(function (value, key) {
+                        var headerLength = key.length + value.length + 4; // Account for white space and colons
+                        bytesHeader_1 += headerLength;
+                    });
+                    results.singleObjectResult.bytesHeader = bytesHeader_1;
+                    results.singleObjectResult.bytesContent = response.headers.get('Content-Length')
+                        ? parseInt(response.headers.get('Content-Length') || '0', 10)
+                        : 0;
+                    console.log("[Catchpoint][Info] JSP - Lastmile: Parent URL: ".concat(results.singleObjectResult.tracePoints.pageUrl));
+                    // Set status code and error appropriately
+                    results.singleObjectResult.codeReturn = statusCode;
+                    if (statusCode === timeoutStatusCode) {
+                        results.singleObjectResult.codeError = AvailableRealUserWebNetworkError.HttpTimedOut;
+                    }
+                    else if ((statusCode >= HttpStatusCode.HttpBadRequest && statusCode <= HttpStatusCode.HttpVersionNotSupported) ||
+                        statusCode == HttpStatusCode.None) {
+                        results.singleObjectResult.codeError = AvailableRealUserWebNetworkError.HttpError;
+                    }
+                    return [3 /*break*/, 5];
+                case 3:
+                    error_4 = _a.sent();
+                    console.log('[Catchpoint][Info] JSP - Lastmile: Error running single object test', error_4);
+                    // Use handleError to properly map the error
+                    results.singleObjectResult.codeError = handleError(error_4);
+                    if (results.singleObjectResult.codeError === AvailableRealUserWebNetworkError.HttpTimedOut) {
+                        results.singleObjectResult.codeReturn = timeoutStatusCode; // HTTP Timeout
+                    }
+                    else {
+                        results.singleObjectResult.codeReturn = 0; // Network error
+                    }
+                    return [4 /*yield*/, observerPromise];
+                case 4:
+                    entries_1 = _a.sent();
+                    getSingleObjectTestMetrics(entries_1, test, results);
+                    return [2 /*return*/];
+                case 5: return [4 /*yield*/, observerPromise];
+                case 6:
+                    entries = _a.sent();
+                    getSingleObjectTestMetrics(entries, test, results);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function getHttpVersion(version) {
+    if (version === 'h2') {
+        return '2';
+    }
+    else if (version === 'h3') {
+        return '3';
+    }
+    else if (version.toLowerCase() === 'http/1.1') {
+        return '1.1';
+    }
+    else {
+        return 'Unknown';
+    }
+}
+// Helper to select timeout based on test type (assuming monitorType distinguishes them)
+function getTestTimeout(test) {
+    // monitorType 1 = single packet, 2 = 100kb
+    if (test.m === 1)
+        return SINGLE_PACKET_TIMEOUT_MS;
+    if (test.m === 2)
+        return KB100_TIMEOUT_MS;
+    return SINGLE_PACKET_TIMEOUT_MS; // default fallback
+}
+var getSingleObjectTestMetrics = function (entries, test, results) {
+    results.siteId = test.s;
+    results.monitorType = test.m;
+    results.singleObjectResult.url = test.u;
+    results.singleObjectResult.tracePoints.pageUrl = getCurrentPageUrl();
+    if (HttpStatusCode.None === results.singleObjectResult.codeReturn) {
+        console.log("[Catchpoint][Info] JSP - Lastmile: Invalid HTTP status. Possibly a CORS error. Aborting metric collection");
+        return results;
+    }
+    if (0 === entries.length) {
+        // console.warn('No entries found.');
+        return results;
+    }
+    var entry = entries[0];
+    console.log("[Catchpoint][Info] JSP - Lastmile: URL: ".concat(entry.name, "      Test: ").concat(test.s));
+    // rounding the values before calculations to avoid 1 value larger/smaller than expected due to JS float precision,
+    // for fullConnectTime, sslTime, connectTime calculations
+    var connectStart = Math.round(entry.connectStart);
+    var connectEnd = Math.round(entry.connectEnd);
+    var secureConnectionStart = Math.round(entry.secureConnectionStart);
+    // Start real metrics
+    var httpVersion = getHttpVersion(entry.nextHopProtocol);
+    var dnsTime = Math.round(entry.domainLookupEnd - entry.domainLookupStart);
+    var fullConnectTime = Math.round(connectEnd - connectStart);
+    var sslTime = entry.secureConnectionStart > 0 ? Math.round(connectEnd - secureConnectionStart) : 0;
+    var waitTime = Math.round(entry.responseStart - entry.requestStart);
+    var loadTime = Math.round(entry.responseEnd - entry.responseStart);
+    var connectTime = Math.round(secureConnectionStart - connectStart);
+    results.singleObjectResult.fullConnectTime = fullConnectTime;
+    results.singleObjectResult.dnsTime = dnsTime;
+    results.singleObjectResult.sslTime = sslTime;
+    results.singleObjectResult.waitTime = waitTime;
+    results.singleObjectResult.loadTime = loadTime;
+    results.singleObjectResult.httpVersion = httpVersion;
+    results.singleObjectResult.connectTime = connectTime;
 };
-/* harmony default export */ var src_visComplete = (visComplete);
-
-;// CONCATENATED MODULE: ./src/frustrationMetrics/RageClick.ts
-/**
- * Detect rage clicks
- *
- * Rage clicks are like punching your mouse or touchpad because it doesn’t do what you want.
- * They are triggered when a visitor clicks an element on your website multiple times, rapidly.
- * In most cases, rage clicks signal that your website didn’t react the way your visitor expected,
- * so you may want to take a closer look at it.
- */
-
-var RageClick = /** @class */ (function () {
-    function RageClick() {
-        this.rprofiler = null;
-        this.clickCount = 0;
-        this.rageClickLimit = 3;
-        this.timeoutDuration = 1000; // milliseconds
-        this.rageClickValue = null;
+// Generate a random number to append to URL to prevent
+// needing to reset cache in browser.
+function getRandomInt() {
+    // Generate a random number between 1,000,000 (10^6) and 999,999,999 (10^9 - 1)
+    return Math.floor(Math.random() * (1000000000 - 1000000) + 1000000);
+}
+function getCurrentPageUrl() {
+    var isInIframe = parent !== window;
+    var url;
+    if (isInIframe) {
+        url = document.referrer;
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    RageClick.prototype.startListening = function (event) {
-        this.clicklistener(event);
-    };
-    RageClick.prototype.getRageClick = function () {
-        return this.rageClickValue;
-    };
-    RageClick.prototype.clicklistener = function (e) {
-        var _this = this;
-        var _a, _b;
-        this.clickCount++;
-        var clickInterval = setInterval(function () {
-            _this.clickCount = 0;
-            clearInterval(clickInterval);
-        }, this.timeoutDuration);
-        if (this.clickCount >= this.rageClickLimit) {
-            this.rageClickValue = 1;
-            clearInterval(clickInterval);
-            this.rprofiler = window['RProfiler'];
-            var sessionReplayEnabled = (_a = this.rprofiler) === null || _a === void 0 ? void 0 : _a.getSessionReplayFlag();
-            // send Rage Click event to session replay
-            if (sessionReplayEnabled && ((_b = this.rprofiler) === null || _b === void 0 ? void 0 : _b.dispatchCustomEvent)) {
-                this.rprofiler.dispatchCustomEvent(RProfilerCustomEventSessionReplay.RageClick, { event: e });
+    else {
+        url = window.location.href;
+    }
+    return url;
+}
+function appendQueryParams(url, params) {
+    try {
+        // Check if URL is valid and has a protocol
+        if (!url || typeof url !== 'string') {
+            console.log('[Catchpoint][Info] JSP - Lastmile:: Invalid URL provided:', url);
+            return url;
+        }
+        // If URL doesn't have a protocol, assume https://
+        var validUrl = url;
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            validUrl = 'https://' + url;
+        }
+        var urlObj = new URL(validUrl);
+        var searchParams = new URLSearchParams(urlObj.search);
+        for (var key in params) {
+            if (Object.prototype.hasOwnProperty.call(params, key)) {
+                searchParams.append(key, params[key]);
             }
         }
-    };
-    return RageClick;
-}());
-var rageClick = new RageClick();
-
-;// CONCATENATED MODULE: ./src/frustrationMetrics/ErrorClick.ts
-/**
- * Detects error clicks
- *
- * Error clicks are clicks that result in JavaScript errors.
- * The visitor doesn’t have to click on something many times in a row.
- * Just one click is enough to spot an error.
- * Often the visitor doesn’t notice that something is broken, but for you,
- * it’s a signal that a particular JavaScript element is not working.
- */
-var ErrorClick = /** @class */ (function () {
-    function ErrorClick() {
-        this.error = '';
-        this.errorClickValue = null;
+        urlObj.search = searchParams.toString();
+        return urlObj.toString();
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    ErrorClick.prototype.startListening = function (_event) {
-        var _this = this;
-        window.onerror = function (msg) {
-            _this.error = msg;
-        };
-        this.clicklistener();
-    };
-    ErrorClick.prototype.getErrorClick = function () {
-        return this.errorClickValue;
-    };
-    ErrorClick.prototype.clicklistener = function () {
-        var _this = this;
-        setTimeout(function () {
-            if (_this.error) {
-                _this.errorClickValue = 1;
-            }
-        }, 0);
-    };
-    return ErrorClick;
-}());
-var errorClick = new ErrorClick();
-
-;// CONCATENATED MODULE: ./src/frustrationMetrics/DeadClick.ts
-
-
-/**
- * Detects dead clicks
- *
- * Dead clicks are clicks that have no effect on the page.
- * The visitor clicks on the image to zoom it in, but nothing happens.
- * He expects a text string to be a link, but it isn’t. Or he clicks on a button,
- * but to no avail. In such situations, the visitor will end up clicking twice, quickly.
- * Looking for dead clicks will help you find these main points of frustration and improve visitors` experience as soon as possible.
- */
-var DeadClick = /** @class */ (function () {
-    function DeadClick() {
-        this.rprofiler = null;
-        this.clickCounts = {};
-        this.deadClickLimit = 2;
-        this.deadClickValue = null;
-        this.timeoutDuration = 1000; // milliseconds
-    }
-    DeadClick.prototype.getDeadClick = function () {
-        return this.deadClickValue;
-    };
-    DeadClick.prototype.clickListener = function (event) {
-        var _this = this;
-        var _a, _b;
-        var clickCountClear = setInterval(function () {
-            _this.clickCounts = {};
-            clearInterval(clickCountClear);
-        }, this.timeoutDuration);
-        var selector = getSelectorFromTarget(event.target);
-        this.clickCounts[selector] = this.clickCounts[selector] ? this.clickCounts[selector] + 1 : 1;
-        if (this.clickCounts[selector] === this.deadClickLimit) {
-            this.deadClickValue = 1;
-            clearInterval(clickCountClear);
-            this.rprofiler = window['RProfiler'];
-            var sessionReplayEnabled = (_a = this.rprofiler) === null || _a === void 0 ? void 0 : _a.getSessionReplayFlag();
-            // send Dead Click event to session replay
-            if (sessionReplayEnabled && ((_b = this.rprofiler) === null || _b === void 0 ? void 0 : _b.dispatchCustomEvent)) {
-                this.rprofiler.dispatchCustomEvent(RProfilerCustomEventSessionReplay.DeadClick, { event: event });
+    catch (error) {
+        console.log('[Catchpoint][Info] JSP - Lastmile:: Failed to construct URL:', url, error);
+        // Fallback: use URLSearchParams for query string construction
+        var separator = url.includes('?') ? '&' : '?';
+        var searchParams = new URLSearchParams();
+        for (var key in params) {
+            if (Object.prototype.hasOwnProperty.call(params, key)) {
+                searchParams.append(key, params[key]);
             }
         }
-    };
-    DeadClick.prototype.startListening = function (event) {
-        this.clickListener(event);
-    };
-    return DeadClick;
-}());
-var deadClick = new DeadClick();
-
-;// CONCATENATED MODULE: ./src/frustrationMetrics/ThrashedCursor.ts
-/**
- * Detect mouse shake
- *
- * Mouse shaking is when users erratically move their cursor back and forth.
- * Rapidly moving the cursor over a page can indicate
- * the user is getting exasperated with some aspect of their experience.
- * Perhaps the site performance is slow or they are struggling to figure something out.
- *
- */
-var ThrashedCursor = /** @class */ (function () {
-    function ThrashedCursor() {
-        var _this = this;
-        this.mouseMoveListener = function (event) {
-            var currentX = event.clientX;
-            var currentY = event.clientY;
-            if (_this.lastMouseX !== null && _this.lastMouseY !== null) {
-                var deltaX = currentX - _this.lastMouseX;
-                var deltaY = currentY - _this.lastMouseY;
-                var nextDirection = Math.sign(deltaX);
-                _this.distance += Math.abs(deltaX) + Math.abs(deltaY);
-                if (nextDirection !== _this.direction) {
-                    _this.direction = nextDirection;
-                    _this.directionChangeCount++;
-                }
-            }
-            // Update the last mouse position
-            _this.lastMouseX = currentX;
-            _this.lastMouseY = currentY;
-        };
-        this.directionChangeCount = 0;
-        this.distance = 0;
-        this.interval = 350;
-        this.threshold = 0.01;
-        this.thrashedCursorValue = false;
-        this.lastMouseX = null;
-        this.lastMouseY = null;
-        var intervalClear = setInterval(function () {
-            var nextVelocity = _this.distance / _this.interval;
-            if (!_this.velocity) {
-                _this.velocity = nextVelocity;
-                return;
-            }
-            var acceleration = (nextVelocity - _this.velocity) / _this.interval;
-            if (_this.directionChangeCount && acceleration > _this.threshold) {
-                // Clearing the interval after detecting thrashed cursor
-                clearInterval(intervalClear);
-                _this.thrashedCursorValue = true;
-            }
-            _this.distance = 0;
-            _this.directionChangeCount = 0;
-            _this.velocity = nextVelocity;
-        }, this.interval);
+        var queryString = searchParams.toString();
+        return queryString ? "".concat(url).concat(separator).concat(queryString) : url;
     }
-    ThrashedCursor.prototype.getThrashedCursor = function () {
-        return this.thrashedCursorValue;
-    };
-    ThrashedCursor.prototype.startListening = function (event) {
-        this.mouseMoveListener(event);
-    };
-    return ThrashedCursor;
-}());
-var thrashedCursor = new ThrashedCursor();
+}
+window.getUTCTimestamp = getUTCTimestamp;
+window.getRandomInt = getRandomInt;
+window.createScheduledTest = createScheduledTest;
+window.requestTest = requestTest;
+window.runSyntheticTests = runSyntheticTests;
+window.runCustomTest = runCustomTest;
+window.postResults = postResults;
 
-;// CONCATENATED MODULE: ./src/frustrationMetrics/FrustrationMetrics.ts
-
-
-
-
-var FrustrationMetrics = /** @class */ (function () {
-    function FrustrationMetrics() {
-    }
-    FrustrationMetrics.prototype.listenClickEvent = function (event) {
-        rageClick.startListening(event);
-        errorClick.startListening(event);
-        deadClick.startListening(event);
-    };
-    FrustrationMetrics.prototype.listenMouseMove = function (event) {
-        thrashedCursor.startListening(event);
-    };
-    FrustrationMetrics.prototype.startListeningClickEvent = function () {
-        window.addEventListener('click', this.listenClickEvent.bind(this));
-    };
-    FrustrationMetrics.prototype.stopListeningClickEvent = function () {
-        window.removeEventListener('click', this.listenClickEvent.bind(this));
-    };
-    FrustrationMetrics.prototype.startListeningMouseMove = function () {
-        window.addEventListener('mousemove', this.listenMouseMove.bind(this));
-    };
-    FrustrationMetrics.prototype.stopListeningMouseMove = function () {
-        window.removeEventListener('mousemove', this.listenMouseMove.bind(this));
-    };
-    return FrustrationMetrics;
-}());
-var frustrationMetrics = new FrustrationMetrics();
-
-;// CONCATENATED MODULE: ./src/rprofiler/rprofiler.ts
-var rprofiler_assign = (undefined && undefined.__assign) || function () {
-    rprofiler_assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return rprofiler_assign.apply(this, arguments);
-};
-var rprofiler_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+;// CONCATENATED MODULE: ./src/lastmile/InitLastMile.ts
+var InitLastMile_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -3389,7 +1426,7 @@ var rprofiler_awaiter = (undefined && undefined.__awaiter) || function (thisArg,
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var rprofiler_generator = (undefined && undefined.__generator) || function (thisArg, body) {
+var InitLastMile_generator = (undefined && undefined.__generator) || function (thisArg, body) {
     var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
     return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
@@ -3419,435 +1456,504 @@ var rprofiler_generator = (undefined && undefined.__generator) || function (this
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-var RProfiler = /** @class */ (function () {
-    function RProfiler() {
-        var _this = this;
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        this.restUrl = 'localhost:44394/jp/91733/v4.0.11/s.M';
-        this.startTime = new Date().getTime();
-        this.eventsTimingHandler = new rprofiler_EventsTimingHandler();
-        this.inpDe = [];
-        this.visitor = null;
-        this.siteId = 91733;
-        this.version = 'v4.0.11'; //version number of inline script
-        this.info = {};
-        this.hasInsight = false;
-        this.data = {
-            start: this.startTime,
-            jsCount: 0,
-            jsErrors: [],
-            loadTime: -1,
-            loadFired: window.document.readyState == 'complete'
-        };
-        this.excludeLastMileBenchMarks = false; // used to exclude the lastmile benchmark to stop running the tests.
-        this.eventManager = new rprofiler_ProfilerEventManager();
-        this.setCLS = function (_a) {
-            var metricName = _a.name, metricValue = _a.value;
-            var CLS = metricName === 'CLS' ? metricValue : undefined;
-            _this.cls = CLS;
-        };
-        this.setLCP = function (_a) {
-            var metricName = _a.name, metricValue = _a.value, metricDelta = _a.delta;
-            var LCP = metricName === 'LCP' ? metricValue : undefined;
-            // Logic skip if the delta value is negative and metric value is 0.
-            if (metricDelta >= 0 && metricValue > 0) {
-                _this.lcp = LCP;
-            }
-        };
-        // Value being used instead delta as metricValue, Delta provide single value and value is for overall value.
-        this.setINP = function (_a) {
-            var metricName = _a.name, metricValue = _a.value, attribution = _a.attribution;
-            var goodInpValue = 200;
-            if (metricName === 'INP') {
-                _this.inp = metricValue;
-                // we want to capture only the INP values greater than 200ms as 200-500 is needs improvement and 500+ is poor.
-                if (metricValue > goodInpValue) {
-                    var eventParams = {
-                        t: attribution.interactionTarget,
-                        eTy: attribution.interactionType,
-                        sTi: main_Util.getRoundedValue(attribution.interactionTime),
-                        indl: main_Util.getRoundedValue(attribution.inputDelay),
-                        psdu: main_Util.getRoundedValue(attribution.processingDuration),
-                        prdl: main_Util.getRoundedValue(attribution.presentationDelay),
-                        val: main_Util.getRoundedValue(metricValue),
-                        ls: main_Util.getLoadStateEnum(attribution.loadState)
-                    };
-                    _this.inpDe.push(rprofiler_assign({}, eventParams));
-                    _this.inpDe.sort(function (a, b) { return b.val - a.val; });
-                    // we want to send top 10 elements with INP values greater than 200ms
-                    if (_this.inpDe.length === 10) {
-                        _this.inpDe.pop();
+var BenchmarkTestType;
+(function (BenchmarkTestType) {
+    BenchmarkTestType[BenchmarkTestType["Public"] = 0] = "Public";
+    BenchmarkTestType[BenchmarkTestType["Private"] = 1] = "Private";
+})(BenchmarkTestType || (BenchmarkTestType = {}));
+var setTimeoutId;
+var initLastMileScript = function () { return InitLastMile_awaiter(void 0, void 0, void 0, function () {
+    return InitLastMile_generator(this, function (_a) {
+        try {
+            clearTimeout(setTimeoutId);
+            // Run tests after 1 second to allow the page to load.
+            setTimeoutId = setTimeout(function () { return InitLastMile_awaiter(void 0, void 0, void 0, function () {
+                return InitLastMile_generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            if (!(benchmarkAppConfig.getConfig().publicTestsList.length > 0)) return [3 /*break*/, 2];
+                            return [4 /*yield*/, runFixedTestsWithCountryWeights(true)];
+                        case 1:
+                            _a.sent();
+                            _a.label = 2;
+                        case 2:
+                            if (!(benchmarkAppConfig.getConfig().privateBenchmarkTestsList.length > 0)) return [3 /*break*/, 4];
+                            // Run additional tests for private benchmark
+                            return [4 /*yield*/, runPrivateTestsWithCountryWeights()];
+                        case 3:
+                            // Run additional tests for private benchmark
+                            _a.sent();
+                            _a.label = 4;
+                        case 4: return [2 /*return*/];
                     }
-                }
-            }
-        };
-        this.setFCP = function (_a) {
-            var name = _a.name, value = _a.value;
-            _this.fcp = name === 'FCP' ? value : undefined;
-        };
-        this.recordPageLoad = function () {
-            _this.data.loadTime = new Date().getTime();
-            _this.data.loadFired = true;
-        };
-        this.addError = function (msg, url, lineNum) {
-            _this.data.jsCount++;
-            var currError = rprofiler_ProfilerJsError.createText(msg, url, lineNum);
-            var errorArr = _this.data.jsErrors;
-            // If session recorder is enabled, send the error event
-            // adding error if the error is same to session recorder.
-            // sessionRecorder?.errorsCustomEvent?.(msg, url, lineNum);
-            _this.dispatchCustomEvent(RProfilerCustomEventSessionReplay.Errors, {
-                additionalData: {
-                    msg: msg,
-                    url: url,
-                    lineNum: lineNum
-                }
-            });
-            for (var _i = 0, errorArr_1 = errorArr; _i < errorArr_1.length; _i++) {
-                var err = errorArr_1[_i];
-                if (err.getText() == currError) {
-                    err.count++;
-                    return;
-                }
-            }
-            errorArr.push(new rprofiler_ProfilerJsError(msg, url, lineNum));
-        };
-        this.getAjaxRequests = function () {
-            return _this.ajaxHandler.getAjaxRequests();
-        };
-        this.clearAjaxRequests = function () {
-            _this.ajaxHandler.clear();
-        };
-        this.addInfo = function (infoType, key, value) {
-            if (_this.isNullOrEmpty(infoType)) {
-                return;
-            }
-            if (_this.isNullOrEmpty(value)) {
-                _this.info[infoType] = key;
-            }
-            else {
-                if (_this.isNullOrEmpty(key)) {
-                    return;
-                }
-                if (_this.isNullOrEmpty(_this.info[infoType])) {
-                    _this.info[infoType] = {};
-                }
-                _this.info[infoType][key] = value;
-            }
-            _this.hasInsight = true;
-        };
-        this.clearInfo = function () {
-            _this.info = {};
-            _this.hasInsight = false;
-        };
-        this.clearErrors = function () {
-            _this.data.jsCount = 0;
-            _this.data.jsErrors = [];
-        };
-        this.getInfo = function () {
-            if (!_this.hasInsight) {
-                return null;
-            }
-            return _this.info;
-        };
-        this.getEventTimingHandler = function () {
-            return _this.eventsTimingHandler;
-        };
-        this.getCPWebVitals = function () {
-            D(_this.setCLS);
-            ot(_this.setLCP);
-            rt(_this.setINP);
-            x(_this.setFCP);
-            return {
-                cls: _this.cls,
-                lcp: _this.lcp,
-                inp: _this.inp,
-                inpDe: _this.inpDe,
-                fcp: _this.fcp
-            };
-        };
-        this.getFrustrationMetrics = function () {
-            return {
-                frc: rageClick.getRageClick(),
-                fec: errorClick.getErrorClick(),
-                fdc: deadClick.getDeadClick(),
-                ftc: thrashedCursor.getThrashedCursor()
-            };
-        };
-        this.runBenchMarkForPageGroup = function () {
-            var location = window.location.href;
-            var pageGroups = _this.getBenchMarksPageGroup();
-            return pageGroups === null || pageGroups === void 0 ? void 0 : pageGroups.some(function (s) {
-                var pageGroupRegEx = new RegExp(s);
-                return pageGroupRegEx.test(location);
-            });
-        };
-        // get session replay flag
-        this.getSessionReplayFlag = function () {
-            return config.config.sessionReplayEnabled;
-        };
-        this.addSessionReplayScript = function () {
-            var sessionReplayScriptUrl = config.config.sessionReplayScriptUrl;
-            var script = document.createElement('script');
-            script.src = sessionReplayScriptUrl;
-            script.defer = true;
-            script.id = 'sessionReplayScript';
-            script.referrerPolicy = 'no-referrer';
-            document.body.appendChild(script);
-            console.log('CP: session replay script added');
-        };
-        this.getVisitorInfo = function () {
-            if (!_this.visitor || !_this.visitor.store) {
-                return;
-            }
-            return _this.visitor.store;
-        };
-        this.usePageHide = function (flag) {
-            if (flag === void 0) { flag = true; }
-            config.setAppConfig({
-                usePageHideEvent: flag
-            });
-        };
-        this.getPageHideFlag = function () {
-            return config.config.usePageHideEvent;
-        };
-        this.eventManager.add(WindowEvent.Load, window, this.recordPageLoad);
-        var errorFunc = this.addError;
-        this.ajaxHandler = new rprofiler_AjaxRequestsHandler();
-        D(this.setCLS, { reportAllChanges: true });
-        ot(this.setLCP, { reportAllChanges: true });
-        rt(this.setINP, { reportAllChanges: true });
-        x(this.setFCP, { reportAllChanges: true });
-        // Frustration event
-        frustrationMetrics.startListeningClickEvent();
-        frustrationMetrics.startListeningMouseMove();
-        function recordJsError(e) {
-            var ev = e.target || e.srcElement;
-            if (ev.nodeType == 3) {
-                ev = ev.parentNode;
-            }
-            errorFunc('N/A', ev.src || ev.URL, -1);
-            return false;
-        }
-        if (!!window['opera']) {
-            this.eventManager.add(WindowEvent.Error, document, recordJsError);
-        }
-        else if ('onerror' in window) {
-            var origOnError_1 = window.onerror;
-            window.onerror = function (msg, url, lineNum) {
-                errorFunc(msg, url !== null && url !== void 0 ? url : '', lineNum !== null && lineNum !== void 0 ? lineNum : 0);
-                if (!!origOnError_1) {
-                    return origOnError_1(msg, url, lineNum);
-                }
-                return false;
-            };
-        }
-        // Event to capture the errors in promise rejection
-        if ('onunhandledrejection' in window) {
-            window.onunhandledrejection = function (errorEvent) {
-                var _a, _b, _c;
-                var fullMessage = (_a = errorEvent.reason.stack) !== null && _a !== void 0 ? _a : '';
-                var atSplitRegex = /\bat\b/;
-                var errorMsg = fullMessage !== '' ? fullMessage.split(atSplitRegex) : [];
-                var fileUrl = errorMsg[1] ? errorMsg[1].replace(/:\d+/g, '') : '';
-                var errorLineNumbers = errorMsg[1] ? errorMsg[1].match(/:\d+/g) : [];
-                var lineNum = errorLineNumbers[0] ? errorLineNumbers[0].replace(':', '') : 0;
-                errorFunc((_c = (_b = errorMsg[0]) === null || _b === void 0 ? void 0 : _b.trim()) !== null && _c !== void 0 ? _c : 'N/A', fileUrl.trim(), lineNum);
-            };
-        }
-        if (!!window['__cpCdnPath']) {
-            this.restUrl = window['__cpCdnPath'].trim();
-        }
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    RProfiler.prototype.isNullOrEmpty = function (val) {
-        if (val === undefined || val === null) {
-            return true;
-        }
-        if (typeof val == 'string') {
-            var str = val;
-            return str.trim().length == 0;
-        }
-        return false;
-    };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    RProfiler.prototype.dispatchCustomEvent = function (event, data) {
-        (function (w) {
-            if (typeof w.CustomEvent === 'function') {
-                return false;
-            }
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            function CustomEvent(event, params) {
-                params = params || { bubbles: false, cancelable: false, detail: undefined };
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                var evt = document.createEvent('CustomEvent');
-                evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-                return evt;
-            }
-            CustomEvent.prototype = Event.prototype;
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            w.CustomEvent = CustomEvent;
-        })(window); //for the browsers don't support CustomEvent
-        var e = new CustomEvent(event, data ? { detail: data } : undefined);
-        window.dispatchEvent(e);
-    };
-    // Check for additional bot tokens in the user agent string
-    // additionalTokenCheck(userAgent: string): boolean {
-    //     return TOKENS.some(token => userAgent.includes(token));
-    // }
-    RProfiler.prototype.checkBrowserIsBot = function () {
-        var _a;
-        var BOT_AGENT = [
-            'bot',
-            'crawl',
-            'datadog',
-            'dynatrace',
-            'newrelic',
-            'ruxit',
-            'spider',
-            'headless',
-            'phantom',
-            'facebookexternalhit',
-            'meta-external', // matches "meta-externalads"
-            'pinterestbot',
-            'headlesschrome',
-            'lighthouse',
-            'catchpoint',
-            'site24x7',
-            'google-read-aloud',
-            'pageburst'
-        ];
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        var uaData = navigator === null || navigator === void 0 ? void 0 : navigator.userAgentData;
-        var userAgent = navigator.userAgent.toLowerCase();
-        var BOT_USER_AGENT_REGEX = new RegExp(BOT_AGENT.join('|'), 'i');
-        if (uaData && ((_a = uaData.brands) === null || _a === void 0 ? void 0 : _a.length)) {
-            var isBot_1 = uaData.brands.some(function (brand) { return BOT_USER_AGENT_REGEX.test(brand.brand); });
-            return isBot_1;
-        }
-        var isBot = BOT_USER_AGENT_REGEX.test(userAgent);
-        return isBot;
-    };
-    // Check if the last mile script should be added,
-    // based on benchmark enabled, not a bot, page group allowed and excludeLastMileBenchMarks flag is false
-    RProfiler.prototype.checkLastMileScriptPermissions = function () {
-        var useBenchmark = config.getConfig().useBenchmark;
-        var isNotBot = !this.checkBrowserIsBot();
-        var isPageGroupAllowed = this.runBenchMarkForPageGroup();
-        return useBenchmark && isNotBot && isPageGroupAllowed && !this.excludeLastMileBenchMarks;
-    };
-    RProfiler.prototype.addLastMileScript = function () {
-        var lastMileUrl = config.getConfig().lastMileUrl;
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.id = 'lastMileScriptiframe';
-        iframe.srcdoc = "<script defer src=\"".concat(lastMileUrl, "\"></script>");
-        iframe.referrerPolicy = 'no-referrer';
-        document.body.appendChild(iframe);
-        console.log('CP: Lastmile script added');
-    };
-    RProfiler.prototype.getBenchMarksPageGroup = function () {
-        var _a = config.getConfig().benchMarkPageGroups, benchMarkPageGroups = _a === void 0 ? '' : _a;
-        return benchMarkPageGroups === null || benchMarkPageGroups === void 0 ? void 0 : benchMarkPageGroups.split(',');
-    };
-    RProfiler.prototype.excludeBenchMarks = function () {
-        this.excludeLastMileBenchMarks = true;
-    };
-    RProfiler.prototype.setVisitor = function (visitor) {
-        this.visitor = visitor;
-    };
-    return RProfiler;
-}());
-/* harmony default export */ var rprofiler = (RProfiler);
-// cookie consent logic
-var CPRUM = function (command, options) {
-    if (command === 'consentv2') {
-        // Handle consentv2 command
-        var _a = options.analytics_storage, analytics_storage = _a === void 0 ? ConsentV2Type.Granted : _a;
-        switch (analytics_storage) {
-            case ConsentV2Type.Granted:
-            case ConsentV2Type.Denied:
-                config.config.consentv2 = analytics_storage;
-                break;
-            default:
-                // Fallback to default consent if value is different
-                config.config.consentv2 = ConsentV2Type.Granted;
-                break;
-        }
-        // delete local storage and cookie, if denied.
-        if (analytics_storage === ConsentV2Type.Denied) {
-            main_Storage.delete();
-        }
-    }
-    return;
-};
-var profiler = new RProfiler();
-window['RProfiler'] = profiler;
-window['WindowEvent'] = WindowEvent;
-window['CPRUM'] = CPRUM;
-var configInit = function () { return rprofiler_awaiter(void 0, void 0, void 0, function () {
-    var canAddLastMileScript;
-    return rprofiler_generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                config.initValues();
-                return [4 /*yield*/, main()];
-            case 1:
-                _a.sent();
-                src_visComplete();
-                canAddLastMileScript = profiler.checkLastMileScriptPermissions();
-                if (canAddLastMileScript) {
-                    profiler.addLastMileScript();
-                }
-                // Add session replay script if session replay is enabled
-                if (profiler.getSessionReplayFlag()) {
-                    profiler.addSessionReplayScript();
-                }
-                return [2 /*return*/];
-        }
-    });
-}); };
-var init = function () { return rprofiler_awaiter(void 0, void 0, void 0, function () {
-    return rprofiler_generator(this, function (_a) {
-        // if the document state is already complete by the time script is injected - can happen in the case of tag managers like GTM
-        if (document.readyState === 'complete') {
-            configInit();
-        }
-        else {
-            document.addEventListener('readystatechange', function (event) { return rprofiler_awaiter(void 0, void 0, void 0, function () {
-                return rprofiler_generator(this, function (_a) {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    if (event.target.readyState === 'complete') {
-                        configInit();
-                    }
-                    return [2 /*return*/];
                 });
-            }); });
+            }); }, 1000);
+        }
+        catch (error) {
+            console.error('[Catchpoint][Info] JSP - Lastmile Error', error);
         }
         return [2 /*return*/];
     });
 }); };
-setTimeout(function () {
-    init();
-}, 500);
-profiler.dispatchCustomEvent('GlimpseLoaded');
+// This is to run configured tests (i.e. tests are retrieved from Core first before running).
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function runScheduledTests() {
+    return InitLastMile_awaiter(this, void 0, void 0, function () {
+        var scheduledTestsToRun, results;
+        return InitLastMile_generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, requestTest()];
+                case 1:
+                    scheduledTestsToRun = _a.sent();
+                    return [4 /*yield*/, runSyntheticTests(scheduledTestsToRun)];
+                case 2:
+                    results = _a.sent();
+                    postResults(results);
+                    // store results in global
+                    window.lastMileResults = results;
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function runFixedTests(pairedTests) {
+    return InitLastMile_awaiter(this, void 0, void 0, function () {
+        var testIdsString, testIdsJson, testsToCreate, timestamp, testsToRun, results;
+        return InitLastMile_generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    testIdsString = benchmarkAppConfig.getConfig().publicTestsList;
+                    testIdsJson = JSON.parse(testIdsString);
+                    testsToCreate = testIdsJson.length > 0 && Array.isArray(testIdsJson)
+                        ? testIdsJson.map(function (item) { return ({ key: Number(item.key), value: item.value }); })
+                        : [];
+                    timestamp = getUTCTimestamp();
+                    testsToRun = Object.entries(testsToCreate).map(function (_a) {
+                        var value = _a[1];
+                        return createScheduledTest(2, Number(value.key), String(value.value), 2, timestamp);
+                    });
+                    results = [];
+                    if (!pairedTests) return [3 /*break*/, 2];
+                    return [4 /*yield*/, runPairedSyntheticTests(testsToRun)];
+                case 1:
+                    results = _a.sent();
+                    return [3 /*break*/, 4];
+                case 2: return [4 /*yield*/, runSyntheticTests(testsToRun)];
+                case 3:
+                    results = _a.sent();
+                    _a.label = 4;
+                case 4:
+                    // Post results
+                    postResults(results);
+                    // store results in global
+                    window.lastMileResults = results;
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+// This function runs tests based on weights and user country for public tests
+function runFixedTestsWithCountryWeights(pairedTests) {
+    return InitLastMile_awaiter(this, void 0, void 0, function () {
+        var testIdsString, testIdsJson, testsToCreate, testWeightsByCountryString, testWeightsByCountryJson, mappedAllPublicTestsWithCountryWeights, userCountry, testToRunBy, weightedRandomTest, timestamp, testsToRun, results;
+        return InitLastMile_generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    testIdsString = benchmarkAppConfig.getConfig().publicTestsList;
+                    testIdsJson = JSON.parse(testIdsString);
+                    testsToCreate = testIdsJson.length > 0 && Array.isArray(testIdsJson)
+                        ? testIdsJson.map(function (item) { return ({ key: Number(item.key), value: item.value }); })
+                        : [];
+                    testWeightsByCountryString = '[{"id":92412,"countries":[224,99],"weight":5},{"id":92408,"countries":[],"weight":15},{"id":92418,"countries":[224],"weight":3}]';
+                    testWeightsByCountryJson = JSON.parse(testWeightsByCountryString);
+                    mappedAllPublicTestsWithCountryWeights = getAllMappedPublicTestsWithCountryWeights(testsToCreate, testWeightsByCountryJson);
+                    userCountry = benchmarkAppConfig.getConfig().userCountry;
+                    testToRunBy = [];
+                    if (mappedAllPublicTestsWithCountryWeights.length > 0) {
+                        weightedRandomTest = publicTestToRunByCountryWeights(mappedAllPublicTestsWithCountryWeights, userCountry, PUBLIC_TEST_PAIRS_FOR_PAGE_VIEW);
+                        testToRunBy = weightedRandomTest.flatMap(function (weightedTest) {
+                            var firstPairIndex = testsToCreate.findIndex(function (test) {
+                                return test.key === weightedTest.id;
+                            });
+                            var firstPair = testsToCreate[firstPairIndex];
+                            var secondPair = testsToCreate[firstPairIndex + 1];
+                            return [firstPair, secondPair];
+                        });
+                    }
+                    else {
+                        // If no weights are provided, use the default test values
+                        testToRunBy = testsToCreate;
+                    }
+                    timestamp = getUTCTimestamp();
+                    testsToRun = Object.entries(testToRunBy).map(function (_a) {
+                        var value = _a[1];
+                        return createScheduledTest(2, Number(value.key), String(value.value), 2, timestamp);
+                    });
+                    results = [];
+                    if (!pairedTests) return [3 /*break*/, 2];
+                    return [4 /*yield*/, runPairedSyntheticTests(testsToRun)];
+                case 1:
+                    results = _a.sent();
+                    return [3 /*break*/, 4];
+                case 2: return [4 /*yield*/, runSyntheticTests(testsToRun)];
+                case 3:
+                    results = _a.sent();
+                    _a.label = 4;
+                case 4:
+                    // Post results
+                    postResults(results);
+                    // store results in global
+                    window.lastMileResults = results;
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+// Function to run private benchmark tests based on weights and user country
+function runPrivateTestsWithCountryWeights() {
+    return InitLastMile_awaiter(this, void 0, void 0, function () {
+        var privateBenchmarkString, privateBenchmarkJson, userCountry, transformedPrivateBenchmarkTests, pickedPrivateBenchmarkTests, privateTestsToCreate, timestamp, privateTestsToRun, results;
+        return InitLastMile_generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    privateBenchmarkString = benchmarkAppConfig.getConfig().privateBenchmarkTestsList;
+                    privateBenchmarkJson = JSON.parse(privateBenchmarkString);
+                    userCountry = benchmarkAppConfig.getConfig().userCountry;
+                    transformedPrivateBenchmarkTests = convertAndFilterPrivateBenchmarkTestsByCountry(privateBenchmarkJson, userCountry);
+                    pickedPrivateBenchmarkTests = transformedPrivateBenchmarkTests;
+                    if (transformedPrivateBenchmarkTests.length === 0) {
+                        console.log('[Catchpoint][Info] JSP - Lastmile: No Private Benchmark Tests to run');
+                        return [2 /*return*/];
+                    }
+                    // If private benchmark tests are more than 4, then pick based on weights else run all
+                    if (transformedPrivateBenchmarkTests.length > PRIVATE_TEST_PAIRS_FOR_PAGE_VIEW) {
+                        pickedPrivateBenchmarkTests = privateTestToRunByCountryWeights(transformedPrivateBenchmarkTests, PRIVATE_TEST_PAIRS_FOR_PAGE_VIEW);
+                    }
+                    privateTestsToCreate = pickedPrivateBenchmarkTests.length > 0 && Array.isArray(pickedPrivateBenchmarkTests)
+                        ? pickedPrivateBenchmarkTests.flatMap(function (item) {
+                            return item.urls.map(function (urlDetail) {
+                                return { key: urlDetail.id, value: urlDetail.url };
+                            });
+                        })
+                        : [];
+                    timestamp = getUTCTimestamp();
+                    privateTestsToRun = Object.entries(privateTestsToCreate).map(function (_a) {
+                        var value = _a[1];
+                        return createScheduledTest(2, Number(value.key), String(value.value), 2, timestamp);
+                    });
+                    results = [];
+                    return [4 /*yield*/, runPairedPrivateTests(privateTestsToRun)];
+                case 1:
+                    results = _a.sent();
+                    // Post results
+                    postResults(results, BenchmarkTestType.Private);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+/* harmony default export */ var InitLastMile = (initLastMileScript);
+
+;// CONCATENATED MODULE: ./src/lastmile/lastmile.ts
+var lastmile_assign = (undefined && undefined.__assign) || function () {
+    lastmile_assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return lastmile_assign.apply(this, arguments);
+};
+var lastmile_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var lastmile_generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+var lastmile_benchmarkAppConfig = benchmarkAppConfig === null || benchmarkAppConfig === void 0 ? void 0 : benchmarkAppConfig.getConfig();
+var SESSION_STORAGE_COUNTRY_ID_KEY = '_CP_CoI';
+var parentWindow = (window.parent || window);
+var captureSoftNavigationsAfterRouteChange = function (callback) {
+    parentWindow.addEventListener('hashchange', callback, false);
+    var history = parentWindow.history;
+    if (!history) {
+        return;
+    }
+    var functionStr = 'function';
+    if (typeof history.go === functionStr) {
+        var origGo_1 = history.go;
+        history.go = function (delta) {
+            origGo_1.call(history, delta);
+            callback();
+        };
+    }
+    if (typeof history.back === functionStr) {
+        var origBack_1 = history.back;
+        history.back = function () {
+            origBack_1.call(history);
+            callback();
+        };
+    }
+    if (typeof history.forward === functionStr) {
+        var origForward_1 = history.forward;
+        history.forward = function () {
+            origForward_1.call(history);
+            callback();
+        };
+    }
+    if (typeof history.pushState === functionStr) {
+        var origPush_1 = history.pushState;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        history.pushState = function (data, title, url) {
+            origPush_1.call(history, data, title, url);
+            callback();
+        };
+    }
+    if (typeof history.replaceState === functionStr) {
+        var origReplace_1 = history.replaceState;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        history.replaceState = function (data, title, url) {
+            origReplace_1.call(history, data, title, url);
+            callback();
+        };
+    }
+};
+var callInitLastMileScript = function () {
+    // The JS must run in an iframe instead of directly on the page.
+    // First check if we are in an iframe already, or if we need to
+    // create one.
+    if (window.self !== window.top) {
+        // console.log('Already in iframe. Executing....');
+        InitLastMile();
+    }
+    else {
+        // console.log('Creating IFrame...');
+        var iframe = document.createElement('iframe');
+        iframe.id = 'lastMileIframe';
+        iframe.style.display = 'none'; // Hide the iframe
+        iframe.srcdoc = '<script>parent.lastMileInitScript();</script>';
+        document.body.appendChild(iframe);
+    }
+    // Add route change listener to capture soft navigations only for benchmark app.
+    if ((lastmile_benchmarkAppConfig === null || lastmile_benchmarkAppConfig === void 0 ? void 0 : lastmile_benchmarkAppConfig.isbenchmarkApp) === "true" && (lastmile_benchmarkAppConfig === null || lastmile_benchmarkAppConfig === void 0 ? void 0 : lastmile_benchmarkAppConfig.appStatus) === 0) {
+        captureSoftNavigationsAfterRouteChange(InitLastMile);
+    }
+};
+function runLastMileTests() {
+    // Run the tests directly, if its not benchmark app.
+    if ((lastmile_benchmarkAppConfig === null || lastmile_benchmarkAppConfig === void 0 ? void 0 : lastmile_benchmarkAppConfig.isbenchmarkApp) === "false") {
+        callInitLastMileScript();
+    }
+    // If it is Benchmark app, then check benchmark app is active, If then run the tests.
+    var activeBenchmarkApp = (lastmile_benchmarkAppConfig === null || lastmile_benchmarkAppConfig === void 0 ? void 0 : lastmile_benchmarkAppConfig.appStatus) === 0;
+    if ((lastmile_benchmarkAppConfig === null || lastmile_benchmarkAppConfig === void 0 ? void 0 : lastmile_benchmarkAppConfig.isbenchmarkApp) === "true" && activeBenchmarkApp) {
+        callInitLastMileScript();
+    }
+}
+var initBenchmarkAppConfig = function () { return lastmile_awaiter(void 0, void 0, void 0, function () {
+    var getBenchmarkAppConfigData, appDetails, error_1;
+    return lastmile_generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                getBenchmarkAppConfigData = function () { return lastmile_awaiter(void 0, void 0, void 0, function () {
+                    var response, text, error_2;
+                    return lastmile_generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                _a.trys.push([0, 3, , 4]);
+                                return [4 /*yield*/, fetch('https://localhost:44394/jp/91733/latest/s.BAC')];
+                            case 1:
+                                response = _a.sent();
+                                if (!response.ok) {
+                                    return [2 /*return*/, null];
+                                }
+                                return [4 /*yield*/, response.text()];
+                            case 2:
+                                text = _a.sent();
+                                if (!text) {
+                                    return [2 /*return*/, null];
+                                }
+                                return [2 /*return*/, JSON.parse(text)];
+                            case 3:
+                                error_2 = _a.sent();
+                                console.error("[Catchpoint][Info] JSP - Lastmile:: Failed to fetch benchmark app config:", error_2);
+                                return [2 /*return*/, null];
+                            case 4: return [2 /*return*/];
+                        }
+                    });
+                }); };
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, getBenchmarkAppConfigData()];
+            case 2:
+                appDetails = _a.sent();
+                benchmarkAppConfig.setAppConfig(lastmile_assign(lastmile_assign({}, benchmarkAppConfig.getConfig()), { appId: appDetails.AppId, appStatus: appDetails.AppStatus }));
+                lastmile_benchmarkAppConfig = benchmarkAppConfig.getConfig();
+                return [3 /*break*/, 4];
+            case 3:
+                error_1 = _a.sent();
+                console.error('[Catchpoint][Info] JSP - Lastmile: benchmark app config error', error_1);
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
+        }
+    });
+}); };
+var initUserGeoInfo = function () { return lastmile_awaiter(void 0, void 0, void 0, function () {
+    var getUserGeoInfo, userCountry, userCoundtryId, error_3;
+    return lastmile_generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                getUserGeoInfo = function () { return lastmile_awaiter(void 0, void 0, void 0, function () {
+                    var geoEndpoint, response, text, data;
+                    return lastmile_generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                geoEndpoint = 'https://lst01a.3genlabs.net/hawklogserver/rl.p?gld=1';
+                                return [4 /*yield*/, fetch(geoEndpoint, { method: 'POST', body: '' })];
+                            case 1:
+                                response = _a.sent();
+                                if (!response.ok) {
+                                    return [2 /*return*/];
+                                }
+                                return [4 /*yield*/, response.text()];
+                            case 2:
+                                text = _a.sent();
+                                if (!text || text.trim() === '') {
+                                    return [2 /*return*/];
+                                }
+                                try {
+                                    data = JSON.parse(text);
+                                    return [2 /*return*/, data];
+                                }
+                                catch (parseError) {
+                                    console.error('[Catchpoint][Info] JSP - Lastmile: GeoInfo Invalid JSON response:', text);
+                                    return [2 /*return*/];
+                                }
+                                return [2 /*return*/];
+                        }
+                    });
+                }); };
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, getUserGeoInfo()];
+            case 2:
+                userCountry = _a.sent();
+                userCoundtryId = userCountry === null || userCountry === void 0 ? void 0 : userCountry.CoI;
+                if (!userCoundtryId) {
+                    return [2 /*return*/];
+                }
+                benchmarkAppConfig.setAppConfig(lastmile_assign(lastmile_assign({}, benchmarkAppConfig.getConfig()), { userCountry: userCoundtryId ? Number(userCoundtryId) : undefined }));
+                sessionStorage.setItem(SESSION_STORAGE_COUNTRY_ID_KEY, userCoundtryId);
+                return [3 /*break*/, 4];
+            case 3:
+                error_3 = _a.sent();
+                console.error('[Catchpoint][Info] JSP - Lastmile: error fetching user country', error_3);
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
+        }
+    });
+}); };
+var setUserGeoInfo = function () { return lastmile_awaiter(void 0, void 0, void 0, function () {
+    var userCoundtryId;
+    return lastmile_generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                userCoundtryId = sessionStorage.getItem(SESSION_STORAGE_COUNTRY_ID_KEY);
+                if (!userCoundtryId) return [3 /*break*/, 1];
+                benchmarkAppConfig.setAppConfig(lastmile_assign(lastmile_assign({}, benchmarkAppConfig.getConfig()), { userCountry: Number(userCoundtryId) }));
+                return [3 /*break*/, 3];
+            case 1: return [4 /*yield*/, initUserGeoInfo()];
+            case 2:
+                _a.sent();
+                _a.label = 3;
+            case 3: return [2 /*return*/];
+        }
+    });
+}); };
+function main() {
+    return lastmile_awaiter(this, void 0, void 0, function () {
+        return lastmile_generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!((lastmile_benchmarkAppConfig === null || lastmile_benchmarkAppConfig === void 0 ? void 0 : lastmile_benchmarkAppConfig.isbenchmarkApp) === "true")) return [3 /*break*/, 2];
+                    return [4 /*yield*/, initBenchmarkAppConfig()];
+                case 1:
+                    _a.sent();
+                    _a.label = 2;
+                case 2: 
+                // Initialize and set user geo info
+                return [4 /*yield*/, setUserGeoInfo()];
+                case 3:
+                    // Initialize and set user geo info
+                    _a.sent();
+                    // Check if the document state is already complete
+                    if (document.readyState === 'complete') {
+                        runLastMileTests();
+                    }
+                    else {
+                        document.addEventListener('readystatechange', function (event) {
+                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                            // @ts-ignore
+                            if (event.target.readyState === 'complete') {
+                                runLastMileTests();
+                            }
+                        });
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+if (window.self !== window.top) {
+    parent.window.lastMileResults = null;
+    parent.window.lastMileInitScript = InitLastMile;
+}
+else {
+    window.lastMileResults = null;
+    window.lastMileInitScript = InitLastMile;
+}
+main();
 
 /******/ })()
 ;
