@@ -71,7 +71,7 @@ var BenchmarkAppConfig = /** @class */ (function () {
         appId: -111,
         version: 'v4.0.11',
         appStatus: -111,
-        isbenchmarkApp: 'false',
+        isbenchmarkApp: 'true',
         publicTestsList: '[{"key":"92412","value":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92413","value":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92410","value":"https://kpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92411","value":"https://kpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92408","value":"https://jpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92409","value":"https://jpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92414","value":"https://apulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92415","value":"https://apulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"},{"key":"92418","value":"https://xpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"key":"92419","value":"https://xpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"}]',
         privateBenchmarkTestsList: '[{"DestinationUrls":[{"Id":99202,"Url":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/1p.gif"},{"Id":99214,"Url":"https://lpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"}],"Locations":[],"ParentBenchmarkId":99200},{"DestinationUrls":[{"Id":104675,"Url":"https://ctchpnt.akamaized.net/ipulse/ad/cp.com/creative/1p.gif"}],"Locations":[],"ParentBenchmarkId":104674},{"DestinationUrls":[{"Id":105693,"Url":"https://ctchpnt.akamaized.net/ipulse/ad/cp.com/creative/1p.gif"},{"Id":111836,"Url":"https://xpulse.perflib.com/ipulse/ad/cp.com/creative/25.jpg"}],"Locations":[],"ParentBenchmarkId":104854}]',
         userCountry: -888
@@ -1801,7 +1801,7 @@ var initBenchmarkAppConfig = function () { return lastmile_awaiter(void 0, void 
                         switch (_a.label) {
                             case 0:
                                 _a.trys.push([0, 3, , 4]);
-                                return [4 /*yield*/, fetch('https://portalstage.catchpoint.com/jp/91733/latest/BAC')];
+                                return [4 /*yield*/, fetch('https://portalstage.catchpoint.com/jp/102638/latest/BAC')];
                             case 1:
                                 response = _a.sent();
                                 if (!response.ok) {
