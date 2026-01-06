@@ -688,23 +688,23 @@ var MainConfig = /** @class */ (function () {
     MainConfig.hasPerformanceApi = !!_g.pageWindow.performance && typeof _g.pageWindow.performance === 'object';
     MainConfig.hasGetEntriesApi = _g.hasPerformanceApi && typeof _g.pageWindow.performance.getEntriesByType === 'function';
     MainConfig.testUserId = 'test'; // wrapping in curly braces and converting to string to match exact string instead partial replacement
-    MainConfig.version = 'v4.0.12';
+    MainConfig.version = 'v4.0.11';
     MainConfig.config = {
         sampleRate: -999, // range [0 - 100]
         waterfallSampleRate: -888, // range [0 - 100]
         postUrl: _g.protocol + 'lst01a.3genlabs.net/hawklogserver/r.p',
         siteId: 91733,
         debugParameter: 'GlimpseDebug',
-        debugUrl: 'localhost:44394/jp/v4.0.12/s.D',
+        debugUrl: 'localhost:44394/jp/v4.0.11/s.D',
         waterfallParameter: 'GlimpseWaterfall',
         sendOnLoad: false, // default is send onunload
         clearResources: true, // clear performance entries when we send data to core. using performance.clearResourceTimings()
         ajaxDomains: '',
         useBenchmark: false,
-        lastMileUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.12/LastMileScript.js',
+        lastMileUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.11/LastMileScript.js',
         benchMarkPageGroups: '',
         sessionReplayEnabled: false,
-        sessionReplayScriptUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.12/SessionReplayScript.js',
+        sessionReplayScriptUrl: _g.protocol + 'localhost:44394/jp/91733/v4.0.11/SessionReplayScript.js',
         usePageHideEvent: false, // use pagehide event instead of unload, Default to false
         consentv2: ConsentV2Type.Granted
     };
@@ -1379,10 +1379,6 @@ var PostData = /** @class */ (function (_super) {
             obj['et'] = this.engagementTime;
             obj['fet'] = this.firstEngagementTime;
             obj['vct'] = this.visComplete;
-            // Checking for networkScore to be not null or undefined, because if it's null/undefined means that last mile script didn't run.
-            if (this.networkScore !== null && this.networkScore !== undefined) {
-                obj['ns'] = this.networkScore;
-            }
             if (!isSoftNavigation) {
                 obj['fp'] = this.firstPaint;
                 obj['fcp'] = this.firstContentPaint;
@@ -2191,8 +2187,7 @@ var DataProvider = /** @class */ (function () {
             }
         };
         this.doPost = function (type, isSoftNavigation) {
-            var isAppActive = config.config.appStatus === true;
-            if (!_this.visitor.shouldPost() || !isAppActive) {
+            if (!_this.visitor.shouldPost()) {
                 return;
             }
             if (type == PostType.OnBeforeUnload && !config.profiler.data.loadFired) {
@@ -2354,11 +2349,6 @@ var DataProvider = /** @class */ (function () {
                 postObj.fdc = cpFrustrationMetrics.fdc;
                 postObj.ftc = cpFrustrationMetrics.ftc;
             }
-        }
-        // Checking for networkScore to be not null or undefined, because if it's null/undefined means that last mile script didn't run.
-        if (config.pageWindow['lastMileNetworkScore'] !== null &&
-            config.pageWindow['lastMileNetworkScore'] !== undefined) {
-            postObj.networkScore = config.pageWindow['lastMileNetworkScore'];
         }
         return postObj;
     };
@@ -2699,7 +2689,7 @@ var mainScript = function () { return __awaiter(void 0, void 0, void 0, function
                     var response, data;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
-                            case 0: return [4 /*yield*/, fetch('https://localhost:44394/jp/91733/v4.0.12/s.AC')];
+                            case 0: return [4 /*yield*/, fetch('https://localhost:44394/jp/91733/v4.0.11/s.AC')];
                             case 1:
                                 response = _a.sent();
                                 return [4 /*yield*/, response.json()];
@@ -2716,7 +2706,6 @@ var mainScript = function () { return __awaiter(void 0, void 0, void 0, function
             case 2:
                 appDetails = _a.sent();
                 config.setAppConfig({
-                    appStatus: appDetails.AppStatus,
                     sampleRate: appDetails.SampleRate,
                     ajaxDomains: appDetails.AjaxDomains,
                     waterfallSampleRate: appDetails.WaterfallSampleRate,
@@ -3448,14 +3437,13 @@ var RProfiler = /** @class */ (function () {
         var _this = this;
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        this.restUrl = 'localhost:44394/jp/91733/v4.0.12/s.M';
+        this.restUrl = 'localhost:44394/jp/91733/v4.0.11/s.M';
         this.startTime = new Date().getTime();
         this.eventsTimingHandler = new rprofiler_EventsTimingHandler();
         this.inpDe = [];
         this.visitor = null;
-        this.processedDataLayerCount = 0; // Track processed commands
         this.siteId = 91733;
-        this.version = 'v4.0.12'; //version number of inline script
+        this.version = 'v4.0.11'; //version number of inline script
         this.info = {};
         this.hasInsight = false;
         this.data = {
@@ -3613,11 +3601,6 @@ var RProfiler = /** @class */ (function () {
             return config.config.sessionReplayEnabled;
         };
         this.addSessionReplayScript = function () {
-            var canAddSessionReplayScript = _this.getSessionReplayFlag();
-            // Add session replay script if enabled
-            if (!canAddSessionReplayScript) {
-                return;
-            }
             var sessionReplayScriptUrl = config.config.sessionReplayScriptUrl;
             var script = document.createElement('script');
             script.src = sessionReplayScriptUrl;
@@ -3641,128 +3624,6 @@ var RProfiler = /** @class */ (function () {
         };
         this.getPageHideFlag = function () {
             return config.config.usePageHideEvent;
-        };
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        this.runCustomRumTags = function (commands) {
-            commands.forEach(function (item) {
-                var _a;
-                // Handle gtag-style format: 'command', 'param1', 'param2', ...
-                // item is the arguments object from push(...args), convert to array
-                var args = Array.prototype.slice.call(item);
-                if (args.length > 0) {
-                    var command = args[0];
-                    switch (command) {
-                        case 'tracepoint':
-                            // Format: 'tracepoint', key, value
-                            if (args.length >= 3) {
-                                var key = args[1];
-                                var value = args[2];
-                                _this.addInfo('tracepoint', key, value);
-                            }
-                            break;
-                        case 'indicator':
-                            // Format: 'indicator', key, value (numeric)
-                            if (args.length >= 3) {
-                                var key = args[1];
-                                var value = args[2];
-                                _this.addInfo('indicator', key, value);
-                            }
-                            break;
-                        case 'pageGroup':
-                            // Format: 'pageGroup', value
-                            if (args.length >= 2) {
-                                var value = args[1];
-                                _this.addInfo('pageGroup', value, '');
-                            }
-                            break;
-                        case 'variation':
-                            // Format: 'variation', value
-                            if (args.length >= 2) {
-                                var value = args[1];
-                                _this.addInfo('variation', value, '');
-                            }
-                            break;
-                        case 'conversion':
-                            // Format: 'conversion', revenue, items
-                            if (args.length >= 3) {
-                                var revenue = args[1];
-                                var items = args[2];
-                                _this.addInfo('conversion', revenue, items);
-                            }
-                            else if (args.length >= 1) {
-                                // Simple conversion without revenue details
-                                var items = args[1];
-                                _this.addInfo('conversion', items, '');
-                            }
-                            break;
-                        case 'appError':
-                            // Format: 'appError', errorCode, errorMessage
-                            if (args.length >= 3) {
-                                var errorCode = args[1];
-                                var errorMessage = args[2];
-                                _this.addInfo('appError', errorCode, errorMessage);
-                            }
-                            break;
-                        case 'excludeBenchMarks':
-                            // Format: 'excludeBenchMarks'
-                            _this.excludeBenchMarks();
-                            break;
-                        case 'usePageHide': {
-                            // Format: 'usePageHide', flag
-                            var flag = (_a = args[1]) !== null && _a !== void 0 ? _a : true;
-                            _this.usePageHide(flag);
-                            break;
-                        }
-                        case 'consentv2': {
-                            // Format: 'consentv2', options
-                            var options = args[1] || {};
-                            CPRUM('consentv2', options);
-                            break;
-                        }
-                        case 'runLastmileScript':
-                            // Format: 'runLastmileScript'
-                            _this.addLastMileScript();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            });
-        };
-        // Process commands in CPRUMDataLayer, quueued before profiler was ready
-        this.runCPRUMTagDataLayer = function () {
-            var dataLayer = window["CPRUMDataLayer"];
-            if (!Array.isArray(dataLayer))
-                return;
-            // Only process new commands that haven't been processed yet
-            var newCommands = dataLayer.slice(_this.processedDataLayerCount);
-            _this.runCustomRumTags(newCommands);
-            // Update the count of processed commands
-            _this.processedDataLayerCount = dataLayer.length;
-        };
-        // Setup automatic processing for future CPRUMDataLayer commands, This will run after rprofiler is ready
-        this.autoRunCPRUMTagDataLayer = function () {
-            // Ensure CPRUMDataLayer exists
-            if (!window['CPRUMDataLayer']) {
-                window['CPRUMDataLayer'] = [];
-            }
-            var dataLayer = window['CPRUMDataLayer'];
-            var originalPush = dataLayer.push;
-            // Override push method to auto-process new commands
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            dataLayer.push = function () {
-                var items = [];
-                for (var _i = 0; _i < arguments.length; _i++) {
-                    items[_i] = arguments[_i];
-                }
-                // Call original push first
-                var result = originalPush.apply(dataLayer, items);
-                // Process only the new items immediately
-                _this.runCustomRumTags(items);
-                // Update processed count
-                _this.processedDataLayerCount = dataLayer.length;
-                return result;
-            };
         };
         this.eventManager.add(WindowEvent.Load, window, this.recordPageLoad);
         var errorFunc = this.addError;
@@ -3845,6 +3706,10 @@ var RProfiler = /** @class */ (function () {
         var e = new CustomEvent(event, data ? { detail: data } : undefined);
         window.dispatchEvent(e);
     };
+    // Check for additional bot tokens in the user agent string
+    // additionalTokenCheck(userAgent: string): boolean {
+    //     return TOKENS.some(token => userAgent.includes(token));
+    // }
     RProfiler.prototype.checkBrowserIsBot = function () {
         var _a;
         var BOT_AGENT = [
@@ -3888,11 +3753,6 @@ var RProfiler = /** @class */ (function () {
         return useBenchmark && isNotBot && isPageGroupAllowed && !this.excludeLastMileBenchMarks;
     };
     RProfiler.prototype.addLastMileScript = function () {
-        // Add lastmile script if conditions are met
-        var canAddLastMileScript = this.checkLastMileScriptPermissions();
-        if (!canAddLastMileScript) {
-            return;
-        }
         var lastMileUrl = config.getConfig().lastMileUrl;
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
@@ -3942,6 +3802,7 @@ window['RProfiler'] = profiler;
 window['WindowEvent'] = WindowEvent;
 window['CPRUM'] = CPRUM;
 var configInit = function () { return rprofiler_awaiter(void 0, void 0, void 0, function () {
+    var canAddLastMileScript;
     return rprofiler_generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -3950,12 +3811,14 @@ var configInit = function () { return rprofiler_awaiter(void 0, void 0, void 0, 
             case 1:
                 _a.sent();
                 src_visComplete();
-                // Setup automatic processing for future commands
-                profiler.autoRunCPRUMTagDataLayer();
-                // Add last mile script
-                profiler.addLastMileScript();
-                // Add session replay script
-                profiler.addSessionReplayScript();
+                canAddLastMileScript = profiler.checkLastMileScriptPermissions();
+                if (canAddLastMileScript) {
+                    profiler.addLastMileScript();
+                }
+                // Add session replay script if session replay is enabled
+                if (profiler.getSessionReplayFlag()) {
+                    profiler.addSessionReplayScript();
+                }
                 return [2 /*return*/];
         }
     });
@@ -3985,8 +3848,6 @@ setTimeout(function () {
     init();
 }, 500);
 profiler.dispatchCustomEvent('GlimpseLoaded');
-// Process any queued CPRUM data layer commands
-profiler.runCPRUMTagDataLayer();
 
 /******/ })()
 ;
