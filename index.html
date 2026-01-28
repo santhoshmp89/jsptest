@@ -1049,17 +1049,19 @@ if (window.RProfiler) {
 
 		// New way of adding custom tag
 		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
-		function cpRUMDataLayerTag() {
-	      CPRUMDataLayer.push(arguments);
-	    }
-
-		cpRUMDataLayerTag('addInfo', 'conversion', 'conve');
-		cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345);
-		cpRUMDataLayerTag('addInfo', 'pageGroup', 'home');
-		cpRUMDataLayerTag('addInfo', 'appError', 10, 'undefined error');
-		cpRUMDataLayerTag('addInfo', 'conversion', 20, 1200);
-		cpRUMDataLayerTag('addInfo', 'tracepoint', 'tracepoint', 'tracepoint mesg');
-		cpRUMDataLayerTag('addInfo', 'variation', 'variation');
+		function cpRumTag() {
+		   CPRUMDataLayer.push(arguments);
+		}
+		
+		cpRumTag('indicator', 'adsrendered', 2345);
+		cpRumTag('pageGroup', 'home');
+		cpRumTag('appError', 10, 'undefined error');
+		cpRumTag('conversion', 20, 1200);
+		cpRumTag('tracepoint', 'tracepoint', 'tracepoint mesg');
+		cpRumTag('variation', 'variation');
+		cpRumTag('usePageHide', false);
+		cpRumTag('excludeBenchMarks');
+		cpRumTag('consentv2', { analytics_storage: 'granted' })
 	  </script>
 
 
@@ -1073,6 +1075,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
