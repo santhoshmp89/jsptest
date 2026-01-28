@@ -1038,14 +1038,28 @@ if (window.RProfiler) {
 		
 	<script  language="javascript" type="text/javascript">
 		    // Initialize the queue
+		// window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+		// function cpRumTag() {
+		//   CPRUMDataLayer.push(arguments);
+		// }
+	
+		// // Queue some events before the "real library" is loaded
+		// cpRumTag('indicator', 'adsrendered', 2345);
+
+
+		// New way of adding custom tag
 		window.CPRUMDataLayer = window.CPRUMDataLayer || [];
-		function cpRumTag() {
-		  CPRUMDataLayer.push(arguments);
-		}
-	
-		// Queue some events before the "real library" is loaded
-		cpRumTag('indicator', 'adsrendered', 2345);
-	
+		function cpRUMDataLayerTag() {
+	      CPRUMDataLayer.push(arguments);
+	    }
+
+		cpRUMDataLayerTag('addInfo', 'conversion', 'conve');
+		cpRUMDataLayerTag('addInfo', 'indicator', 'adsrendered', 2345);
+		cpRUMDataLayerTag('addInfo', 'pageGroup', 'home');
+		cpRUMDataLayerTag('addInfo', 'appError', 10, 'undefined error');
+		cpRUMDataLayerTag('addInfo', 'conversion', 20, 1200);
+		cpRUMDataLayerTag('addInfo', 'tracepoint', 'tracepoint', 'tracepoint mesg');
+		cpRUMDataLayerTag('addInfo', 'variation', 'variation');
 	  </script>
 
 
@@ -1059,6 +1073,7 @@ if (window.RProfiler) {
          <script src="js/main.js"></script>
     </body>
 </html>
+
 
 
 
